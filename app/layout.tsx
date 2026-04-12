@@ -17,6 +17,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Saliq Wiki — Pakistan Esports",
   description: "Stats, rosters, and tournament history for Pakistan's competitive gaming scene — all in one place.",
+  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover",
 };
 
 export default function RootLayout({
@@ -27,9 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} h-full w-screen overflow-x-hidden antialiased`}
+      className={`${syne.variable} ${dmSans.variable} h-screen w-full overflow-y-auto overflow-x-hidden antialiased`}
     >
-      <body className="min-h-full w-screen flex flex-col font-body overflow-x-hidden">{children}</body>
+      <body className="min-h-full w-full flex flex-col font-body overflow-x-hidden">{children}</body>
     </html>
   );
 }
