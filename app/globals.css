@@ -1,0 +1,617 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg-primary: #0B0F19;
+  --bg-secondary: #111827;
+  --accent-green: #22C55E;
+  --accent-yellow: #FACC15;
+  --text-primary: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --glow-green: rgba(34, 197, 94, 0.25);
+  --glow-green-strong: rgba(34, 197, 94, 0.5);
+  --logo-grad-1: #E5E7EB;
+  --logo-grad-2: #FFFFFF;
+  --logo-grad-3: #22C55E;
+  --logo-glow: rgba(34, 197, 94, 0.2);
+}
+
+[data-theme="light"] {
+  --bg-primary: #F9FAFB;
+  --bg-secondary: #F3F4F6;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --glow-green: rgba(34, 197, 94, 0.15);
+  --glow-green-strong: rgba(34, 197, 94, 0.4);
+  --logo-grad-1: #FFFFFF;
+  --logo-grad-2: #22C55E;
+  --logo-grad-3: #166534;
+  --logo-glow: rgba(34, 197, 94, 0.4);
+}
+
+/* ─── Tailwind v4 Theme ──────────────────────────────────── */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-syne);
+  --font-body: var(--font-dm-sans);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-accent-green: var(--accent-green);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), 'DM Sans', system-ui, sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+}
+
+/* ─── Background Grid Pattern ───────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Floating Blur Blobs ────────────────────────────────── */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.blob-green {
+  background: #22C55E;
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  right: -160px;
+  animation: float-slow 8s ease-in-out infinite alternate;
+}
+
+.blob-yellow {
+  background: #FACC15;
+  width: 300px;
+  height: 300px;
+  bottom: 80px;
+  left: -100px;
+  animation: float-slow 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float-slow {
+  from {
+    transform: translateY(0px) scale(1);
+  }
+
+  to {
+    transform: translateY(24px) scale(1.05);
+  }
+}
+
+/* ─── Logo Glow Underline ────────────────────────────────── */
+.logo-glow {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-glow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #22C55E, #FACC15);
+  border-radius: 2px;
+  box-shadow: 0 0 12px var(--glow-green-strong);
+}
+
+/* ─── PUBG Card ──────────────────────────────────────────── */
+.pubg-card {
+  position: relative;
+  background: linear-gradient(135deg,
+      rgba(17, 24, 39, 0.85) 0%,
+      rgba(11, 15, 25, 0.95) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.pubg-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(34, 197, 94, 0.06) 0%,
+      transparent 60%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.pubg-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.3),
+    0 32px 80px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(34, 197, 94, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.pubg-card:hover .card-arrow {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+.card-arrow {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+/* ─── PUBG Icon ──────────────────────────────────────────── */
+.icon-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(250, 204, 21, 0.08));
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.1);
+}
+
+/* ─── Toggle Switch ──────────────────────────────────────── */
+.toggle-track {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-track.active {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #9CA3AF;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-thumb.active {
+  transform: translateX(24px);
+  background: #22C55E;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+/* ─── Badge Pill ─────────────────────────────────────────── */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #22C55E;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #22C55E;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* ─── Footer divider ─────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(34, 197, 94, 0.2) 30%,
+      rgba(250, 204, 21, 0.15) 70%,
+      transparent);
+}
+
+html.light .divider {
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(34, 197, 94, 0.15) 30%,
+      rgba(250, 204, 21, 0.1) 70%,
+      transparent);
+}
+
+/* ─── Contact link hover ─────────────────────────────────── */
+.contact-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.contact-link:hover {
+  color: var(--accent-green);
+}
+
+/* ─── Additional styles from HTML ────────────────────────── */
+
+/* Glow blob */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+html.light .blob {
+  opacity: 0.10;
+}
+
+/* Logo accent */
+.logo-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #22C55E 0%, #FACC15 100%);
+  border-radius: 99px;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+/* Game card */
+.game-card {
+  position: relative;
+  background: linear-gradient(145deg, #151D2E 0%, #0D1525 100%);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2), box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+html.light .game-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f0f4ff 100%);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.07) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 0 0 1.5px rgba(34, 197, 94, 0.45), 0 24px 60px rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.55);
+}
+
+.game-card:hover::before {
+  opacity: 1;
+}
+
+/* Arrow animation on hover */
+.card-arrow {
+  transform: translateX(0) translateY(0);
+  transition: transform 0.25s ease;
+  opacity: 0.5;
+}
+
+.game-card:hover .card-arrow {
+  transform: translateX(4px) translateY(-4px);
+  opacity: 1;
+}
+
+/* Icon ring */
+.icon-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(250, 204, 21, 0.08) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.game-card:hover .icon-ring {
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.3);
+}
+
+/* Toggle */
+.toggle-track {
+  width: 48px;
+  height: 26px;
+  border-radius: 99px;
+  background: #1F2937;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+}
+
+html.light .toggle-track {
+  background: #D1FAE5;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #9CA3AF;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2), background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+html.light .toggle-thumb {
+  transform: translateX(22px);
+  background: #22C55E;
+}
+
+/* Stat pill */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 99px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #22C55E;
+  letter-spacing: 0.02em;
+}
+
+html.light .stat-pill {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.07) 40%, rgba(255, 255, 255, 0.07) 60%, transparent 100%);
+}
+
+html.light .divider {
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.07) 40%, rgba(0, 0, 0, 0.07) 60%, transparent 100%);
+}
+
+/* Footer link */
+.footer-link {
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #22C55E;
+}
+
+html.light .footer-link {
+  color: #6B7280;
+}
+
+html.light .footer-link:hover {
+  color: #22C55E;
+}
+
+/* Badge */
+.badge-new {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: rgba(250, 204, 21, 0.12);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  color: #FACC15;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .blob-green {
+    width: 280px;
+    height: 280px;
+    top: -80px;
+    right: -80px;
+  }
+
+  .blob-yellow {
+    width: 160px;
+    height: 160px;
+  }
+
+  .icon-ring {
+    width: 72px;
+    height: 72px;
+    font-size: 36px;
+    border-radius: 18px;
+  }
+
+  .game-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .icon-ring {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 14px;
+  }
+}
+
+/* ─── Responsive helpers ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .blob-green {
+    width: 280px;
+    height: 280px;
+    top: -80px;
+    right: -80px;
+  }
+
+  .blob-yellow {
+    width: 160px;
+    height: 160px;
+  }
+
+  .icon-ring {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+  }
+}
+
+/* ─── Advanced Logo V2 ───────────────────────────────────── */
+.branding-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-accent-line {
+  width: 3px;
+  height: 32px;
+  background: linear-gradient(180deg, var(--accent-green), transparent);
+  border-radius: 99px;
+  box-shadow: 0 0 12px var(--glow-green-strong);
+}
+
+.logo-text-v2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(135deg, var(--logo-grad-1) 0%, var(--logo-grad-2) 60%, var(--logo-grad-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px var(--logo-glow));
+}
+
+.logo-hyphen {
+  color: var(--accent-green);
+  -webkit-text-fill-color: var(--accent-green);
+  text-shadow: 0 0 10px var(--accent-green);
+  margin: 0 1px;
+}
+
+.tagline-v2 {
+font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-yellow) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Coming Soon Game Chips ────────────────────────────── */
+.game-chip-tekken:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(34, 197, 94, 0.5) !important;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+}
