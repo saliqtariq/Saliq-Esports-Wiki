@@ -32,6 +32,8 @@
 }
 
 /* ─── Tailwind v4 Theme ──────────────────────────────────── */
+/* @theme inline block commented out - design tokens are defined in :root above */
+/*
 @theme inline {
   --font-sans: var(--font-inter);
   --font-display: var(--font-syne);
@@ -43,6 +45,7 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
 }
+*/
 
 /* ─── Base ───────────────────────────────────────────────── */
 *,
@@ -57,10 +60,11 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: visible;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  user-select: none;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -70,7 +74,6 @@ body {
   font-family: var(--font-body), 'DM Sans', system-ui, sans-serif;
   transition: background 0.4s ease, color 0.4s ease;
   min-height: 100vh;
-  height: 100%;
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;

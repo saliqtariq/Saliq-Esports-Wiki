@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ width: '100%', overflowX: 'hidden', overflowY: 'auto' }}>
+    <div style={{ width: '100%', overflowX: 'hidden' }}>
       {/* Background blobs */}
       <div className="blob" style={{ width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' }} />
       <div className="blob" style={{ width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 }} />
