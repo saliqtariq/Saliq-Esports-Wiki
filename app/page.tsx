@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div style={{ width: '100%', overflow: 'hidden' }}>
       {/* Background blobs */}
       <div className="blob" style={{ width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' }} />
       <div className="blob" style={{ width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 }} />
@@ -34,10 +34,10 @@ export default function Home() {
       {/* Grid pattern overlay */}
       <div style={{ position: 'fixed', inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M60 0H0v60' fill='none' stroke='%23ffffff' stroke-opacity='0.025' stroke-width='1'/%3E%3C/svg%3E\")", pointerEvents: 'none', zIndex: 0 }} />
 
-      <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
 
         {/* ===== HEADER ===== */}
-        <header style={{ padding: '1.75rem 2rem 0' }}>
+        <header style={{ padding: '1.75rem 2rem 0', width: '100%' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem' }}>
 
             {/* Advanced Branding Block */}
@@ -69,7 +69,7 @@ export default function Home() {
         </header>
 
         {/* ===== HERO ===== */}
-        <main style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 1.5rem 3rem' }}>
+        <main style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 1.5rem 3rem', width: '100%' }}>
           <div style={{ maxWidth: '560px', width: '100%', textAlign: 'center' }}>
 
             {/* Main heading */}
@@ -280,6 +280,6 @@ export default function Home() {
         </footer>
 
       </div>
-    </>
+    </div>
   );
 }

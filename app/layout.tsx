@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${syne.variable} ${dmSans.variable} h-full w-screen overflow-x-hidden antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body">{children}</body>
+      <body className="min-h-full w-screen flex flex-col font-body overflow-x-hidden">{children}</body>
     </html>
   );
 }
