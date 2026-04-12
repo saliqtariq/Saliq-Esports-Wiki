@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isLight, setIsLight] = useState(false);
+  const router = useRouter();
 
   const toggleTheme = () => {
     const nextLight = !isLight;
@@ -85,12 +87,15 @@ export default function Home() {
             {/* ===== PUBG Card ===== */}
             <div
               className="game-card"
-              style={{ maxWidth: '460px', margin: '0 auto' }}
-              onClick={(e) => cardClick(e.currentTarget as HTMLElement)}
+              style={{ maxWidth: '460px', margin: '0 auto', cursor: 'pointer' }}
+              onClick={(e) => {
+                cardClick(e.currentTarget as HTMLElement);
+                setTimeout(() => router.push('/pubg'), 150);
+              }}
               tabIndex={0}
               role="button"
               aria-label="Explore PUBG Mobile Esports"
-              onKeyDown={(e) => { if (e.key === 'Enter') cardClick(e.currentTarget as HTMLElement); }}
+              onKeyDown={(e) => { if (e.key === 'Enter') { cardClick(e.currentTarget as HTMLElement); setTimeout(() => router.push('/pubg'), 150); } }}
             >
               {/* Top row — compact, title forced to one line */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.1rem' }}>
