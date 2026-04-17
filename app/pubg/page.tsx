@@ -108,14 +108,14 @@ export default function PUBGPage() {
             <div className="pubg-action-grid" style={{
               marginBottom: '4rem',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '1.5rem',
-              maxWidth: '800px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+              gap: '0.85rem',
+              maxWidth: '680px',
               margin: '0 auto 4rem'
             }}>
               {actionCards.map((card) => (
-                <div
-                  key={card.title}
+                <div 
+                  key={card.title} 
                   className="module-card-v5"
                   onClick={() => console.log(`Navigating to ${card.title}`)}
                 >

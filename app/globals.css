@@ -264,15 +264,14 @@ body {
 .module-card-v5 {
   display: flex;
   flex-direction: column;
-  background: #1F2937;
-  /* Solid gray/navy from reference */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  background: #000000; /* Absolute black */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   width: 100%;
   cursor: pointer;
-  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
 
@@ -300,16 +299,15 @@ body {
 }
 
 .card-footer-v5 {
-  padding: 1.25rem 1rem;
+  padding: 1.35rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #111827;
-  /* Darker footer area */
+  background: #000000; /* Absolute black */
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-title-v5 {
