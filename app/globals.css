@@ -9,6 +9,11 @@
   --text-primary: #E5E7EB;
   --text-secondary: #9CA3AF;
   --border-subtle: rgba(255, 255, 255, 0.06);
+  --footer-bg: rgba(0, 0, 0, 0.2);
+  --footer-border: rgba(255, 255, 255, 0.03);
+  --card-bg-subtle: rgba(255, 255, 255, 0.03);
+  --card-border-subtle: rgba(255, 255, 255, 0.08);
+  --grid-color: rgba(255, 255, 255, 0.025);
   --glow-green: rgba(34, 197, 94, 0.25);
   --glow-green-strong: rgba(34, 197, 94, 0.5);
   --logo-grad-1: #E5E7EB;
@@ -23,6 +28,11 @@
   --text-primary: #111827;
   --text-secondary: #6B7280;
   --border-subtle: rgba(0, 0, 0, 0.08);
+  --footer-bg: rgba(255, 255, 255, 0.5);
+  --footer-border: rgba(0, 0, 0, 0.05);
+  --card-bg-subtle: rgba(0, 0, 0, 0.02);
+  --card-border-subtle: rgba(0, 0, 0, 0.06);
+  --grid-color: rgba(34, 197, 94, 0.05);
   --glow-green: rgba(34, 197, 94, 0.15);
   --glow-green-strong: rgba(34, 197, 94, 0.4);
   --logo-grad-1: #FFFFFF;
@@ -56,21 +66,36 @@
   padding: 0;
 }
 
-/* Smooth theme transitions for all elements */
-a,
-button,
-input,
-select,
-textarea,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-div {
-  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+/* Optimized theme transitions - only critical elements on mobile */
+html,
+body {
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Only transition these on larger screens where performance is better */
+@media (min-width: 768px) {
+
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Performance optimization */
+html,
+body {
+  will-change: background-color;
 }
 
 html {
@@ -83,14 +108,14 @@ html {
   -webkit-user-select: none;
   user-select: none;
   -webkit-text-size-adjust: 100%;
-  transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body), 'DM Sans', system-ui, sans-serif;
-  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -102,11 +127,15 @@ body {
 }
 
 /* ─── Background Grid Pattern ───────────────────────────── */
-.bg-grid {
+.dynamic-grid {
+  position: fixed;
+  inset: 0;
   background-image:
-    linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ─── Floating Blur Blobs ────────────────────────────────── */
@@ -229,6 +258,91 @@ body {
   background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(250, 204, 21, 0.08));
   border: 1px solid rgba(34, 197, 94, 0.25);
   box-shadow: 0 0 24px rgba(34, 197, 94, 0.1);
+}
+
+/* ─── PUBG Integrated Module Card (Ref: Merged V5) ──────── */
+.module-card-v5 {
+  display: flex;
+  flex-direction: column;
+  background: #1F2937;
+  /* Solid gray/navy from reference */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.module-card-v5:hover {
+  transform: translateY(-8px);
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+}
+
+.card-image-wrapper-v5 {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.module-image-v5 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.module-card-v5:hover .module-image-v5 {
+  transform: scale(1.08);
+}
+
+.card-footer-v5 {
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #111827;
+  /* Darker footer area */
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-title-v5 {
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.footer-stats-v5 {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+html.light .module-card-v5 {
+  background: #F3F4F6;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.light .card-footer-v5 {
+  background: #E5E7EB;
+}
+
+html.light .footer-title-v5 {
+  color: #111827;
+}
+
+html.light .footer-stats-v5 {
+  color: #6B7280;
 }
 
 /* ─── Toggle Switch ──────────────────────────────────────── */
@@ -634,7 +748,7 @@ html.light .footer-link:hover {
 }
 
 .tagline-v2 {
-font-size: 0.6rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -650,4 +764,101 @@ font-size: 0.6rem;
   transform: translateY(-2px) scale(1.05);
   border-color: rgba(34, 197, 94, 0.5) !important;
   box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+}
+
+/* ─── Mobile Performance Optimizations ───────────────────── */
+@media (max-width: 768px) {
+
+  /* Reduce transitions on mobile for better performance */
+  html,
+  body {
+    transition: background-color 0.1s linear;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    transition: none;
+  }
+
+  .game-card {
+    transition: transform 0.2s ease-out, border-color 0.1s linear;
+  }
+
+  .toggle-thumb {
+    transition: transform 0.2s ease-out, background 0.1s linear;
+  }
+
+  .card-arrow {
+    transition: none;
+  }
+}
+
+/* ─── Reduced Motion Support ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html,
+  body {
+    transition: background-color 0.05s linear;
+  }
+}
+
+
+
+/* ─── Redesigned Footer Styles ──────────────────────────── */
+.footer-link-v2 {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: inline-block;
+}
+
+.footer-link-v2:hover {
+  color: var(--accent-green);
+  transform: translateY(-1px);
+}
+
+.footer-link-v2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-green);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.footer-link-v2:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.social-icon {
+  color: #6B7280;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  color: var(--accent-green);
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 0 10px var(--glow-green-strong));
 }

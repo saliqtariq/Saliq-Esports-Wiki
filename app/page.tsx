@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Footer from './components/Footer';
 
 export default function Home() {
   const [isLight, setIsLight] = useState(false);
@@ -10,13 +11,17 @@ export default function Home() {
   const toggleTheme = () => {
     const nextLight = !isLight;
     setIsLight(nextLight);
-    if (nextLight) {
-      document.documentElement.classList.add('light');
-      document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    
+    // Batch DOM updates for better performance
+    requestAnimationFrame(() => {
+      if (nextLight) {
+        document.documentElement.classList.add('light');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    });
   };
 
   const cardClick = (el: HTMLElement) => {
@@ -27,14 +32,14 @@ export default function Home() {
   };
 
   return (
-    <div style={{ width: '100%', overflowX: 'hidden' }}>
+    <div style={{ width: '100%', overflowX: 'hidden', background: 'var(--bg-primary)' }}>
       {/* Background blobs */}
       <div className="blob" style={{ width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' }} />
       <div className="blob" style={{ width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 }} />
       <div className="blob" style={{ width: '300px', height: '300px', top: '50%', left: '55%', background: '#22C55E', opacity: 0.07 }} />
 
       {/* Grid pattern overlay */}
-      <div style={{ position: 'fixed', inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M60 0H0v60' fill='none' stroke='%23ffffff' stroke-opacity='0.025' stroke-width='1'/%3E%3C/svg%3E\")", pointerEvents: 'none', zIndex: 0 }} />
+      <div className="dynamic-grid" />
 
       <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
 
@@ -248,43 +253,11 @@ export default function Home() {
               </div>
             </div>
             {/* end coming soon */}
-
-          </div>
-        </main>
-
-        {/* ===== FOOTER ===== */}
-        <footer style={{ padding: '0 1.5rem 2.25rem' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <div className="divider" style={{ marginBottom: '2rem' }} />
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '1.1rem', fontWeight: 600 }}>Contact</p>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-                <a href="tel:03134490701" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.875rem' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                  03134490701
-                </a>
-                <div style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.07)' }} />
-                <a href="mailto:saliqtariq2@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.875rem' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                  saliqtariq2@gmail.com
-                </a>
-              </div>
-              <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginBottom: '0.5rem', letterSpacing: '0.02em', fontWeight: 600 }}>
-                PAKISTAN ESPORTS
-              </p>
-              <p style={{ fontSize: '10px', color: 'var(--text-secondary)', opacity: 0.8 }}>
-                &copy; 2025 Saliq Wiki
-              </p>
             </div>
-          </div>
-        </footer>
+          </main>
 
+          <Footer />
+        </div>
       </div>
-    </div>
   );
 }
