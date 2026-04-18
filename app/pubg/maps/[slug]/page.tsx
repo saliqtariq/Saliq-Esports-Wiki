@@ -15,7 +15,15 @@ type MapInfo = {
   gameModes: string;
 };
 
-const mapData: Record<string, { title: string; info: MapInfo; topDownImage: string }> = {
+type MapContent = {
+  title: string;
+  info: MapInfo;
+  topDownImage: string;
+  overviewTitle: string;
+  overviewParagraphs: string[];
+};
+
+const mapData: Record<string, MapContent> = {
   erangel: {
     title: 'Erangel',
     topDownImage: '/maps/erangel_topdown.png',
@@ -24,11 +32,129 @@ const mapData: Record<string, { title: string; info: MapInfo; topDownImage: stri
       location: 'Russia',
       releaseDate: '2018',
       theme: 'Forest',
-      competitionSpan: '2018 – Current',
+      competitionSpan: '2018 - Current',
       size: '8x8 km',
       gameVersion: 'PUBGM',
       gameModes: 'Battle Royale',
     },
+    overviewTitle: 'The King of Maps',
+    overviewParagraphs: [
+      'Erangel is the inaugural map of PUBG Mobile, offering players an expansive 8x8 km battlefield that combines urban landscapes, rural areas, and diverse terrains.',
+      'Set on a fictional Russian island in the Black Sea, Erangel presents a rich tapestry of environments, from sprawling cities to dense forests and open fields. The map architecture and layout encourage a wide variety of combat scenarios, catering to both close-quarters skirmishes and long-range engagements.',
+    ],
+  },
+  miramar: {
+    title: 'Miramar',
+    topDownImage: '/maps/miramar_topdown.png',
+    info: {
+      creator: ['KRAFTON', 'Level Infinite', 'LightSpeed Studios'],
+      location: 'Mexico',
+      releaseDate: '2018',
+      theme: 'Desert',
+      competitionSpan: '2018 - Current',
+      size: '8x8 km',
+      gameVersion: 'PUBGM',
+      gameModes: 'Battle Royale',
+    },
+    overviewTitle: 'Desert Warfare',
+    overviewParagraphs: [
+      'Miramar drops players into a vast arid landscape where long sightlines, sparse cover, and elevated terrain make positioning a decisive advantage.',
+      'From compact towns to open plains and ridgelines, the map rewards smart rotations, vehicle control, and precision fights at medium to long range.',
+    ],
+  },
+  sanhok: {
+    title: 'Sanhok',
+    topDownImage: '/maps/sanhok-map.jpg',
+    info: {
+      creator: ['PUBG Corporation'],
+      location: 'Southeast Asia',
+      releaseDate: '2018',
+      theme: 'Tropical',
+      competitionSpan: '2018 - Current',
+      size: '4x4 km',
+      gameVersion: 'PUBGM',
+      gameModes: 'Battle Royale',
+    },
+    overviewTitle: 'Jungle Fury',
+    overviewParagraphs: [
+      'Sanhok drops players into a dense, tropical island where every jungle trail, waterfall, and seaside compound invites high-intensity firefights and fast rotations.',
+      'The compact 4x4 km arena emphasizes aggressive play, vehicle mobility, and sharp decision-making as the circle closes quickly. Mastering ambush points, bridges, and the island’s varied cover is the key to dominating the Sanhok meta.',
+    ],
+  },
+  vikendi: {
+    title: 'Vikendi',
+    topDownImage: '/maps/vikendi-map.jpg',
+    info: {
+      creator: ['PUBG Corporation'],
+      location: 'Slovenia',
+      releaseDate: '2018-12-19',
+      theme: 'Snow Island',
+      competitionSpan: '2018-12-19 - 2025-02-02',
+      size: '6x6 km',
+      gameVersion: 'PUBGM',
+      gameModes: 'Battle Royale',
+    },
+    overviewTitle: 'Frozen Frontlines',
+    overviewParagraphs: [
+      'Vikendi blends crisp winter visuals with fast-paced combat, forcing players to adapt quickly to open snowfields, narrow mountain passes, and icy villages.',
+      'The map rewards aggressive rotations and smart use of cover as snow drifts and winding roads define each firefight. Tracer rounds, vehicles, and weather awareness make every decision count in this chilly battleground.',
+    ],
+  },
+  karakin: {
+    title: 'Karakin',
+    topDownImage: '/maps/krakin-map.jpg',
+    info: {
+      creator: ['PUBG Corporation'],
+      location: 'North Africa',
+      releaseDate: '2018',
+      theme: 'Desert',
+      competitionSpan: '2018 - Current',
+      size: '2x2 km',
+      gameVersion: 'PUBGM',
+      gameModes: 'Battle Royale',
+    },
+    overviewTitle: 'Tiny but Ruthless',
+    overviewParagraphs: [
+      'Karakin compresses PUBG Mobile action into a fierce 2x2 km island where every building, ruin, and tunnel can become a deadly trap.',
+      'The map’s quick circle, destructible walls, and narrow chokepoints demand smart positioning and rapid decision-making. Aggressive play and map awareness shine brightest in Karakin’s intense, high-risk combat zones.',
+    ],
+  },  livik: {
+    title: 'Livik',
+    topDownImage: '/maps/livik-map.jpg',
+    info: {
+      creator: ['Tencent Games'],
+      location: 'Scandinavia',
+      releaseDate: '2020-07 / 2022-05-15',
+      theme: 'Mixed',
+      competitionSpan: '2020-07 - 2022-05-14 / 2022-05-15 - Current',
+      size: '2x2 km',
+      gameVersion: 'PUBGM',
+      gameModes: 'Battle Royale',
+    },
+    overviewTitle: 'Verdant Valley',
+    overviewParagraphs: [
+      'Livik fuses Scandinavian landscapes with diverse terrain—forests, meadows, and coastal areas—creating a map where varied combat styles thrive.',
+      'The 2x2 km arena encourages fast rotations and multi-engagement strategies. Mixed terrain offers close-quarters encounters and medium-range standoffs, rewarding adaptable players who master both aggressive and methodical approaches.',
+    ],
+  },
+  rondo: {
+    title: 'Rondo',
+    topDownImage: '/maps/rondo-map.jpg',
+    info: {
+      creator: ['KRAFTON', 'Level Infinite'],
+      location: 'China',
+      releaseDate: '2025-03-07',
+      theme: 'City, Forests',
+      competitionSpan: '2025 - Current',
+      size: '8x8 km',
+      gameVersion: 'PUBGM',
+      gameModes: 'Battle Royale',
+    },
+    overviewTitle: 'Urban Jungle',
+    overviewParagraphs: [
+      'Rondo blends metropolitan sprawl with dense forests across an 8x8 km canvas, delivering diverse combat environments from skyscraper rooftops to verdant valleys.',
+      'The map rewards strategic positioning and environmental awareness, with vertical gameplay in urban cores and dynamic forest engagements. From high-rise sniping to jungle ambushes, Rondo tests every aspect of competitive play.',
+    ],
   },
 };
 
@@ -44,15 +170,6 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-
-  if (!data) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-primary)' }}>
-        <h1 style={{ color: 'var(--text-secondary)' }}>Map "{slug}" not found.</h1>
-        <button onClick={() => router.back()} style={{ marginTop: '1rem', color: '#22C55E' }}>Go Back</button>
-      </div>
-    );
-  }
 
   // Zoom Logic
   const handleWheel = (e: React.WheelEvent) => {
@@ -94,6 +211,15 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
+  if (!data) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-primary)' }}>
+        <h1 style={{ color: 'var(--text-secondary)' }}>{`Map ${slug} not found.`}</h1>
+        <button onClick={() => router.back()} style={{ marginTop: '1rem', color: '#22C55E' }}>Go Back</button>
+      </div>
+    );
+  }
+
   return (
     <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', background: 'var(--bg-primary)' }}>
       {/* Background blobs */}
@@ -124,7 +250,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
                 transition: 'all 0.3s ease',
               }}
             >
-              <span>←</span> Back to Maps
+              <span>&larr;</span> Back to Maps
             </button>
           </div>
         </header>
@@ -200,7 +326,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
               marginBottom: '1.5rem',
               letterSpacing: '-0.02em'
             }}>
-              The King of Maps
+              {data.overviewTitle}
             </h2>
             <p style={{ 
               color: 'var(--text-secondary)', 
@@ -209,10 +335,9 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
               maxWidth: '850px',
               fontWeight: 400
             }}>
-              Erangel is the inaugural map of <span style={{ color: '#22C55E', fontWeight: 600 }}>PUBG Mobile</span>, offering players an expansive 8x8 km battlefield that combines urban landscapes, rural areas, and diverse terrains. 
+              {data.overviewParagraphs[0]}
               <br /><br />
-              Set on a fictional Russian island in the <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>Black Sea</span>, Erangel presents a rich tapestry of environments, from sprawling cities to dense forests and open fields. 
-              The map's architecture and layout encourage a wide variety of combat scenarios, catering perfectly to both intense close-quarters skirmishes and high-stakes, long-range engagements.
+              {data.overviewParagraphs[1]}
             </p>
           </div>
 
@@ -327,3 +452,4 @@ function InfoRow({ label, value, last, isHoverable }: { label: string; value: st
     </div>
   );
 }
+
