@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
+import { useState, type MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Footer from '../../components/Footer';
 
@@ -16,6 +17,7 @@ const maps = [
 
 export default function MapsPage() {
   const [isLight, setIsLight] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const router = useRouter();
 
   const toggleTheme = () => {
@@ -31,6 +33,14 @@ export default function MapsPage() {
         document.documentElement.setAttribute('data-theme', 'dark');
       }
     });
+  };
+
+  const handleMapClick = (event: MouseEvent<HTMLAnchorElement>, slug: string) => {
+    if (isNavigating) {
+      event.preventDefault();
+      return;
+    }
+    setIsNavigating(true);
   };
 
   return (
@@ -118,9 +128,11 @@ export default function MapsPage() {
               width: '100%'
             }}>
               {maps.map((map) => (
-                <div
+                <Link
                   key={map.slug}
+                  href={`/pubg/maps/${map.slug}`}
                   className="module-card-v5"
+                  onClick={(event) => handleMapClick(event, map.slug)}
                   style={{
                     height: '180px',
                     position: 'relative',
@@ -129,7 +141,6 @@ export default function MapsPage() {
                     minWidth: '260px',
                     borderRadius: '16px'
                   }}
-                  onClick={() => router.push(`/pubg/maps/${map.slug}`)}
                 >
                   <div className="card-image-wrapper-v5" style={{ height: '100%', position: 'relative' }}>
                     <img
@@ -176,7 +187,7 @@ export default function MapsPage() {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
