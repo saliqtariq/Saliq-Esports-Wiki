@@ -243,7 +243,7 @@ export default function Home() {
                     fontWeight: 700,
                     letterSpacing: '0.07em',
                     textTransform: 'uppercase',
-                    padding: '2px 7px',
+                    padding: '2px 7px', 
                     borderRadius: '99px',
                     background: '#22C55E',
                     color: '#0B0F19',
