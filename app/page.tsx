@@ -52,7 +52,7 @@ export default function Home() {
           
               <div>
                 <h1 className="logo-text-v2">
-                  Saliq<span className="logo-hyphen">-</span>Wiki
+                  SALIK
                 </h1>
                 <p className="tagline-v2">
                  The Home of Pakistan Esports

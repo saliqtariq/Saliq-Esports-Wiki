@@ -25,7 +25,7 @@ export default function Footer() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}>
-                Saliq<span style={{ color: '#22C55E', WebkitTextFillColor: '#22C55E' }}>-</span>Wiki
+                SALIK
               </h2>
             </div>
             <p style={{ 
@@ -76,7 +76,7 @@ export default function Footer() {
           
           {/* License text removed as requested */}
           <div style={{ fontSize: '0.75rem', color: '#6B7280', maxWidth: '400px' }}>
-            <p style={{ margin: 0, opacity: 0.8 }}>&copy; 2025 Saliq Wiki. All rights reserved.</p>
+            <p style={{ margin: 0, opacity: 0.8 }}>&copy; 2025 SALIK. All rights reserved.</p>
           </div>
 
           {/* Social Icons */}
