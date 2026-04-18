@@ -44,7 +44,7 @@ export default function MapsPage() {
       <div className="dynamic-grid" />
 
       <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
-        
+
         {/* ===== HEADER ===== */}
         <header style={{ padding: '1.75rem 2rem 1rem', width: '100%' }}>
           <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
@@ -94,14 +94,14 @@ export default function MapsPage() {
         {/* ===== MAIN CONTENT ===== */}
         <main style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem 1rem 4rem' }}>
           <div style={{ maxWidth: '1000px', width: '100%', textAlign: 'center' }}>
-            <h2 style={{ 
-              fontFamily: 'var(--font-display)', 
-              fontSize: 'clamp(2rem, 5vw, 3rem)', 
-              fontWeight: 800, 
-              letterSpacing: '-0.035em', 
-              lineHeight: 1.08, 
-              marginBottom: '3rem', 
-              color: 'var(--text-primary)' 
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: 800,
+              letterSpacing: '-0.035em',
+              lineHeight: 1.08,
+              marginBottom: '3rem',
+              color: 'var(--text-primary)'
             }}>
               PUBG Mobile
               <br />
@@ -118,11 +118,11 @@ export default function MapsPage() {
               width: '100%'
             }}>
               {maps.map((map) => (
-                <div 
+                <div
                   key={map.slug}
                   className="module-card-v5"
-                  style={{ 
-                    height: '180px', 
+                  style={{
+                    height: '180px',
                     position: 'relative',
                     flex: '1 1 280px',
                     maxWidth: '310px',
@@ -132,12 +132,27 @@ export default function MapsPage() {
                   onClick={() => router.push(`/pubg/maps/${map.slug}`)}
                 >
                   <div className="card-image-wrapper-v5" style={{ height: '100%', position: 'relative' }}>
-                    <img 
-                      src={map.image} 
-                      alt={map.title} 
+                    <img
+                      src={map.image}
+                      alt={map.title}
                       className="module-image-v5"
                       style={{ opacity: 0.85 }}
                     />
+                    {/* Blur mask for text area */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: '38%',
+                      background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%)',
+                      backdropFilter: 'blur(18px)',
+                      WebkitBackdropFilter: 'blur(18px)',
+                      maskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
+                      zIndex: 1,
+                      pointerEvents: 'none'
+                    }} />
                     <div style={{
                       position: 'absolute',
                       inset: 0,
@@ -148,10 +163,10 @@ export default function MapsPage() {
                       justifyContent: 'flex-end',
                       paddingBottom: '1.25rem'
                     }}>
-                      <h3 style={{ 
-                        color: '#FFFFFF', 
-                        fontFamily: 'var(--font-syne), var(--font-display)', 
-                        fontSize: '1.35rem', 
+                      <h3 style={{
+                        color: '#FFFFFF',
+                        fontFamily: 'var(--font-syne), var(--font-display)',
+                        fontSize: '1.35rem',
                         fontWeight: 800,
                         margin: 0,
                         letterSpacing: '-0.02em',
