@@ -2,30 +2,54 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import NextImage from 'next/image';
 import Footer from '../../components/Footer';
+
+interface Player {
+  id: string;
+  realName: string;
+  team: string;
+  teamLogo?: string;
+  links: {
+    instagram?: string;
+    youtube?: string;
+    twitter?: string;
+  };
+}
+
+const players: Player[] = [
+  { 
+    id: 'Shurta G', 
+    realName: 'Saliq Tariq', 
+    team: 'FMA Esports',
+    teamLogo: '/fma-esports-logo.jpg',
+    links: { 
+      instagram: 'https://www.instagram.com/ig_shurta' 
+    } 
+  }
+];
 
 export default function PlayersPage() {
   const [isLight, setIsLight] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const router = useRouter();
 
   const toggleTheme = () => {
     const nextLight = !isLight;
     setIsLight(nextLight);
-
-    requestAnimationFrame(() => {
-      if (nextLight) {
-        document.documentElement.classList.add('light');
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.classList.remove('light');
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    });
+    if (nextLight) {
+      document.documentElement.classList.add('light');
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.classList.remove('light');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
   };
 
   return (
     <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', background: 'var(--bg-primary)' }}>
-      {/* Background blobs - hidden on mobile for performance */}
+      {/* Background blobs */}
       <div className="blob" style={{ width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' }} />
       <div className="blob" style={{ width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 }} />
 
@@ -70,7 +94,7 @@ export default function PlayersPage() {
         <main style={{ flex: 1, padding: '1rem 2rem 5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ maxWidth: '1000px', width: '100%', textAlign: 'center' }}>
             
-            {/* Centered Large Title - SIZES REDUCED */}
+            {/* Centered Large Title */}
             <div style={{ margin: '2rem 0 5rem' }}>
               <h1 style={{ 
                 fontFamily: 'var(--font-display)',
@@ -98,41 +122,138 @@ export default function PlayersPage() {
               </h2>
             </div>
 
-            {/* Players Heading Section - SIZES REDUCED */}
+            {/* Wiki Style Table Section */}
             <div style={{ marginTop: '2rem', textAlign: 'left', width: '100%' }}>
-              <div style={{ position: 'relative', marginBottom: '1.25rem' }}>
-                <h3 style={{ 
-                  fontSize: '1.4rem', 
-                  fontWeight: 900, 
-                  color: 'var(--text-primary)',
-                  margin: '0 0 0.5rem 0',
-                  letterSpacing: '-0.02em',
-                  position: 'relative',
-                  zIndex: 2
+              <div style={{ 
+                border: '1px solid #3c3c3c', 
+                background: '#202020',
+                borderRadius: '4px',
+                overflow: 'hidden'
+              }}>
+                {/* Wiki Header Row */}
+                <div style={{ 
+                  background: '#2c2c2c', 
+                  padding: '10px 12px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  borderBottom: '1px solid #3c3c3c',
+                  position: 'relative'
                 }}>
-                  Players
-                </h3>
-                {/* Subtle glow behind title */}
-                <div style={{ 
-                  position: 'absolute', 
-                  bottom: '12px', 
-                  left: '-8px', 
-                  width: '50px', 
-                  height: '15px', 
-                  background: '#22C55E', 
-                  filter: 'blur(20px)', 
-                  opacity: 0.25,
-                  zIndex: 1 
-                }} />
-                
-                {/* Gradient line moved below */}
-                <div style={{ 
-                  height: '3px', 
-                  width: '100%', 
-                  background: 'linear-gradient(90deg, #22C55E 0%, rgba(34, 197, 94, 0.05) 100%)',
-                  borderRadius: '2px',
-                  opacity: 0.8
-                }} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 800, fontSize: '1.1rem', color: '#fff' }}>
+                    <NextImage 
+                      src="/mini-pak-flag.png" 
+                      alt="PK" 
+                      width={20} 
+                      height={15} 
+                      style={{ objectFit: 'contain' }}
+                    />
+                    Players
+                  </div>
+                  <button 
+                    onClick={() => setIsHidden(!isHidden)}
+                    style={{ 
+                      position: 'absolute',
+                      right: '12px',
+                      background: 'rgba(255, 255, 255, 0.05)', 
+                      border: '1px solid #555', 
+                      borderRadius: '4px', 
+                      padding: '4px 12px', 
+                      fontSize: '0.85rem', 
+                      color: '#fff', 
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    {isHidden ? 'Show' : 'Hide'}
+                  </button>
+                </div>
+
+                {!isHidden && (
+                  <div style={{ overflowX: 'auto' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', color: '#fff', fontSize: '1rem' }}>
+                      <thead>
+                        <tr style={{ background: '#1a1a1a', borderBottom: '1px solid #3c3c3c' }}>
+                          <th style={{ padding: '8px 12px', borderRight: '1px solid #3c3c3c', width: '25%' }}>ID</th>
+                          <th style={{ padding: '8px 12px', borderRight: '1px solid #3c3c3c', width: '35%' }}>Real Name</th>
+                          <th style={{ padding: '8px 12px', borderRight: '1px solid #3c3c3c', width: '30%' }}>Team</th>
+                          <th style={{ padding: '8px 12px', width: '10%' }}>Links</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {players.map((player) => (
+                          <tr key={player.id} style={{ borderBottom: '1px solid #3c3c3c' }}>
+                            <td style={{ padding: '6px 12px', borderRight: '1px solid #3c3c3c' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <NextImage 
+                                  src="/mini-pak-flag.png" 
+                                  alt="PK" 
+                                  width={16} 
+                                  height={12} 
+                                  style={{ objectFit: 'contain' }}
+                                />
+                                <Link 
+                                  href={`/pubg/players/${player.id.toLowerCase().replace(/\s+/g, '-')}`}
+                                  style={{ 
+                                    color: '#22C55E', 
+                                    fontWeight: 700, 
+                                    textDecoration: 'none',
+                                  }}
+                                >
+                                  {player.id}
+                                </Link>
+                              </div>
+                            </td>
+                            <td style={{ padding: '6px 12px', borderRight: '1px solid #3c3c3c' }}>
+                              {player.realName}
+                            </td>
+                            <td style={{ padding: '6px 12px', borderRight: '1px solid #3c3c3c', color: player.team ? '#22C55E' : '#fff' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                {player.teamLogo && (
+                                  <NextImage 
+                                    src={player.teamLogo} 
+                                    alt={player.team} 
+                                    width={20} 
+                                    height={20} 
+                                    style={{ borderRadius: '4px', objectFit: 'contain' }}
+                                  />
+                                )}
+                                {player.team}
+                              </div>
+                            </td>
+                            <td style={{ padding: '6px 12px' }}>
+                              <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '8px' }}>
+                                {player.links.instagram && (
+                                  <a href={player.links.instagram} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
+                                    <div style={{ 
+                                      background: '#000', 
+                                      borderRadius: '4px', 
+                                      width: '20px', 
+                                      height: '20px', 
+                                      display: 'flex', 
+                                      alignItems: 'center', 
+                                      justifyContent: 'center',
+                                      overflow: 'hidden'
+                                    }}>
+                                      <NextImage 
+                                        src="/instagram-logo.jpeg" 
+                                        alt="Instagram" 
+                                        width={18} 
+                                        height={18} 
+                                        style={{ objectFit: 'contain' }}
+                                      />
+                                    </div>
+                                  </a>
+                                )}
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </div>
             </div>
 
