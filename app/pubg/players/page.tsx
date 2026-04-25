@@ -100,12 +100,12 @@ export default function PlayersPage() {
         </header>
 
         {/* ===== MAIN CONTENT ===== */}
-        <main style={{ flex: 1, padding: '1rem 2rem 5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <main style={{ flex: 1, padding: '1rem 1rem 5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ maxWidth: '1000px', width: '100%', textAlign: 'center' }}>
             
             {/* Centered Large Title */}
-            <div style={{ margin: '2rem 0 5rem' }}>
-              <h1 style={{ 
+            <div style={{ margin: '2rem 0 4rem' }}>
+              <h1 className="mobile-title-clamp" style={{ 
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2rem, 5vw, 3.25rem)',
                 fontWeight: 900,
@@ -117,7 +117,7 @@ export default function PlayersPage() {
               }}>
                 Player Portal
               </h1>
-              <h2 style={{ 
+              <h2 className="mobile-title-clamp" style={{ 
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2rem, 5vw, 3.25rem)',
                 fontWeight: 900,
@@ -132,7 +132,7 @@ export default function PlayersPage() {
             </div>
 
             {/* Wiki Style Table Section */}
-            <div style={{ marginTop: '2rem', textAlign: 'left', width: '100%' }}>
+            <div style={{ marginTop: '1rem', textAlign: 'left', width: '100%' }}>
               <div style={{ 
                 border: '1px solid #3c3c3c', 
                 background: '#202020',
@@ -149,12 +149,12 @@ export default function PlayersPage() {
                   borderBottom: '1px solid #3c3c3c',
                   position: 'relative'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 800, fontSize: '1.1rem', color: '#fff' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '1rem', color: '#fff' }}>
                     <NextImage 
                       src="/mini-pak-flag.png" 
                       alt="PK" 
-                      width={20} 
-                      height={15} 
+                      width={18} 
+                      height={13} 
                       style={{ objectFit: 'contain' }}
                     />
                     Players
@@ -168,11 +168,10 @@ export default function PlayersPage() {
                       border: '1px solid #555', 
                       borderRadius: '4px', 
                       padding: '4px 12px', 
-                      fontSize: '0.85rem', 
+                      fontSize: '0.75rem', 
                       color: '#fff', 
                       cursor: 'pointer',
-                      fontWeight: 700,
-                      transition: 'all 0.2s ease'
+                      fontWeight: 700
                     }}
                   >
                     {isHidden ? 'Show' : 'Hide'}
@@ -180,26 +179,26 @@ export default function PlayersPage() {
                 </div>
 
                 {!isHidden && (
-                  <div style={{ overflowX: 'auto' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', color: '#fff', fontSize: '1rem' }}>
+                  <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+                    <table style={{ width: '100%', minWidth: '450px', borderCollapse: 'collapse', textAlign: 'left', color: '#fff', fontSize: '1rem' }}>
                       <thead>
                         <tr style={{ background: '#1a1a1a', borderBottom: '1px solid #3c3c3c' }}>
-                          <th style={{ padding: '8px 12px', borderRight: '1px solid #3c3c3c', width: '25%' }}>ID</th>
-                          <th style={{ padding: '8px 12px', borderRight: '1px solid #3c3c3c', width: '35%' }}>Real Name</th>
-                          <th style={{ padding: '8px 12px', borderRight: '1px solid #3c3c3c', width: '30%' }}>Team</th>
-                          <th style={{ padding: '8px 12px', width: '10%' }}>Links</th>
+                          <th className="mobile-table-header" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', width: '25%' }}>ID</th>
+                          <th className="mobile-table-header" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', width: '35%' }}>Real Name</th>
+                          <th className="mobile-table-header" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', width: '30%' }}>Team</th>
+                          <th className="mobile-table-header" style={{ padding: '10px 15px', width: '10%' }}>Links</th>
                         </tr>
                       </thead>
                       <tbody>
                         {players.map((player) => (
                           <tr key={player.id} style={{ borderBottom: '1px solid #3c3c3c' }}>
-                            <td style={{ padding: '6px 12px', borderRight: '1px solid #3c3c3c' }}>
+                            <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c' }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <NextImage 
                                   src="/mini-pak-flag.png" 
                                   alt="PK" 
-                                  width={16} 
-                                  height={12} 
+                                  width={14} 
+                                  height={10} 
                                   style={{ objectFit: 'contain' }}
                                 />
                                 <Link 
@@ -208,38 +207,39 @@ export default function PlayersPage() {
                                     color: '#22C55E', 
                                     fontWeight: 700, 
                                     textDecoration: 'none',
+                                    whiteSpace: 'nowrap'
                                   }}
                                 >
                                   {player.id}
                                 </Link>
                               </div>
                             </td>
-                            <td style={{ padding: '6px 12px', borderRight: '1px solid #3c3c3c' }}>
+                            <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', whiteSpace: 'nowrap' }}>
                               {player.realName}
                             </td>
-                            <td style={{ padding: '6px 12px', borderRight: '1px solid #3c3c3c', color: player.team ? '#22C55E' : '#fff' }}>
+                            <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', color: player.team ? '#22C55E' : '#fff', whiteSpace: 'nowrap' }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 {player.teamLogo && (
                                   <NextImage 
                                     src={player.teamLogo} 
                                     alt={player.team} 
-                                    width={20} 
-                                    height={20} 
+                                    width={16} 
+                                    height={16} 
                                     style={{ borderRadius: '4px', objectFit: 'contain' }}
                                   />
                                 )}
                                 {player.team}
                               </div>
                             </td>
-                            <td style={{ padding: '6px 12px' }}>
+                            <td className="mobile-table-cell" style={{ padding: '10px 15px' }}>
                               <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '8px' }}>
                                 {player.links.instagram && (
                                   <a href={player.links.instagram} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
                                     <div style={{ 
                                       background: '#000', 
                                       borderRadius: '4px', 
-                                      width: '20px', 
-                                      height: '20px', 
+                                      width: '18px', 
+                                      height: '18px', 
                                       display: 'flex', 
                                       alignItems: 'center', 
                                       justifyContent: 'center',
@@ -248,8 +248,8 @@ export default function PlayersPage() {
                                       <NextImage 
                                         src="/instagram-logo.jpeg" 
                                         alt="Instagram" 
-                                        width={18} 
-                                        height={18} 
+                                        width={14} 
+                                        height={14} 
                                         style={{ objectFit: 'contain' }}
                                       />
                                     </div>

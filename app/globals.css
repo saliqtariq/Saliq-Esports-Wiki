@@ -798,9 +798,53 @@ html.light .footer-link:hover {
   }
 
   .game-card {
-    transition: transform 0.2s ease-out, border-color 0.1s linear;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+}
+
+/* ─── Mobile Layout Optimization ─── */
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 2rem !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .mobile-hide {
+    display: none !important;
+  }
+  
+  .mobile-p-none {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.85rem !important;
+  }
+  
+  .mobile-table-cell {
+    padding: 8px 6px !important;
+    font-size: 0.75rem !important;
   }
 
+  .mobile-table-header {
+    padding: 10px 8px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .mobile-title-clamp {
+    font-size: clamp(1.5rem, 8vw, 2.25rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
   .toggle-thumb {
     transition: transform 0.2s ease-out, background 0.1s linear;
   }

@@ -8,7 +8,7 @@ export default function Footer() {
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
         {/* Top Row: Branding & Primary Links */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '3rem', marginBottom: '3rem' }}>
+        <div className="mobile-stack" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '3rem', marginBottom: '3rem' }}>
           
           {/* Left Column: Logo & Main Nav */}
           <div style={{ flex: '1', minWidth: '280px' }}>
@@ -72,7 +72,7 @@ export default function Footer() {
         <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '1.5rem' }} />
 
         {/* Bottom Row: License & Socials */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="mobile-stack" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem' }}>
           
           {/* License text removed as requested */}
           <div style={{ fontSize: '0.75rem', color: '#6B7280', maxWidth: '400px' }}>
