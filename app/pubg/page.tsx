@@ -7,6 +7,7 @@ import NextImage from 'next/image';
 const actionCards = [
   {
     title: 'Players',
+    stats: 'Work In Progress',
     image: '/players.jpg',
     variant: 'players',
   },
@@ -18,6 +19,7 @@ const actionCards = [
   },
   {
     title: 'Upcoming Tournaments',
+    stats: '',
     image: '/tournaments.webp',
     variant: 'tournaments',
   },
@@ -119,7 +121,10 @@ export default function PUBGPage() {
                   key={card.title}
                   className="module-card-v5"
                   onClick={() => {
-                    const route = card.title === 'Maps' ? '/pubg/maps' : null;
+                    let route = null;
+                    if (card.title === 'Maps') route = '/pubg/maps';
+                    if (card.title === 'Players') route = '/pubg/players';
+                    
                     if (route) router.push(route);
                     else console.log(`Navigating to ${card.title}`);
                   }}
