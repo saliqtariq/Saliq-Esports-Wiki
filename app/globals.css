@@ -830,13 +830,13 @@ html.light .footer-link:hover {
   }
   
   .mobile-table-cell {
-    padding: 8px 6px !important;
-    font-size: 0.75rem !important;
+    padding: 10px 8px !important;
+    font-size: 0.95rem !important;
   }
 
   .mobile-table-header {
-    padding: 10px 8px !important;
-    font-size: 0.75rem !important;
+    padding: 12px 10px !important;
+    font-size: 0.9rem !important;
   }
 
   .mobile-title-clamp {

@@ -180,7 +180,7 @@ export default function PlayersPage() {
 
                 {!isHidden && (
                   <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
-                    <table style={{ width: '100%', minWidth: '450px', borderCollapse: 'collapse', textAlign: 'left', color: '#fff', fontSize: '1rem' }}>
+                    <table style={{ width: '100%', minWidth: '500px', borderCollapse: 'collapse', textAlign: 'left', color: '#fff', fontSize: '1.15rem' }}>
                       <thead>
                         <tr style={{ background: '#1a1a1a', borderBottom: '1px solid #3c3c3c' }}>
                           <th className="mobile-table-header" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', width: '25%' }}>ID</th>
