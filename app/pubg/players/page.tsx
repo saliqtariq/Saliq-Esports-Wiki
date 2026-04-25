@@ -70,14 +70,14 @@ export default function PlayersPage() {
         <main style={{ flex: 1, padding: '1rem 2rem 5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ maxWidth: '1000px', width: '100%', textAlign: 'center' }}>
             
-            {/* Centered Large Title */}
-            <div style={{ margin: '2rem 0 6rem' }}>
+            {/* Centered Large Title - SIZES REDUCED */}
+            <div style={{ margin: '2rem 0 5rem' }}>
               <h1 style={{ 
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+                fontSize: 'clamp(2rem, 5vw, 3.25rem)',
                 fontWeight: 900,
                 letterSpacing: '-0.04em',
-                lineHeight: 1,
+                lineHeight: 1.1,
                 color: 'var(--text-primary)',
                 margin: 0,
                 textTransform: 'uppercase'
@@ -86,10 +86,10 @@ export default function PlayersPage() {
               </h1>
               <h2 style={{ 
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+                fontSize: 'clamp(2rem, 5vw, 3.25rem)',
                 fontWeight: 900,
                 letterSpacing: '-0.04em',
-                lineHeight: 1,
+                lineHeight: 1.1,
                 color: '#22C55E',
                 margin: '0.25rem 0 0 0',
                 textTransform: 'uppercase'
@@ -98,14 +98,14 @@ export default function PlayersPage() {
               </h2>
             </div>
 
-            {/* Players Heading Section - ENHANCED */}
+            {/* Players Heading Section - SIZES REDUCED */}
             <div style={{ marginTop: '2rem', textAlign: 'left', width: '100%' }}>
-              <div style={{ position: 'relative', marginBottom: '1.5rem' }}>
+              <div style={{ position: 'relative', marginBottom: '1.25rem' }}>
                 <h3 style={{ 
-                  fontSize: '2.5rem', 
+                  fontSize: '1.75rem', 
                   fontWeight: 900, 
                   color: 'var(--text-primary)',
-                  margin: '0 0 0.75rem 0',
+                  margin: '0 0 0.5rem 0',
                   letterSpacing: '-0.03em',
                   position: 'relative',
                   zIndex: 2
@@ -115,19 +115,19 @@ export default function PlayersPage() {
                 {/* Subtle glow behind title */}
                 <div style={{ 
                   position: 'absolute', 
-                  bottom: '20px', 
-                  left: '-10px', 
-                  width: '60px', 
-                  height: '20px', 
+                  bottom: '12px', 
+                  left: '-8px', 
+                  width: '50px', 
+                  height: '15px', 
                   background: '#22C55E', 
-                  filter: 'blur(25px)', 
-                  opacity: 0.3,
+                  filter: 'blur(20px)', 
+                  opacity: 0.25,
                   zIndex: 1 
                 }} />
                 
                 {/* Gradient line moved below */}
                 <div style={{ 
-                  height: '4px', 
+                  height: '3px', 
                   width: '100%', 
                   background: 'linear-gradient(90deg, #22C55E 0%, rgba(34, 197, 94, 0.05) 100%)',
                   borderRadius: '2px',
