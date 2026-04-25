@@ -102,11 +102,11 @@ export default function PlayersPage() {
             <div style={{ marginTop: '2rem', textAlign: 'left', width: '100%' }}>
               <div style={{ position: 'relative', marginBottom: '1.25rem' }}>
                 <h3 style={{ 
-                  fontSize: '1.75rem', 
+                  fontSize: '1.4rem', 
                   fontWeight: 900, 
                   color: 'var(--text-primary)',
                   margin: '0 0 0.5rem 0',
-                  letterSpacing: '-0.03em',
+                  letterSpacing: '-0.02em',
                   position: 'relative',
                   zIndex: 2
                 }}>
