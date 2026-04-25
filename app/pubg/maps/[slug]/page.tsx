@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import NextImage from 'next/image';
 import Footer from '../../../components/Footer';
 
 type MapInfo = {
@@ -118,7 +119,7 @@ const mapData: Record<string, MapContent> = {
       'Karakin compresses PUBG Mobile action into a fierce 2x2 km island where every building, ruin, and tunnel can become a deadly trap.',
       'The map’s quick circle, destructible walls, and narrow chokepoints demand smart positioning and rapid decision-making. Aggressive play and map awareness shine brightest in Karakin’s intense, high-risk combat zones.',
     ],
-  },  livik: {
+  }, livik: {
     title: 'Livik',
     topDownImage: '/maps/livik-map.jpg',
     info: {
@@ -229,7 +230,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
       <div className="dynamic-grid" />
 
       <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
-        
+
         {/* ===== HEADER ===== */}
         <header style={{ padding: '1.5rem 2rem', width: '100%' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '2rem' }}>
@@ -257,7 +258,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
 
         {/* ===== MAIN CONTENT ===== */}
         <main style={{ flex: 1, padding: '0 1.5rem 4rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          
+
           <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
             <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', fontWeight: 900, color: 'var(--text-primary)', letterSpacing: '-0.04em', lineHeight: 1, marginBottom: '0.5rem' }}>
               {data.title}
@@ -266,21 +267,30 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
-            
+
             {/* Left: Map Viewer Card */}
             <div 
               onClick={() => setIsOpen(true)}
               style={{ 
+                width: '100%',
+                aspectRatio: '1/1',
+                position: 'relative',
                 background: 'rgba(255, 255, 255, 0.02)', 
                 border: '1px solid rgba(255, 255, 255, 0.05)', 
                 borderRadius: '24px',
                 overflow: 'hidden',
                 cursor: 'zoom-in',
-                position: 'relative'
               }}
               className="map-card-hover"
             >
-              <img src={data.topDownImage} alt={`${data.title} Map`} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <NextImage 
+                src={data.topDownImage} 
+                alt={`${data.title} Map`} 
+                fill
+                sizes="(max-width: 768px) 100vw, 600px"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </div>
 
             {/* Right: Info Card */}
@@ -288,10 +298,10 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
               <div style={{ background: 'rgba(34, 197, 94, 0.15)', padding: '1.25rem 1.5rem', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
                 <h2 style={{ color: '#22C55E', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>Map Information</h2>
               </div>
-                <div style={{ padding: '1.5rem' }}>
-                <InfoRow 
-                  label="Creator" 
-                  value={data.info.creator.join(', ')} 
+              <div style={{ padding: '1.5rem' }}>
+                <InfoRow
+                  label="Creator"
+                  value={data.info.creator.join(', ')}
                   isHoverable
                 />
                 <InfoRow label="Location" value={data.info.location} />
@@ -299,9 +309,9 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
                 <InfoRow label="Theme" value={data.info.theme} />
                 <InfoRow label="Competition Span" value={data.info.competitionSpan} />
                 <InfoRow label="Size" value={data.info.size} />
-                <InfoRow 
-                  label="Game Version" 
-                  value={data.info.gameVersion} 
+                <InfoRow
+                  label="Game Version"
+                  value={data.info.gameVersion}
                   isHoverable
                 />
                 <InfoRow label="Game Mode(s)" value={data.info.gameModes} last />
@@ -310,28 +320,28 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
           </div>
 
           {/* ===== MAP OVERVIEW SECTION ===== */}
-          <div style={{ 
-            marginTop: '4rem', 
-            padding: '2.5rem', 
-            background: 'rgba(255, 255, 255, 0.01)', 
+          <div style={{
+            marginTop: '4rem',
+            padding: '2.5rem',
+            background: 'rgba(255, 255, 255, 0.01)',
             borderLeft: '4px solid #22C55E',
             borderRadius: '0 24px 24px 0',
             backdropFilter: 'blur(10px)'
           }}>
-            <h2 style={{ 
-              color: 'var(--text-primary)', 
-              fontFamily: 'var(--font-display)', 
-              fontSize: '1.75rem', 
-              fontWeight: 800, 
+            <h2 style={{
+              color: 'var(--text-primary)',
+              fontFamily: 'var(--font-display)',
+              fontSize: '1.75rem',
+              fontWeight: 800,
               marginBottom: '1.5rem',
               letterSpacing: '-0.02em'
             }}>
               {data.overviewTitle}
             </h2>
-            <p style={{ 
-              color: 'var(--text-secondary)', 
-              fontSize: '1.1rem', 
-              lineHeight: 1.8, 
+            <p style={{
+              color: 'var(--text-secondary)',
+              fontSize: '1.1rem',
+              lineHeight: 1.8,
               maxWidth: '850px',
               fontWeight: 400
             }}>
@@ -348,7 +358,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
 
       {/* ===== FULL SCREEN MAP MODAL ===== */}
       {isOpen && (
-        <div 
+        <div
           onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
           onWheel={handleWheel}
           onMouseDown={handleMouseDown}
@@ -368,9 +378,52 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
             overflow: 'hidden'
           }}
         >
-          {/* Close interaction hint */}
-          <div style={{ position: 'absolute', top: '2rem', right: '2rem', color: 'rgba(255,255,255,0.5)', zIndex: 10 }}>
-            Press ESC or Click Outside to Close
+          {/* Close button */}
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              setScale(1);
+              setPosition({ x: 0, y: 0 });
+            }}
+            style={{
+              position: 'absolute',
+              top: '1.5rem',
+              right: '1.5rem',
+              width: '48px',
+              height: '48px',
+              borderRadius: '16px',
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              color: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              zIndex: 100,
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              backdropFilter: 'blur(8px)',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = 'rgba(255, 255, 255, 0.15)';
+              (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)';
+              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = 'rgba(255, 255, 255, 0.08)';
+              (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
+              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255, 255, 255, 0.15)';
+            }}
+            aria-label="Close modal"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          {/* Desktop interaction hint */}
+          <div style={{ position: 'absolute', top: '1.5rem', left: '2rem', color: 'rgba(255,255,255,0.4)', zIndex: 10, fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }} className="desktop-only">
+            ESC or Click Outside to Close
           </div>
 
           <div 
@@ -380,17 +433,19 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
               transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
               maxWidth: '90vw',
               maxHeight: '90vh',
+              width: '100%',
+              height: '100%',
+              position: 'relative'
             }}
           >
-            <img 
+            <NextImage 
               src={data.topDownImage} 
               alt={data.title} 
               draggable={false}
+              fill
+              sizes="90vw"
               style={{ 
-                width: 'auto', 
-                height: 'auto', 
-                maxWidth: '100%', 
-                maxHeight: '90vh', 
+                objectFit: 'contain',
                 boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
                 borderRadius: '8px',
                 cursor: scale > 1 ? 'grab' : 'auto'
@@ -415,6 +470,11 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
           transform: translateY(-8px);
           border-color: rgba(34, 197, 94, 0.3) !important;
         }
+        @media (max-width: 768px) {
+          .desktop-only {
+            display: none !important;
+          }
+        }
       `}</style>
     </div>
   );
@@ -424,10 +484,10 @@ function InfoRow({ label, value, last, isHoverable }: { label: string; value: st
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.85rem 0', borderBottom: last ? 'none' : '1px solid rgba(255, 255, 255, 0.05)', fontSize: '0.95rem' }}>
       <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{label}</span>
-      <span 
-        style={{ 
-          color: isHoverable ? '#22C55E' : 'var(--text-primary)', 
-          fontWeight: 600, 
+      <span
+        style={{
+          color: isHoverable ? '#22C55E' : 'var(--text-primary)',
+          fontWeight: 600,
           textAlign: 'right',
           cursor: isHoverable ? 'pointer' : 'default',
           transition: 'all 0.3s ease',

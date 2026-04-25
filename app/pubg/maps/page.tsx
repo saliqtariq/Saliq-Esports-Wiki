@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, type MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import NextImage from 'next/image';
 import Footer from '../../components/Footer';
 
 const maps = [
@@ -60,7 +61,7 @@ export default function MapsPage() {
           <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
               <button
-                onClick={() => router.push('/pubg')}
+                onClick={() => router.back()}
                 style={{
                   background: 'rgba(34, 197, 94, 0.1)',
                   border: '1px solid rgba(34, 197, 94, 0.2)',
@@ -143,27 +144,32 @@ export default function MapsPage() {
                   }}
                 >
                   <div className="card-image-wrapper-v5" style={{ height: '100%', position: 'relative' }}>
-                    <img
+                    <NextImage
                       src={map.image}
                       alt={map.title}
                       className="module-image-v5"
-                      style={{ opacity: 0.85 }}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 310px"
+                      style={{ opacity: 0.85, objectFit: 'cover' }}
                     />
                     {/* Blur mask for text area */}
-                    <div style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: '38%',
-                      background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%)',
-                      backdropFilter: 'blur(18px)',
-                      WebkitBackdropFilter: 'blur(18px)',
-                      maskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
-                      WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
-                      zIndex: 1,
-                      pointerEvents: 'none'
-                    }} />
+                    <div 
+                      className="mobile-hide-blur"
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: '38%',
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%)',
+                        backdropFilter: 'blur(12px)',
+                        WebkitBackdropFilter: 'blur(12px)',
+                        maskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
+                        zIndex: 1,
+                        pointerEvents: 'none'
+                      }} 
+                    />
                     <div style={{
                       position: 'absolute',
                       inset: 0,
@@ -192,7 +198,7 @@ export default function MapsPage() {
             </div>
 
             <button
-              onClick={() => router.push('/pubg')}
+              onClick={() => router.back()}
               style={{
                 padding: '0.85rem 1.75rem',
                 borderRadius: '12px',

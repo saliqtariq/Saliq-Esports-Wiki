@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import NextImage from 'next/image';
 
 const actionCards = [
   {
@@ -56,7 +57,7 @@ export default function PUBGPage() {
           <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
               <button
-                onClick={() => router.back()}
+                onClick={() => router.push('/')}
                 style={{
                   background: 'rgba(34, 197, 94, 0.1)',
                   border: '1px solid rgba(34, 197, 94, 0.2)',
@@ -114,8 +115,8 @@ export default function PUBGPage() {
               margin: '0 auto 4rem'
             }}>
               {actionCards.map((card) => (
-                <div 
-                  key={card.title} 
+                <div
+                  key={card.title}
                   className="module-card-v5"
                   onClick={() => {
                     const route = card.title === 'Maps' ? '/pubg/maps' : null;
@@ -123,11 +124,14 @@ export default function PUBGPage() {
                     else console.log(`Navigating to ${card.title}`);
                   }}
                 >
-                  <div className="card-image-wrapper-v5">
-                    <img
+                  <div className="card-image-wrapper-v5" style={{ position: 'relative', height: '160px' }}>
+                    <NextImage
                       src={card.image}
-                      alt=""
+                      alt={card.title}
                       className="module-image-v5"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 220px"
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <div className="card-footer-v5">
@@ -139,7 +143,7 @@ export default function PUBGPage() {
             </div>
 
             <button
-              onClick={() => router.back()}
+              onClick={() => router.push('/')}
               style={{
                 padding: '0.75rem 1.5rem',
                 borderRadius: '8px',
