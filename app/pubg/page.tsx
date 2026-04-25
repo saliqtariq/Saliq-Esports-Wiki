@@ -7,7 +7,7 @@ import NextImage from 'next/image';
 const actionCards = [
   {
     title: 'Players',
-    stats: 'Work In Progress',
+    stats: '2+ Players',
     image: '/players.jpg',
     variant: 'players',
   },
