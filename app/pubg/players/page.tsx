@@ -27,6 +27,15 @@ const players: Player[] = [
     links: { 
       instagram: 'https://www.instagram.com/ig_shurta' 
     } 
+  },
+  { 
+    id: 'AlphaBoy', 
+    realName: 'Muhammad Huzaifa Ali', 
+    team: 'Seventh Element',
+    teamLogo: '/SeventhElement-Logo.png',
+    links: { 
+      instagram: 'https://www.instagram.com/alphaboyy.1' 
+    } 
   }
 ];
 
