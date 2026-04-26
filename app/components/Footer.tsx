@@ -8,26 +8,10 @@ export default function Footer() {
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
         {/* Top Row: Branding & Primary Links */}
-        <div className="mobile-stack" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '3rem', marginBottom: '3rem' }}>
+        <div className="mobile-stack" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '3rem', marginBottom: '3rem' }}>
           
-          {/* Left Column: Logo & Main Nav */}
+          {/* Left Column: Tagline & Nav */}
           <div style={{ flex: '1', minWidth: '280px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.25rem' }}>
-              <h2 style={{ 
-                fontFamily: 'var(--font-display)', 
-                fontSize: '1.5rem', 
-                fontWeight: 800, 
-                textTransform: 'uppercase', 
-                letterSpacing: '-0.03em', 
-                margin: 0, 
-                color: 'var(--text-primary)',
-                background: 'linear-gradient(135deg, #E5E7EB 0%, #FFFFFF 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                SALIK
-              </h2>
-            </div>
             <p style={{ 
               fontFamily: 'var(--font-display)',
               fontSize: '0.875rem', 
@@ -36,8 +20,7 @@ export default function Footer() {
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
               fontWeight: 600,
-              borderLeft: '2px solid rgba(255,255,255,0.1)',
-              paddingLeft: '1rem',
+              paddingLeft: '0',
               opacity: 0.8
             }}>
               The Ultimate Home for <span style={{ color: '#22C55E' }}>Pakistan</span> Esports
@@ -51,7 +34,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column: Site Info */}
-          <div style={{ flexShrink: 0, textAlign: 'left', maxWidth: '300px' }}>
+          <div style={{ flexShrink: 0, textAlign: 'left', maxWidth: '350px' }}>
             <p style={{ 
               fontFamily: 'var(--font-display)', 
               fontSize: '0.9rem', 

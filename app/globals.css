@@ -105,8 +105,8 @@ html {
   overflow-x: hidden;
   overflow-y: visible;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
+  -webkit-user-select: text;
+  user-select: text;
   -webkit-text-size-adjust: 100%;
   transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
