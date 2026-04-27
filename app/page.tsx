@@ -85,9 +85,6 @@ export default function Home() {
               <span style={{ color: '#22C55E' }}>Esports</span> Reference
             </h2>
 
-            <p style={{ fontSize: '0.975rem', color: '#9CA3AF', lineHeight: 1.7, marginBottom: '2.75rem', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Stats, rosters, and tournament history for Pakistan&apos;s competitive gaming scene — all in one place.
-            </p>
 
             {/* ===== PUBG Card ===== */}
             <div
