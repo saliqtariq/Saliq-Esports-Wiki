@@ -177,7 +177,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     status: 'Active',
     bio: (
       <p style={{ margin: 0 }}>
-        Muhammad Imad Habib <strong style={{ color: '#fff' }}>"Beastopie"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#fff', fontWeight: 700 }}>Freestyle</span>.
+        Muhammad Imad Habib <strong style={{ color: '#fff' }}>"Beastopie"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#FACC15', fontWeight: 700 }}>Freestyle</span>.
       </p>
     ),
     achievements: [
