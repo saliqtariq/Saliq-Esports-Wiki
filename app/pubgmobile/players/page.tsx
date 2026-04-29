@@ -22,8 +22,8 @@ const players: Player[] = [
   { 
     id: 'Shurta G', 
     realName: 'Saliq Tariq', 
-    team: 'FMA Esports',
-    teamLogo: '/fma-esports-logo.jpg',
+    team: 'Destroyer Esports',
+    teamLogo: '/Des-Logo.jpg',
     links: { 
       instagram: 'https://www.instagram.com/ig_shurta' 
     } 
@@ -35,6 +35,24 @@ const players: Player[] = [
     teamLogo: '/SeventhElement-Logo.png',
     links: { 
       instagram: 'https://www.instagram.com/alphaboyy.1' 
+    } 
+  },
+  { 
+    id: 'Chief OG', 
+    realName: 'Muhammad Izhar', 
+    team: 'Galacticous',
+    teamLogo: '/Galacticous-logo.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/cheifog_pubg' 
+    } 
+  },
+  { 
+    id: 'Eminent', 
+    realName: 'Khuzaima', 
+    team: 'FMA Esports',
+    teamLogo: '/fma-esports-logo.jpg',
+    links: { 
+      instagram: 'https://www.instagram.com/lazy_.khuzaima' 
     } 
   }
 ];
@@ -202,7 +220,7 @@ export default function PlayersPage() {
                                   style={{ objectFit: 'contain' }}
                                 />
                                 <Link 
-                                  href={`/pubg/players/${player.id.toLowerCase().replace(/\s+/g, '-')}`}
+                                  href={`/pubgmobile/players/${player.id.toLowerCase().replace(/\s+/g, '-')}`}
                                   style={{ 
                                     color: '#22C55E', 
                                     fontWeight: 700, 

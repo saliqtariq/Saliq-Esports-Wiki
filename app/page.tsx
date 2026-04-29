@@ -11,7 +11,7 @@ export default function Home() {
   const toggleTheme = () => {
     const nextLight = !isLight;
     setIsLight(nextLight);
-    
+
     // Batch DOM updates for better performance
     requestAnimationFrame(() => {
       if (nextLight) {
@@ -49,13 +49,13 @@ export default function Home() {
 
             {/* Advanced Branding Block */}
             <div className="branding-block">
-          
+
               <div>
                 <h1 className="logo-text-v2">
                   SALIK
                 </h1>
                 <p className="tagline-v2">
-                 The Home of Pakistan Esports
+                  The Home of Pakistan Esports
                 </p>
               </div>
             </div>
@@ -92,12 +92,12 @@ export default function Home() {
               style={{ maxWidth: '460px', margin: '0 auto', cursor: 'pointer' }}
               onClick={(e) => {
                 cardClick(e.currentTarget as HTMLElement);
-                setTimeout(() => router.push('/pubg'), 150);
+                setTimeout(() => router.push('/pubgmobile'), 150);
               }}
               tabIndex={0}
               role="button"
               aria-label="Explore PUBG Mobile Esports"
-              onKeyDown={(e) => { if (e.key === 'Enter') { cardClick(e.currentTarget as HTMLElement); setTimeout(() => router.push('/pubg'), 150); } }}
+              onKeyDown={(e) => { if (e.key === 'Enter') { cardClick(e.currentTarget as HTMLElement); setTimeout(() => router.push('/pubgmobile'), 150); } }}
             >
               {/* Top row — compact, title forced to one line */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.1rem' }}>
@@ -219,7 +219,7 @@ export default function Home() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
 
                 {/* Tekken */}
-                <div 
+                <div
                   className="game-chip-tekken"
                   style={{
                     display: 'flex',
@@ -240,7 +240,7 @@ export default function Home() {
                     fontWeight: 700,
                     letterSpacing: '0.07em',
                     textTransform: 'uppercase',
-                    padding: '2px 7px', 
+                    padding: '2px 7px',
                     borderRadius: '99px',
                     background: '#22C55E',
                     color: '#0B0F19',
@@ -250,11 +250,11 @@ export default function Home() {
               </div>
             </div>
             {/* end coming soon */}
-            </div>
-          </main>
+          </div>
+        </main>
 
-          <Footer />
-        </div>
+        <Footer />
       </div>
+    </div>
   );
 }

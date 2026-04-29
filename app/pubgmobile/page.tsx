@@ -7,7 +7,7 @@ import NextImage from 'next/image';
 const actionCards = [
   {
     title: 'Players',
-    stats: '2+ Players',
+    stats: '4+ Players',
     image: '/players.jpg',
     variant: 'players',
   },
@@ -122,8 +122,8 @@ export default function PUBGPage() {
                   className="module-card-v5"
                   onClick={() => {
                     let route = null;
-                    if (card.title === 'Maps') route = '/pubg/maps';
-                    if (card.title === 'Players') route = '/pubg/players';
+                    if (card.title === 'Maps') route = '/pubgmobile/maps';
+                    if (card.title === 'Players') route = '/pubgmobile/players';
                     
                     if (route) router.push(route);
                     else console.log(`Navigating to ${card.title}`);

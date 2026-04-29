@@ -103,6 +103,59 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2024', leave: '2025', team: 'FMA Esports' },
       { join: '2025', leave: '2026', team: 'Destroyer Esports' },
     ]
+  },
+  'chief-og': {
+    name: 'Muhammad Izhar',
+    nick: 'Chief OG',
+    image: '/Chief-Esport Pic.jpg',
+    teamLogo: '/Galacticous-logo.jpeg',
+    teamName: 'Galacticous',
+    nationality: 'Pakistan',
+    born: 'June 4, 2005 (age 20)',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Muhammad Izhar <strong style={{ color: '#fff' }}>"Chief OG"</strong> (born June 4, 2005) is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ background: 'linear-gradient(to right, #ff4d4d, #f1c40f)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>Galacticous</span>.
+      </p>
+    ),
+    achievements: [
+      { date: '2024-03-03', place: '27th', tier: 'A-Tier', tourney: 'PUBG Mobile Super League - Central and South Asia 2024: Pakistan Qualifier', team: 'Hashtag Esports' },
+      { date: '2023-04-09', place: '12th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: 'Team QWERTY' },
+      { date: '2022-11-22', place: '16th', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Asia Fall 2022', team: '7Sins' },
+      { date: '2022-07-31', place: '14th', tier: 'B-Tier', tourney: 'Gamenow Summer Clash', team: 'DTDxEsports' },
+    ],
+    history: [
+      { join: '-', leave: '-', team: 'RPG' },
+      { join: '-', leave: '2022-07-31', team: 'DTD' },
+      { join: '2022-11-21', leave: '-', team: '7Sins' },
+      { join: '2023-03-21', leave: '2023-04-09', team: 'QWERTY' },
+      { join: '2024-02-21', leave: '2024-03-03', team: 'HASHTAG' },
+      { join: '-', leave: 'Present', team: 'Galacticous' },
+    ]
+  },
+  'eminent': {
+    name: 'Khuzaima',
+    nick: 'Eminent',
+    image: '/FmaxEminent-Pic.png',
+    teamLogo: '/fma-esports-logo.jpg',
+    teamName: 'FMA Esports',
+    nationality: 'Pakistan',
+    born: 'TBD',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Khuzaima <strong style={{ color: '#fff' }}>"Eminent"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ background: 'linear-gradient(to right, #ff0000, #000000)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>FMA Esports</span>.
+      </p>
+    ),
+    achievements: [
+      { date: '2025-08-31', place: '9th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'FMA Esports' },
+      { date: '2025-04-27', place: '8th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'FMA Esports' },
+      { date: '2024-04-21', place: '5th', tier: 'B-Tier', tourney: 'Gamers Galaxy Pakistan 2024', team: 'FMA Esports' },
+      { date: '2025-11-10', place: 'Finals', tier: 'C-Tier', tourney: 'PUBG Mobile Manhunt Series - Season 2', team: 'Destroyer Esports' },
+    ],
+    history: [
+      { join: '-', leave: 'Present', team: 'FMA Esports' },
+    ]
   }
 };
 
@@ -244,11 +297,26 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                     { label: 'Nationality:', value: player.nationality },
                     { label: 'Born:', value: player.born },
                     { label: 'Status:', value: player.status, color: player.statusColor || '#22C55E' },
-                    { label: 'Team:', value: player.teamName, color: player.teamName === 'Seventh Element' ? '#3498db' : player.teamName === 'Destroyer Esports' ? '#e74c3c' : '#fff' },
+                    { 
+                      label: 'Team:', 
+                      value: player.teamName, 
+                      gradient: player.teamName === 'Galacticous' ? 'linear-gradient(to right, #ff4d4d, #f1c40f)' : 
+                                player.teamName === 'FMA Esports' ? 'linear-gradient(to right, #ff0000, #000000)' : null,
+                      color: player.teamName === 'Seventh Element' ? '#3498db' : player.teamName === 'Destroyer Esports' ? '#e74c3c' : '#fff' 
+                    },
                   ].map((info, idx) => (
                     <tr key={idx} style={{ background: idx % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
                       <td style={{ padding: '10px 12px', fontWeight: 700, color: '#9CA3AF', width: '42%', textAlign: 'right', borderRight: '1px solid #3c3c3c', whiteSpace: 'nowrap' }}>{info.label}</td>
-                      <td style={{ padding: '10px 12px', fontWeight: 800, color: info.color || '#fff', textAlign: 'left', whiteSpace: 'nowrap' }}>{info.value}</td>
+                      <td style={{ 
+                        padding: '10px 12px', 
+                        fontWeight: 800, 
+                        background: info.gradient || 'none',
+                        WebkitBackgroundClip: info.gradient ? 'text' : 'none',
+                        WebkitTextFillColor: info.gradient ? 'transparent' : 'initial',
+                        color: info.color || '#fff', 
+                        textAlign: 'left', 
+                        whiteSpace: 'nowrap' 
+                      }}>{info.value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -292,12 +360,12 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                         <tr key={idx} style={{ borderBottom: '1px solid #3c3c3c', background: idx % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent' }}>
                           <td style={{ padding: '14px 15px', fontSize: '1.1rem', borderRight: '1px solid #3c3c3c', color: '#eee', fontWeight: 500 }}>{ach.date}</td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c', textAlign: 'center' }}>
-                            <span style={{ display: 'inline-block', width: '60px', padding: '4px 0', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 800, background: (ach.place === '1st' || ach.place === '3rd') ? '#a08a00' : ach.place === '5th' ? '#8B4513' : '#2c5f63', color: '#fff' }}>
+                            <span style={{ display: 'inline-block', width: '60px', padding: '4px 0', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 800, background: (ach.place === '1st' || ach.place === '3rd') ? '#a08a00' : ach.place === '5th' ? '#8B4513' : (ach.place === '8th' || ach.place === '9th') ? '#FFD700' : '#2c5f63', color: '#fff' }}>
                               {ach.place}
                             </span>
                           </td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c', textAlign: 'center' }}>
-                            <span style={{ fontSize: '1rem', fontWeight: 600, color: '#a0c4ff' }}>{ach.tier}</span>
+                            <span style={{ fontSize: '1rem', fontWeight: 600, color: ach.tier === 'A-Tier' ? '#FFD700' : '#a0c4ff' }}>{ach.tier}</span>
                           </td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c' }}>
                             <span className="tourney-link" style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 500, cursor: 'pointer' }}>{ach.tourney}</span>
@@ -331,10 +399,25 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === '247Esports') && (
                                 <NextImage src="/247Esp-Logo.png" alt="247Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="247Esports" />
                               )}
+                              {(ach.team === 'Hashtag Esports') && (
+                                <NextImage src="/HashtagEsports-logo.png" alt="Hashtag Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Hashtag Esports" />
+                              )}
+                              {(ach.team === 'Galacticous') && (
+                                <NextImage src="/Galacticous-logo.jpeg" alt="Galacticous" width={48} height={30} style={{ objectFit: 'contain' }} title="Galacticous" />
+                              )}
+                              {(ach.team === 'Team QWERTY') && (
+                                <NextImage src="/Qwerty-Logo.png" alt="Team QWERTY" width={48} height={30} style={{ objectFit: 'contain' }} title="Team QWERTY" />
+                              )}
+                              {(ach.team === '7Sins') && (
+                                <NextImage src="/7Sins-Logo.png" alt="7Sins" width={48} height={30} style={{ objectFit: 'contain' }} title="7Sins" />
+                              )}
+                              {(ach.team === 'DTDxEsports') && (
+                                <NextImage src="/DTDxEsports Logo.png" alt="DTDxEsports" width={48} height={30} style={{ objectFit: 'contain' }} title="DTDxEsports" />
+                              )}
                               {ach.team === 'Flames 1' && (
                                 <span style={{ fontSize: '0.85rem', color: '#ff0000', fontWeight: 700 }}>Flames 1</span>
                               )}
-                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Flames 1'].includes(ach.team) && (
+                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Flames 1', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>

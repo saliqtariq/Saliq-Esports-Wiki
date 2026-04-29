@@ -131,7 +131,7 @@ export default function MapsPage() {
               {maps.map((map) => (
                 <Link
                   key={map.slug}
-                  href={`/pubg/maps/${map.slug}`}
+                  href={`/pubgmobile/maps/${map.slug}`}
                   className="module-card-v5"
                   onClick={(event) => handleMapClick(event, map.slug)}
                   style={{
