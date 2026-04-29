@@ -93,6 +93,9 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       </p>
     ),
     achievements: [
+      { date: '2024-03-18', place: '3rd', tier: 'C-Tier', tourney: 'NIL League S14', team: 'FMA Esports' },
+      { date: '2024-06-15', place: '1st', tier: 'D-Tier', tourney: 'The Clash Last Circle', team: 'FMA Esports' },
+      { date: '2024-08-26', place: '3rd', tier: 'D-Tier', tourney: 'IHS League S11', team: 'FMA Esports' },
       { date: '2024-10-27', place: '3rd', tier: 'B-Tier', tourney: 'PUBG Mobile Iron Squad Showdown', team: '52 Esports' },
       { date: '2021-09-30', place: '1st', tier: 'B-Tier', tourney: 'Codashop Global Series Pakistan 2021', team: '247Esports' },
       { date: '2024-04-21', place: '5th', tier: 'B-Tier', tourney: 'Gamers Galaxy Pakistan 2024', team: 'FMA Esports' },
@@ -101,7 +104,6 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { date: '2026-01-04', place: '13th', tier: 'C-Tier', tourney: 'PUBG Mobile Winter Rumble 2025', team: 'Destroyer Esports' },
       { date: '2025-11-10', place: 'Finals', tier: 'C-Tier', tourney: 'PUBG Mobile Manhunt Series - Season 2', team: 'Destroyer Esports' },
       { date: '2025-07-20', place: '11th', tier: 'C-Tier', tourney: 'PUBG Mobile Summer Clash 2025', team: 'Destroyer Esports' },
-      { date: '2024-09-29', place: '11th', tier: 'D-Tier', tourney: 'Senior Championship Season 2', team: 'FMA Esports' },
     ],
     history: [
       { join: '2020', leave: '2021', team: '247 Esports' },
@@ -156,11 +158,13 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       </p>
     ),
     achievements: [
+      { date: '2024-03-18', place: '3rd', tier: 'C-Tier', tourney: 'NIL League S14', team: 'FMA Esports' },
+      { date: '2024-06-15', place: '1st', tier: 'D-Tier', tourney: 'The Clash Last Circle', team: 'FMA Esports' },
+      { date: '2024-08-26', place: '3rd', tier: 'D-Tier', tourney: 'IHS League S11', team: 'FMA Esports' },
       { date: '2025-08-31', place: '9th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'FMA Esports' },
       { date: '2025-04-27', place: '8th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'FMA Esports' },
       { date: '2024-04-21', place: '5th', tier: 'B-Tier', tourney: 'Gamers Galaxy Pakistan 2024', team: 'FMA Esports' },
       { date: '2025-11-10', place: 'Finals', tier: 'C-Tier', tourney: 'PUBG Mobile Manhunt Series - Season 2', team: 'Destroyer Esports' },
-      { date: '2024-09-29', place: '11th', tier: 'D-Tier', tourney: 'Senior Championship Season 2', team: 'FMA Esports' },
     ],
     history: [
       { join: '-', leave: 'Present', team: 'FMA Esports' },
@@ -189,7 +193,18 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { date: '2026-02-06', place: '7th', tier: 'C-Tier', tourney: 'PUBG MOBILE UNIVERSITY SHOWDOWN', team: 'Freestyle' },
       { date: '2022-07-31', place: '16th', tier: 'C-Tier', tourney: 'PUBG MOBILE Gamenow Summer Clash', team: 'TOB' },
     ],
-    history: []
+    history: [
+      { join: '2019', leave: '2021', team: 'EXTERMINATORS' },
+      { join: '2021', leave: '2023', team: 'FIRE AND GLADIATORS' },
+      { join: '2023', leave: '2023', team: 'EXTREME' },
+      { join: '2023', leave: '2024', team: 'LQ5' },
+      { join: '2024', leave: '2024', team: 'REVOLUTION' },
+      { join: '2024', leave: '2024', team: 'GPA' },
+      { join: '2024', leave: '2024', team: 'H4K' },
+      { join: '2024', leave: '2025', team: 'ATX' },
+      { join: '2025', leave: '2025', team: 'NEVERBACK' },
+      { join: '2025 Nov', leave: 'Present', team: 'FREESTYLE' },
+    ]
   }
 };
 
