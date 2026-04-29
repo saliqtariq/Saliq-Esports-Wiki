@@ -54,6 +54,13 @@ const players: Player[] = [
     links: { 
       instagram: 'https://www.instagram.com/lazy_.khuzaima' 
     } 
+  },
+  {
+    id: 'Beastopie',
+    realName: 'Muhammad Imad Habib',
+    team: 'Freestyle',
+    teamLogo: '/freestyle-logo.jpg',
+    links: {}
   }
 ];
 

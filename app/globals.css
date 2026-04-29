@@ -922,7 +922,3 @@ html.light .footer-link:hover {
   transform: translateY(-4px) scale(1.1);
   filter: drop-shadow(0 0 10px var(--glow-green-strong));
 }
-a {
-  color: white;
-  text-decoration: none;
-}

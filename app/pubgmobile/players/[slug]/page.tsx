@@ -14,6 +14,13 @@ type Achievement = {
   team: string;
 };
 
+const TIER_PRIORITY: Record<string, number> = {
+  'A-Tier': 0,
+  'B-Tier': 1,
+  'C-Tier': 2,
+  'D-Tier': 3,
+};
+
 type HistoryEntry = {
   join: string;
   leave: string;
@@ -94,6 +101,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { date: '2026-01-04', place: '13th', tier: 'C-Tier', tourney: 'PUBG Mobile Winter Rumble 2025', team: 'Destroyer Esports' },
       { date: '2025-11-10', place: 'Finals', tier: 'C-Tier', tourney: 'PUBG Mobile Manhunt Series - Season 2', team: 'Destroyer Esports' },
       { date: '2025-07-20', place: '11th', tier: 'C-Tier', tourney: 'PUBG Mobile Summer Clash 2025', team: 'Destroyer Esports' },
+      { date: '2024-09-29', place: '11th', tier: 'D-Tier', tourney: 'Senior Championship Season 2', team: 'FMA Esports' },
     ],
     history: [
       { join: '2020', leave: '2021', team: '247 Esports' },
@@ -152,10 +160,36 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { date: '2025-04-27', place: '8th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'FMA Esports' },
       { date: '2024-04-21', place: '5th', tier: 'B-Tier', tourney: 'Gamers Galaxy Pakistan 2024', team: 'FMA Esports' },
       { date: '2025-11-10', place: 'Finals', tier: 'C-Tier', tourney: 'PUBG Mobile Manhunt Series - Season 2', team: 'Destroyer Esports' },
+      { date: '2024-09-29', place: '11th', tier: 'D-Tier', tourney: 'Senior Championship Season 2', team: 'FMA Esports' },
     ],
     history: [
       { join: '-', leave: 'Present', team: 'FMA Esports' },
     ]
+  },
+  'beastopie': {
+    name: 'Muhammad Imad Habib',
+    nick: 'Beastopie',
+    image: '/Beast-EsportPic.jpeg',
+    teamLogo: '/freestyle-logo.jpg',
+    teamName: 'Freestyle',
+    nationality: 'Pakistan',
+    born: 'February 5, 2007 (age 19)',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Muhammad Imad Habib <strong style={{ color: '#fff' }}>"Beastopie"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#fff', fontWeight: 700 }}>Freestyle</span>.
+      </p>
+    ),
+    achievements: [
+      { date: '2024-09-29', place: '12th', tier: 'D-Tier', tourney: 'Senior Championship Season 2', team: 'GPA' },
+      { date: '2024-10-08', place: '15th', tier: 'D-Tier', tourney: 'Senior Chill Zone Season 1', team: 'ATX' },
+      { date: '2020-09-09', place: '23rd', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Fall Split 2020: Pakistan', team: 'Ext' },
+      { date: '2024-03-30', place: '12th', tier: 'B-Tier', tourney: 'IESF National Qualifiers - Pakistan 2024', team: 'H4K' },
+      { date: '2026-11-19', place: '17th', tier: 'C-Tier', tourney: 'PUBG Mobile Stallions Series Qualifier Finals South Asia 2025', team: 'Unstoppable' },
+      { date: '2026-02-06', place: '7th', tier: 'C-Tier', tourney: 'PUBG MOBILE UNIVERSITY SHOWDOWN', team: 'Freestyle' },
+      { date: '2022-07-31', place: '16th', tier: 'C-Tier', tourney: 'PUBG MOBILE Gamenow Summer Clash', team: 'TOB' },
+    ],
+    history: []
   }
 };
 
@@ -165,6 +199,13 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const player = PLAYERS_DATA[slug.toLowerCase()];
+  const sortedAchievements = player
+    ? [...player.achievements].sort((a, b) => {
+        const tierDiff = (TIER_PRIORITY[a.tier] ?? 99) - (TIER_PRIORITY[b.tier] ?? 99);
+        if (tierDiff !== 0) return tierDiff;
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      })
+    : [];
 
   if (!player) {
     return (
@@ -356,7 +397,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                       </tr>
                     </thead>
                     <tbody>
-                      {player.achievements.map((ach, idx) => (
+                      {sortedAchievements.map((ach, idx) => (
                         <tr key={idx} style={{ borderBottom: '1px solid #3c3c3c', background: idx % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent' }}>
                           <td style={{ padding: '14px 15px', fontSize: '1.1rem', borderRight: '1px solid #3c3c3c', color: '#eee', fontWeight: 500 }}>{ach.date}</td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c', textAlign: 'center' }}>
@@ -414,10 +455,34 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'DTDxEsports') && (
                                 <NextImage src="/DTDxEsports Logo.png" alt="DTDxEsports" width={48} height={30} style={{ objectFit: 'contain' }} title="DTDxEsports" />
                               )}
+                              {(ach.team === 'Unbeatables') && (
+                                <NextImage src="/Unbeatables-logo.png" alt="Unbeatables" width={48} height={30} style={{ objectFit: 'contain' }} title="Unbeatables" />
+                              )}
+                              {(ach.team === 'Freestyle') && (
+                                <NextImage src="/freestyle-logo.jpg" alt="Freestyle" width={48} height={30} style={{ objectFit: 'contain' }} title="Freestyle" />
+                              )}
+                              {(ach.team === 'TOB') && (
+                                <NextImage src="/TOB-esportlogo.png" alt="TOB" width={48} height={30} style={{ objectFit: 'contain' }} title="TOB" />
+                              )}
+                              {(ach.team === 'Ext') && (
+                                <NextImage src="/Ext-logo.png" alt="Ext" width={48} height={30} style={{ objectFit: 'contain' }} title="Ext" />
+                              )}
+                              {(ach.team === 'H4K') && (
+                                <NextImage src="/h4k-logo.png" alt="H4K" width={48} height={30} style={{ objectFit: 'contain' }} title="H4K" />
+                              )}
+                              {(ach.team === 'Unstoppable') && (
+                                <NextImage src="/Unstoppable-logo.jpeg" alt="Unstoppable" width={48} height={30} style={{ objectFit: 'contain' }} title="Unstoppable" />
+                              )}
+                              {(ach.team === 'GPA') && (
+                                <NextImage src="/GPA-logo.png" alt="GPA" width={48} height={30} style={{ objectFit: 'contain' }} title="GPA" />
+                              )}
+                              {(ach.team === 'ATX') && (
+                                <NextImage src="/atx-logo.png" alt="ATX" width={48} height={30} style={{ objectFit: 'contain' }} title="ATX" />
+                              )}
                               {ach.team === 'Flames 1' && (
                                 <span style={{ fontSize: '0.85rem', color: '#ff0000', fontWeight: 700 }}>Flames 1</span>
                               )}
-                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Flames 1', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports'].includes(ach.team) && (
+                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Flames 1', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
