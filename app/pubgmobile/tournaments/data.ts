@@ -43,8 +43,8 @@ export const organizations: Organization[] = [
   },
   {
     slug: 'galacticous',
-    name: 'Galacticous',
-    logo: '/Galacticous-logo.jpeg',
+    name: 'esport141official',
+    logo: '/141-logo.jpg',
     shortInfo: 'Consistent macro-focused roster with regular finals appearances.',
     region: 'Pakistan',
     founded: '2021',

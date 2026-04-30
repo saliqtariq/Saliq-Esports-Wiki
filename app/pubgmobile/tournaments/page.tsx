@@ -65,9 +65,11 @@ export default function TournamentsPage() {
 
       <main style={{ flex: 1, padding: '2rem 1.5rem 3rem' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.9rem, 5vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '0.65rem', color: 'var(--text-primary)' }}>
-            PUBG Mobile <span style={{ color: '#22C55E' }}>Pakistan Tournaments</span>
-          </h1>
+          <div style={{ maxWidth: '760px', margin: '0 auto 0.9rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 5vw, 2.9rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.08, margin: 0, color: 'var(--text-primary)' }}>
+              PUBG Mobile <span style={{ color: '#22C55E' }}>Pakistan Tournaments</span>
+            </h1>
+          </div>
 
           <section
             style={{
@@ -93,12 +95,13 @@ export default function TournamentsPage() {
                   style={{
                     border: '1px solid rgba(34, 197, 94, 0.2)',
                     borderRadius: '14px',
-                    padding: '1rem',
+                    padding: 0,
+                    overflow: 'hidden',
                     background: 'rgba(15, 23, 42, 0.22)',
                     backdropFilter: 'blur(6px)',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.95rem',
+                    gap: 0,
                     transition: 'transform 0.2s ease, border-color 0.2s ease',
                   }}
                 >
@@ -122,8 +125,8 @@ export default function TournamentsPage() {
                       style={{ objectFit: 'cover' }}
                     />
                   </div>
-                  <div style={{ minWidth: 0 }}>
-                    <h2 style={{ margin: 0, fontSize: '1.08rem', color: 'var(--text-primary)' }}>{org.name}</h2>
+                  <div style={{ minWidth: 0, padding: '0.75rem 1rem' }}>
+                    <h2 style={{ margin: 0, fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{org.name}</h2>
                   </div>
                 </article>
               </Link>
