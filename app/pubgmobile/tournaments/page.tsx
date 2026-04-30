@@ -75,7 +75,7 @@ export default function TournamentsPage() {
             style={{
               marginTop: '1.75rem',
               display: 'grid',
-              gap: '0.9rem',
+              gap: '0.65rem',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
               maxWidth: '760px',
               marginLeft: 'auto',
