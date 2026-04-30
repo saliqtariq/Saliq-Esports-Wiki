@@ -74,7 +74,10 @@ export default function TournamentsPage() {
               marginTop: '1.75rem',
               display: 'grid',
               gap: '0.9rem',
-              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              maxWidth: '760px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
             }}
           >
             {organizations.map((org) => (
