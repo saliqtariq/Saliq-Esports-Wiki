@@ -75,9 +75,6 @@ export default function TournamentsPage() {
               display: 'grid',
               gap: '0.9rem',
               gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-              maxWidth: '760px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
             }}
           >
             {organizations.map((org) => (
@@ -93,21 +90,20 @@ export default function TournamentsPage() {
                   style={{
                     border: '1px solid rgba(34, 197, 94, 0.2)',
                     borderRadius: '14px',
-                    padding: '0.8rem 0.9rem',
+                    padding: '1rem',
                     background: 'rgba(15, 23, 42, 0.22)',
                     backdropFilter: 'blur(6px)',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.75rem',
+                    gap: '0.95rem',
                     transition: 'transform 0.2s ease, border-color 0.2s ease',
-                    minHeight: '84px',
                   }}
                 >
                   <div
                     style={{
-                      width: '46px',
-                      height: '46px',
-                      borderRadius: '10px',
+                      width: '56px',
+                      height: '56px',
+                      borderRadius: '12px',
                       overflow: 'hidden',
                       border: '1px solid rgba(255,255,255,0.16)',
                       background: 'rgba(2, 6, 23, 0.45)',
@@ -124,7 +120,7 @@ export default function TournamentsPage() {
                     />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <h2 style={{ margin: 0, fontSize: '0.98rem', color: 'var(--text-primary)' }}>{org.name}</h2>
+                    <h2 style={{ margin: 0, fontSize: '1.08rem', color: 'var(--text-primary)' }}>{org.name}</h2>
                   </div>
                 </article>
               </Link>
