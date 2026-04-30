@@ -115,7 +115,10 @@ export default function Home() {
                   fontSize: '22px',
                   flexShrink: 0,
                   transition: 'box-shadow 0.3s ease',
-                }}>🎮</div>
+                  overflow: 'hidden',
+                }}>
+                  <img src="/krafton_generated.png" alt="Krafton Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
 
                 {/* Title + subtitle */}
                 <div style={{ textAlign: 'left', flex: 1, minWidth: 0 }}>
@@ -130,7 +133,6 @@ export default function Home() {
                     }}>
                       PUBG Mobile Esports
                     </h3>
-                    <span className="badge-new" style={{ flexShrink: 0 }}>New</span>
                   </div>
                   <p style={{ fontSize: '0.75rem', color: '#6B7280', margin: 0, lineHeight: 1.4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     Teams, players &amp; tournaments in Pakistan
@@ -162,7 +164,7 @@ export default function Home() {
                 {/* Players */}
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #FACC15, transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FACC15', lineHeight: 1, marginBottom: '3px' }}>2+</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FACC15', lineHeight: 1, marginBottom: '3px' }}>5</div>
                   <div style={{ fontSize: '10px', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Players</div>
                   <div style={{ fontSize: '9px', color: '#374151', marginTop: '3px' }}>Profiled</div>
                 </div>

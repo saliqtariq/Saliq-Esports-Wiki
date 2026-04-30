@@ -12,16 +12,16 @@ const actionCards = [
     variant: 'players',
   },
   {
+    title: 'Tournaments',
+    stats: '',
+    image: '/tournaments.webp',
+    variant: 'tournaments',
+  },
+  {
     title: 'Maps',
     stats: '7 Maps',
     image: '/maps.png',
     variant: 'maps',
-  },
-  {
-    title: 'Upcoming Tournaments',
-    stats: '',
-    image: '/tournaments.webp',
-    variant: 'tournaments',
   },
 ];
 
@@ -124,6 +124,7 @@ export default function PUBGPage() {
                     let route = null;
                     if (card.title === 'Maps') route = '/pubgmobile/maps';
                     if (card.title === 'Players') route = '/pubgmobile/players';
+                    if (card.title === 'Tournaments') route = '/pubgmobile/tournaments';
                     
                     if (route) router.push(route);
                     else console.log(`Navigating to ${card.title}`);
