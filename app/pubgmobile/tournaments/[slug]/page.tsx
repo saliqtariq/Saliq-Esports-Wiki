@@ -53,7 +53,7 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
               display: 'flex',
               gap: 0,
               alignItems: 'stretch',
-              justifyContent: 'space-between',
+              justifyContent: 'flex-start',
               marginBottom: '1.1rem',
               flexWrap: 'wrap',
             }}
@@ -70,16 +70,14 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
               >
                 <NextImage src={organization.logo} alt={organization.name} fill sizes="80px" style={{ objectFit: 'cover' }} />
               </div>
-              <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center' }}>
-                <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--text-primary)' }}>
+              <div style={{ padding: '0.8rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '0.2rem' }}>
+                <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--text-primary)', lineHeight: 1.1 }}>
                   {organization.name}
                 </h1>
-              </div>
-            </div>
-            <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <span style={{ fontSize: '1rem', color: '#FFFFFF', textTransform: 'none', letterSpacing: '0.05em', fontWeight: 500 }}>Ongoing-Tournaments</span>
-                <span style={{ fontSize: '1.25rem', color: '#FFFFFF', fontFamily: 'var(--font-display)', fontWeight: 700 }}>{organization.ongoingTournaments.length}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span style={{ fontSize: '0.85rem', color: '#D1D5DB', textTransform: 'none', letterSpacing: '0.05em', fontWeight: 500 }}>Ongoing-Tournaments</span>
+                  <span style={{ fontSize: '1rem', color: '#FFFFFF', fontFamily: 'var(--font-display)', fontWeight: 700 }}>{organization.ongoingTournaments.length}</span>
+                </div>
               </div>
             </div>
           </section>
