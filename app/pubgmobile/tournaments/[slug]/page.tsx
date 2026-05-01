@@ -47,49 +47,44 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
             style={{
               border: '1px solid rgba(34, 197, 94, 0.22)',
               borderRadius: '16px',
-              padding: '1rem',
+              padding: 0,
+              overflow: 'hidden',
               background: 'rgba(15, 23, 42, 0.24)',
               display: 'flex',
-              gap: '1rem',
-              alignItems: 'center',
+              gap: 0,
+              alignItems: 'stretch',
+              justifyContent: 'space-between',
               marginBottom: '1.1rem',
+              flexWrap: 'wrap',
             }}
           >
-            <div
-              style={{
-                width: '72px',
-                height: '72px',
-                borderRadius: '14px',
-                overflow: 'hidden',
-                border: '1px solid rgba(255,255,255,0.2)',
-                position: 'relative',
-                flexShrink: 0,
-              }}
-            >
-              <NextImage src={organization.logo} alt={organization.name} fill sizes="72px" style={{ objectFit: 'cover' }} />
+            <div style={{ display: 'flex', alignItems: 'stretch', gap: 0 }}>
+              <div
+                style={{
+                  width: '90px',
+                  alignSelf: 'stretch',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  flexShrink: 0,
+                }}
+              >
+                <NextImage src={organization.logo} alt={organization.name} fill sizes="80px" style={{ objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center' }}>
+                <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--text-primary)' }}>
+                  {organization.name}
+                </h1>
+              </div>
             </div>
-            <div>
-              <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--text-primary)' }}>
-                {organization.name}
-              </h1>
-              <p style={{ margin: '0.4rem 0 0', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{organization.shortInfo}</p>
+            <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                <span style={{ fontSize: '1rem', color: '#FFFFFF', textTransform: 'none', letterSpacing: '0.05em', fontWeight: 500 }}>Ongoing-Tournaments</span>
+                <span style={{ fontSize: '1.25rem', color: '#FFFFFF', fontFamily: 'var(--font-display)', fontWeight: 700 }}>{organization.ongoingTournaments.length}</span>
+              </div>
             </div>
           </section>
 
-          <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '1.1rem' }}>
-            <article style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '0.8rem', background: 'rgba(2, 6, 23, 0.35)' }}>
-              <p style={{ margin: 0, fontSize: '0.76rem', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Region</p>
-              <h2 style={{ margin: '0.35rem 0 0', fontSize: '1rem', color: 'var(--text-primary)' }}>{organization.region}</h2>
-            </article>
-            <article style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '0.8rem', background: 'rgba(2, 6, 23, 0.35)' }}>
-              <p style={{ margin: 0, fontSize: '0.76rem', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Founded</p>
-              <h2 style={{ margin: '0.35rem 0 0', fontSize: '1rem', color: 'var(--text-primary)' }}>{organization.founded}</h2>
-            </article>
-            <article style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '0.8rem', background: 'rgba(2, 6, 23, 0.35)' }}>
-              <p style={{ margin: 0, fontSize: '0.76rem', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Ongoing Tournaments</p>
-              <h2 style={{ margin: '0.35rem 0 0', fontSize: '1rem', color: 'var(--text-primary)' }}>{organization.ongoingTournaments.length}</h2>
-            </article>
-          </section>
+
 
           <section style={{ display: 'grid', gap: '0.8rem' }}>
             {organization.ongoingTournaments.map((tournament) => (
