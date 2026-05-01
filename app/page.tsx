@@ -117,7 +117,11 @@ export default function Home() {
                   transition: 'box-shadow 0.3s ease',
                   overflow: 'hidden',
                 }}>
-                  <img src="/krafton_generated.png" alt="Krafton Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img
+                    src="/kraftonfixed-logo.png"
+                    alt="Krafton Logo"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', transform: 'scale(2.40)', background: '#000' }}
+                  />
                 </div>
 
                 {/* Title + subtitle */}
