@@ -5,6 +5,7 @@ export type OrganizationTournament = {
   prizePool: string;
   startDate: string;
   logo?: string;
+  round?: string;
 };
 
 export type Organization = {
@@ -21,24 +22,19 @@ export const organizations: Organization[] = [
   {
     slug: 'maxebels',
     name: 'Maxebels',
-    logo: '/Maxebelslogo.png',
+    logo: '/Maxbels logo.jpeg',
     shortInfo: 'Active tournament organizer with regular custom-room events.',
     region: 'Pakistan',
     founded: '2024',
     ongoingTournaments: [
       {
-        name: 'Maxebels Open Series',
-        status: 'Registration Open',
-        format: 'Squad BO6',
-        prizePool: 'PKR 100,000',
-        startDate: 'May 20, 2026',
-      },
-      {
-        name: 'Maxebels Weekly Battle',
-        status: 'Ongoing',
-        format: 'Squad BO4',
-        prizePool: 'PKR 40,000',
-        startDate: 'May 8, 2026',
+        name: 'Maxebels Invitational Season 4',
+        status: 'Invitational',
+        format: 'Invitational',
+        prizePool: '1000$',
+        startDate: '25 April 2026',
+        round: 'Play Offs',
+        logo: '/MaxInvS4.jpeg',
       },
     ],
   },
@@ -72,6 +68,7 @@ export const organizations: Organization[] = [
         format: 'Entry Fee: PKR 300',
         prizePool: 'PKR 5,000',
         startDate: '8:10 PM / 10:30 PM',
+        logo: '/IHS Daily Battle.jpeg',
       },
       {
         name: 'IHS Daily Battle S2',
@@ -79,6 +76,7 @@ export const organizations: Organization[] = [
         format: 'Entry Fee: PKR 500',
         prizePool: 'PKR 8,500',
         startDate: '8:10 PM / 10:30 PM',
+        logo: '/IHS Daily Battle.jpeg',
       },
     ],
   },

@@ -71,7 +71,15 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
                 <NextImage src={organization.logo} alt={organization.name} fill sizes="80px" style={{ objectFit: 'cover' }} />
               </div>
               <div style={{ padding: '0.8rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '0.2rem' }}>
-                <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'var(--text-primary)', lineHeight: 1.1 }}>
+                <h1 style={{ 
+                  margin: 0, 
+                  fontFamily: 'var(--font-display)', 
+                  fontSize: 'clamp(1.75rem, 5vw, 2.6rem)', 
+                  color: 'var(--text-primary)', 
+                  lineHeight: 1.1,
+                  fontWeight: 800,
+                  letterSpacing: '-0.03em'
+                }}>
                   {organization.name}
                 </h1>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -84,40 +92,74 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
 
 
 
-          <section style={{ display: 'grid', gap: '0.8rem' }}>
+          <section style={{ display: 'grid', gap: '1rem' }}>
             {organization.ongoingTournaments.map((tournament) => {
               const isDailyBattle = tournament.name.toLowerCase().includes('daily battle');
               return (
-              <Link
-                key={tournament.name}
-                href={`/pubgmobile/tournaments/${organization.slug}/${toTournamentSlug(tournament.name)}`}
-                style={{
-                  textDecoration: 'none',
-                  color: 'inherit',
-                }}
-              >
-                <article
+                <Link
+                  key={tournament.name}
+                  href={`/pubgmobile/tournaments/${organization.slug}/${toTournamentSlug(tournament.name)}`}
                   style={{
-                    border: '1px solid rgba(34, 197, 94, 0.2)',
-                    borderRadius: '14px',
-                    padding: '1rem',
-                    background: 'rgba(15, 23, 42, 0.2)',
+                    textDecoration: 'none',
+                    color: 'inherit',
                   }}
                 >
-                  <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.05rem' }}>{tournament.name}</h3>
-                  <p style={{ margin: '0.35rem 0 0.75rem', color: '#22C55E', fontSize: '0.84rem', fontWeight: 700 }}>{tournament.status}</p>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.6rem' }}>
-                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{tournament.format}</p>
-                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Prize:</strong> {tournament.prizePool}</p>
-                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Start:</strong> {tournament.startDate}</p>
-                    {isDailyBattle ? (
-                      <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Server:</strong> Asia</p>
-                    ) : (
-                      <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Round:</strong> Qualifiers</p>
-                    )}
-                  </div>
-                </article>
-              </Link>
+                  <article
+                    className="tournament-card"
+                    style={{
+                      border: '1px solid rgba(34, 197, 94, 0.2)',
+                      borderRadius: '16px',
+                      padding: '1.25rem',
+                      background: 'rgba(15, 23, 42, 0.25)',
+                      backdropFilter: 'blur(10px)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1.25rem',
+                    }}
+                  >
+                    <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                      {tournament.logo ? (
+                        <div style={{ width: '64px', height: '64px', borderRadius: '12px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(255,255,255,0.1)', position: 'relative' }}>
+                          <NextImage src={tournament.logo} alt={tournament.name} fill sizes="64px" style={{ objectFit: 'cover' }} />
+                        </div>
+                      ) : (
+                        <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(34, 197, 94, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(34, 197, 94, 0.2)' }}>
+                          <span style={{ fontSize: '1.5rem' }}>🏆</span>
+                        </div>
+                      )}
+
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.15rem', fontWeight: 700 }}>{tournament.name}</h3>
+                        <p style={{ margin: '0.2rem 0 0', color: '#22C55E', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          {tournament.status}
+                        </p>
+                      </div>
+
+                      <div className="mobile-hide" style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.3)', color: '#22C55E', fontSize: '0.875rem', fontWeight: 700 }}>
+                        View Details
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '1rem', padding: '1rem', background: 'rgba(0,0,0,0.2)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.03)' }}>
+                      <div>
+                        <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700 }}>Format</p>
+                        <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{tournament.format}</p>
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700 }}>Prize Pool</p>
+                        <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{tournament.prizePool}</p>
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700 }}>Start Date</p>
+                        <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{tournament.startDate}</p>
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700 }}>{isDailyBattle ? 'Server' : 'Round'}</p>
+                        <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{isDailyBattle ? 'Asia' : (tournament.round || 'Qualifiers')}</p>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
               );
             })}
           </section>
