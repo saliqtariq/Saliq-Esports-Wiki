@@ -77,8 +77,8 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
               flexWrap: 'wrap',
             }}
           >
-            <div style={{ width: '90px', position: 'relative', minHeight: '90px' }}>
-              <NextImage src={tournament.logo ?? organization.logo} alt={tournament.name} fill sizes="90px" style={{ objectFit: 'cover' }} />
+            <div style={{ width: '150px', position: 'relative', minHeight: '90px' }}>
+              <NextImage src={tournament.logo ?? organization.logo} alt={tournament.name} fill sizes="150px" style={{ objectFit: 'cover' }} />
             </div>
             <div style={{ padding: '0.9rem 1.2rem', display: 'grid', gap: '0.35rem' }}>
               <p style={{ margin: 0, color: '#22C55E', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
