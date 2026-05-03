@@ -67,24 +67,22 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
       <main style={{ flex: 1, padding: '1rem 1.5rem 3rem', position: 'relative', zIndex: 2 }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gap: '1rem' }}>
           <section
+            className="responsive-detail-card"
             style={{
               border: '1px solid rgba(34, 197, 94, 0.22)',
               borderRadius: '16px',
               overflow: 'hidden',
               background: 'rgba(15, 23, 42, 0.24)',
-              display: 'flex',
-              alignItems: 'stretch',
-              flexWrap: 'wrap',
             }}
           >
-            <div style={{ width: '150px', position: 'relative', minHeight: '90px' }}>
-              <NextImage src={tournament.logo ?? organization.logo} alt={tournament.name} fill sizes="150px" style={{ objectFit: 'cover' }} />
+            <div className="card-image-container">
+              <NextImage src={tournament.logo ?? organization.logo} alt={tournament.name} fill sizes="(max-width: 640px) 100vw, 150px" style={{ objectFit: 'cover' }} />
             </div>
-            <div style={{ padding: '0.9rem 1.2rem', display: 'grid', gap: '0.35rem' }}>
+            <div style={{ padding: '1.1rem 1.4rem', display: 'grid', gap: '0.4rem', flex: 1 }}>
               <p style={{ margin: 0, color: '#22C55E', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Tournament Details
               </p>
-              <h1 style={{ margin: 0, color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 4vw, 2rem)', lineHeight: 1.1 }}>
+              <h1 style={{ margin: 0, color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 4vw, 2.25rem)', lineHeight: 1.1 }}>
                 {tournament.name}
               </h1>
               <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
