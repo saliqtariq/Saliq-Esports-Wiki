@@ -129,7 +129,7 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
                       )}
 
                       <div style={{ flex: 1 }}>
-                        <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.15rem', fontWeight: 700 }}>{tournament.name}</h3>
+                        <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.15rem', fontWeight: 700 }}>{tournament.listName ?? tournament.name}</h3>
                         <p style={{ margin: '0.2rem 0 0', color: '#22C55E', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                           {tournament.status}
                         </p>

@@ -1,5 +1,6 @@
 export type OrganizationTournament = {
   name: string;
+  listName?: string;
   status: string;
   format: string;
   prizePool: string;
@@ -28,7 +29,8 @@ export const organizations: Organization[] = [
     founded: '2024',
     ongoingTournaments: [
       {
-        name: 'Maxebels Invitational Season 4',
+        name: 'PMTM Season 4',
+        listName: 'Maxebels Invitational Season 4',
         status: 'Invitational',
         format: 'Invitational',
         prizePool: '1000$',
