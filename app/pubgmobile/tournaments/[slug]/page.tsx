@@ -85,7 +85,9 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
 
 
           <section style={{ display: 'grid', gap: '0.8rem' }}>
-            {organization.ongoingTournaments.map((tournament) => (
+            {organization.ongoingTournaments.map((tournament) => {
+              const isDailyBattle = tournament.name.toLowerCase().includes('daily battle');
+              return (
               <Link
                 key={tournament.name}
                 href={`/pubgmobile/tournaments/${organization.slug}/${toTournamentSlug(tournament.name)}`}
@@ -108,11 +110,16 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
                     <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{tournament.format}</p>
                     <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Prize:</strong> {tournament.prizePool}</p>
                     <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Start:</strong> {tournament.startDate}</p>
-                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Server:</strong> Asia</p>
+                    {isDailyBattle ? (
+                      <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Server:</strong> Asia</p>
+                    ) : (
+                      <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Round:</strong> Qualifiers</p>
+                    )}
                   </div>
                 </article>
               </Link>
-            ))}
+              );
+            })}
           </section>
         </div>
       </main>

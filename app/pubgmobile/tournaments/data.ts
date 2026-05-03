@@ -4,6 +4,7 @@ export type OrganizationTournament = {
   format: string;
   prizePool: string;
   startDate: string;
+  logo?: string;
 };
 
 export type Organization = {
@@ -55,6 +56,7 @@ export const organizations: Organization[] = [
         format: 'Entry Fee: Free',
         prizePool: 'PKR 60,000',
         startDate: 'April 27, 2026',
+        logo: '/Ihs clash s1.jpeg',
       },
       {
         name: 'IHS CLASH S2',
@@ -62,6 +64,21 @@ export const organizations: Organization[] = [
         format: 'Entry Fee: Free',
         prizePool: 'PKR 80,000',
         startDate: 'May 3, 2026',
+        logo: '/IHS Clash S2 fixed.jpeg',
+      },
+      {
+        name: 'IHS Daily Battle',
+        status: 'Register Now',
+        format: 'Entry Fee: PKR 300',
+        prizePool: 'PKR 5,000',
+        startDate: '8:10 PM / 10:30 PM',
+      },
+      {
+        name: 'IHS Daily Battle S2',
+        status: 'Register Now',
+        format: 'Entry Fee: PKR 500',
+        prizePool: 'PKR 8,500',
+        startDate: '8:10 PM / 10:30 PM',
       },
     ],
   },

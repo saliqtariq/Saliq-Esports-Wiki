@@ -17,6 +17,7 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
   const tournament = organization.ongoingTournaments.find(
     (item) => toTournamentSlug(item.name) === tournamentSlug,
   );
+  const isDailyBattle = tournament?.name.toLowerCase().includes('daily battle') ?? false;
 
   if (!tournament) notFound();
 
@@ -77,7 +78,7 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
             }}
           >
             <div style={{ width: '90px', position: 'relative', minHeight: '90px' }}>
-              <NextImage src={organization.logo} alt={organization.name} fill sizes="90px" style={{ objectFit: 'cover' }} />
+              <NextImage src={tournament.logo ?? organization.logo} alt={tournament.name} fill sizes="90px" style={{ objectFit: 'cover' }} />
             </div>
             <div style={{ padding: '0.9rem 1.2rem', display: 'grid', gap: '0.35rem' }}>
               <p style={{ margin: 0, color: '#22C55E', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
@@ -110,10 +111,17 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
                 <p style={{ margin: 0, color: '#FACC15', fontSize: '0.8rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 700 }}>Start Date</p>
                 <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '1rem', fontWeight: 700 }}>{tournament.startDate}</p>
               </div>
-              <div>
-                <p style={{ margin: 0, color: '#FACC15', fontSize: '0.8rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 700 }}>Server</p>
-                <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '1rem', fontWeight: 700 }}>Asia</p>
-              </div>
+              {isDailyBattle ? (
+                <div>
+                  <p style={{ margin: 0, color: '#FACC15', fontSize: '0.8rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 700 }}>Server</p>
+                  <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '1rem', fontWeight: 700 }}>Asia</p>
+                </div>
+              ) : (
+                <div>
+                  <p style={{ margin: 0, color: '#FACC15', fontSize: '0.8rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 700 }}>Round</p>
+                  <p style={{ margin: '0.2rem 0 0', color: '#E5E7EB', fontSize: '1rem', fontWeight: 700 }}>Qualifiers</p>
+                </div>
+              )}
             </div>
           </section>
         </div>
