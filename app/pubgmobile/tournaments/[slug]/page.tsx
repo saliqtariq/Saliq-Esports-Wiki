@@ -2,7 +2,7 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import { notFound } from 'next/navigation';
 import Footer from '@/app/components/Footer';
-import { organizationsBySlug } from '../data';
+import { organizationsBySlug, toTournamentSlug } from '../data';
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -86,23 +86,32 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
 
           <section style={{ display: 'grid', gap: '0.8rem' }}>
             {organization.ongoingTournaments.map((tournament) => (
-              <article
+              <Link
                 key={tournament.name}
+                href={`/pubgmobile/tournaments/${organization.slug}/${toTournamentSlug(tournament.name)}`}
                 style={{
-                  border: '1px solid rgba(34, 197, 94, 0.2)',
-                  borderRadius: '14px',
-                  padding: '1rem',
-                  background: 'rgba(15, 23, 42, 0.2)',
+                  textDecoration: 'none',
+                  color: 'inherit',
                 }}
               >
-                <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.05rem' }}>{tournament.name}</h3>
-                <p style={{ margin: '0.35rem 0 0.75rem', color: '#22C55E', fontSize: '0.84rem', fontWeight: 700 }}>{tournament.status}</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.6rem' }}>
-                  <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}><strong style={{ color: 'var(--text-primary)' }}>Format:</strong> {tournament.format}</p>
-                  <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}><strong style={{ color: 'var(--text-primary)' }}>Prize:</strong> {tournament.prizePool}</p>
-                  <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}><strong style={{ color: 'var(--text-primary)' }}>Start:</strong> {tournament.startDate}</p>
-                </div>
-              </article>
+                <article
+                  style={{
+                    border: '1px solid rgba(34, 197, 94, 0.2)',
+                    borderRadius: '14px',
+                    padding: '1rem',
+                    background: 'rgba(15, 23, 42, 0.2)',
+                  }}
+                >
+                  <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.05rem' }}>{tournament.name}</h3>
+                  <p style={{ margin: '0.35rem 0 0.75rem', color: '#22C55E', fontSize: '0.84rem', fontWeight: 700 }}>{tournament.status}</p>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.6rem' }}>
+                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}>{tournament.format}</p>
+                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Prize:</strong> {tournament.prizePool}</p>
+                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Start:</strong> {tournament.startDate}</p>
+                    <p style={{ margin: 0, color: '#E5E7EB', fontSize: '0.9rem', fontWeight: 600 }}><strong style={{ color: '#F3F4F6' }}>Server:</strong> Asia</p>
+                  </div>
+                </article>
+              </Link>
             ))}
           </section>
         </div>

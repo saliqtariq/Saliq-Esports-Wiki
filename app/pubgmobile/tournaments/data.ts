@@ -43,25 +43,25 @@ export const organizations: Organization[] = [
   },
   {
     slug: '7sins',
-    name: 'IHS Gaming',
+    name: 'IHS Scrims',
     logo: '/IHS-logo.png',
     shortInfo: 'IHS Clash Season 1, IHS Elite Battle,IHS Daily Battle.',
     region: 'Pakistan',
     founded: '2022',
     ongoingTournaments: [
       {
-        name: 'PMNC Pakistan 2026 Open Qualifiers',
-        status: 'Registered',
-        format: 'Squad BO6',
-        prizePool: 'TBD',
-        startDate: 'May 12, 2026',
+        name: 'IHS CLASH S1',
+        status: 'Register Now',
+        format: 'Entry Fee: Free',
+        prizePool: 'PKR 60,000',
+        startDate: 'April 27, 2026',
       },
       {
-        name: 'Karachi Rivals Invitational',
-        status: 'Group Stage',
-        format: 'Squad BO8',
-        prizePool: 'PKR 300,000',
-        startDate: 'May 5, 2026',
+        name: 'IHS CLASH S2',
+        status: 'Register Now',
+        format: 'Entry Fee: Free',
+        prizePool: 'PKR 80,000',
+        startDate: 'May 3, 2026',
       },
     ],
   },
@@ -263,3 +263,11 @@ export const organizationsBySlug = organizations.reduce<Record<string, Organizat
   acc[org.slug] = org;
   return acc;
 }, {});
+
+export function toTournamentSlug(tournamentName: string): string {
+  return tournamentName
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
