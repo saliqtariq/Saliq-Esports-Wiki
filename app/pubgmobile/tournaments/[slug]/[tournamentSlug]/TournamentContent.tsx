@@ -202,7 +202,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '1.5rem 1rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ padding: '1.5rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
             {/* Background Decor */}
             <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)', zIndex: 0 }} />
 
@@ -216,24 +216,24 @@ export default function TournamentContent({ tournament, organization, isDailyBat
 
               {prizes.length > 0 ? (
                 <>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.6rem', marginBottom: '1.25rem', maxWidth: '600px', margin: '0 auto' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.6rem', marginBottom: '1rem', maxWidth: '500px', margin: '0 auto 1.25rem' }}>
                     {prizes.map((p, index) => (
-                      <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '40px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
-                        <div style={{ width: '45px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', transform: 'skewX(-15deg)', marginLeft: '-8px', paddingLeft: '8px' }}>
+                      <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '38px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
+                        <div style={{ width: '45px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', transform: 'skewX(-15deg)', marginLeft: '-6px', paddingLeft: '6px' }}>
                           <span style={{ transform: 'skewX(15deg)' }}>{p.rank}</span>
                         </div>
-                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1.2rem', fontWeight: 800, letterSpacing: '0.02em' }}>
+                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1.1rem', fontWeight: 800, letterSpacing: '0.02em' }}>
                           {p.amount}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'stretch', height: '44px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '320px', margin: '0 auto' }}>
-                    <div style={{ width: '70px', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', textTransform: 'uppercase' }}>
+                  <div style={{ display: 'flex', alignItems: 'stretch', height: '44px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '300px', margin: '0 auto' }}>
+                    <div style={{ padding: '0 1.2rem', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', textTransform: 'uppercase' }}>
                       MVP
                     </div>
-                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.5rem', fontWeight: 900, letterSpacing: '0.05em' }}>
+                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.3rem', fontWeight: 900, letterSpacing: '0.05em' }}>
                       $50
                     </div>
                   </div>
