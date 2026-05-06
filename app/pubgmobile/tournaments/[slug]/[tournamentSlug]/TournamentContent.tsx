@@ -146,9 +146,6 @@ export default function TournamentContent({ tournament, organization, isDailyBat
 
             {playOffsData.length > 0 ? (
               <>
-                <div style={{ color: '#9CA3AF', fontSize: '0.72rem', margin: '0 0 0.45rem 0.15rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-                  Swipe left / right to view full standings
-                </div>
                 <div className="standings-table-wrapper custom-scrollbar" style={{ overflowX: 'auto', overflowY: 'hidden', width: '100%', maxWidth: '100%', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)', WebkitOverflowScrolling: 'touch' }}>
                 <table className="standings-table" style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
@@ -187,13 +184,35 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                       overflow-y: hidden;
                     }
                     .standings-table {
-                      width: max-content !important;
-                      min-width: 680px;
+                      width: 100% !important;
+                      min-width: 0 !important;
+                      table-layout: fixed;
                     }
                     .standings-th,
                     .standings-td {
-                      padding: 0.65rem 0.7rem !important;
-                      font-size: 0.78rem !important;
+                      padding: 0.65rem 0.35rem !important;
+                      font-size: 0.72rem !important;
+                    }
+                    .standings-table th:nth-child(1),
+                    .standings-table td:nth-child(1) {
+                      width: 14%;
+                    }
+                    .standings-table th:nth-child(2),
+                    .standings-table td:nth-child(2) {
+                      width: 34%;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                    .standings-table th:nth-child(3),
+                    .standings-table td:nth-child(3),
+                    .standings-table th:nth-child(4),
+                    .standings-table td:nth-child(4),
+                    .standings-table th:nth-child(5),
+                    .standings-table td:nth-child(5),
+                    .standings-table th:nth-child(6),
+                    .standings-table td:nth-child(6) {
+                      width: 13%;
                     }
                   }
                 `}} />
