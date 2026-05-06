@@ -120,7 +120,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', overflowX: 'auto' }}>
+          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', overflowX: 'hidden' }}>
             <div className="custom-scrollbar" style={{ display: 'flex', gap: '0.6rem', marginBottom: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '0.25rem', borderRadius: '10px', width: 'fit-content', overflowX: 'auto', whiteSpace: 'nowrap', maxWidth: '100%' }}>
               {standingTabs.map((tab) => (
                 <button
@@ -145,7 +145,11 @@ export default function TournamentContent({ tournament, organization, isDailyBat
             </div>
 
             {playOffsData.length > 0 ? (
-              <div className="standings-table-wrapper custom-scrollbar" style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)', WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}>
+              <>
+                <div style={{ color: '#9CA3AF', fontSize: '0.72rem', margin: '0 0 0.45rem 0.15rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                  Swipe left / right to view full standings
+                </div>
+                <div className="standings-table-wrapper custom-scrollbar" style={{ overflowX: 'auto', overflowY: 'hidden', width: '100%', maxWidth: '100%', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)', WebkitOverflowScrolling: 'touch' }}>
                 <table className="standings-table" style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
@@ -180,10 +184,11 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   @media (max-width: 768px) {
                     .standings-table-wrapper {
                       overflow-x: auto;
+                      overflow-y: hidden;
                     }
                     .standings-table {
                       width: max-content !important;
-                      min-width: 560px;
+                      min-width: 680px;
                     }
                     .standings-th,
                     .standings-td {
@@ -193,6 +198,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   }
                 `}} />
               </div>
+              </>
             ) : (
               <div style={{ padding: '4rem 2rem', textAlign: 'center', background: 'rgba(0,0,0,0.15)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.03)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.5 }}>📊</div>
