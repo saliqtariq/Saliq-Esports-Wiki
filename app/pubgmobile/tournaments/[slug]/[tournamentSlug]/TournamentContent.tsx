@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import NextImage from 'next/image';
 import TournamentRules from './TournamentRules';
 
@@ -15,6 +15,7 @@ interface TournamentContentProps {
 export default function TournamentContent({ tournament, organization, isDailyBattle }: TournamentContentProps) {
   const [activeTab, setActiveTab] = useState<Tab>('Overview');
   const [standingTab, setStandingTab] = useState<'Play-Offs' | 'Grand Finals'>('Play-Offs');
+  const standingsScrollRef = useRef<HTMLDivElement | null>(null);
 
   const tabs: Tab[] = ['Overview', 'Standings', 'Prize Pool', 'Rules'];
 
@@ -145,7 +146,44 @@ export default function TournamentContent({ tournament, organization, isDailyBat
             </div>
 
             {playOffsData.length > 0 ? (
-              <div className="standings-horizontal-scroll" style={{ overflowX: 'scroll', overflowY: 'hidden', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginBottom: '0.6rem' }}>
+                  <button
+                    onClick={() => standingsScrollRef.current?.scrollBy({ left: -260, behavior: 'smooth' })}
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(34, 197, 94, 0.35)',
+                      background: 'rgba(34, 197, 94, 0.12)',
+                      color: '#22C55E',
+                      fontWeight: 900,
+                      cursor: 'pointer'
+                    }}
+                    aria-label="Scroll standings left"
+                    title="Scroll left"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={() => standingsScrollRef.current?.scrollBy({ left: 260, behavior: 'smooth' })}
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(34, 197, 94, 0.35)',
+                      background: 'rgba(34, 197, 94, 0.12)',
+                      color: '#22C55E',
+                      fontWeight: 900,
+                      cursor: 'pointer'
+                    }}
+                    aria-label="Scroll standings right"
+                    title="Scroll right"
+                  >
+                    →
+                  </button>
+                </div>
+              <div ref={standingsScrollRef} className="standings-horizontal-scroll" style={{ overflowX: 'scroll', overflowY: 'hidden', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <table style={{ minWidth: '920px', width: 'max-content', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
@@ -198,6 +236,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   }
                 `}} />
               </div>
+              </>
             ) : (
               <div style={{ padding: '4rem 2rem', textAlign: 'center', background: 'rgba(0,0,0,0.15)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.03)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.5 }}>📊</div>
