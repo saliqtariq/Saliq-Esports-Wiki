@@ -148,7 +148,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="standings-section-content" style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
             <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '0.25rem', borderRadius: '10px', width: 'fit-content', overflowX: 'auto', whiteSpace: 'nowrap', maxWidth: '100%' }}>
               {standingTabs.map((tab) => (
                 <button
@@ -206,6 +206,9 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   __html: `
                   .standing-row:hover { background: rgba(34, 197, 94, 0.05); }
                   @media (max-width: 768px) {
+                    .standings-section-content {
+                      padding: 0 0.7rem 1rem !important;
+                    }
                     .standings-table-wrapper {
                       overflow-x: hidden;
                     }
