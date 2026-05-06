@@ -173,31 +173,31 @@ export default function TournamentContent({ tournament, organization, isDailyBat
             </div>
 
             {playOffsData.length > 0 ? (
-              <div style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <table style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+              <div className="standings-table-wrapper" style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <table className="standings-table" style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
-                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>RANK</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>TEAM</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>WWCD</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>PP</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>EP</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>TP</th>
+                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>RANK</th>
+                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>TEAM</th>
+                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>WWCD</th>
+                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>PP</th>
+                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>EP</th>
+                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>TP</th>
                     </tr>
                   </thead>
                   <tbody>
                     {playOffsData.map((row) => (
                       <tr key={row.rank} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', transition: 'background 0.2s' }} className="standing-row">
-                        <td style={{ padding: '0.8rem 1rem', fontWeight: 700, color: row.rank <= 3 ? '#FACC15' : '#9CA3AF' }}>#{row.rank}</td>
-                        <td style={{ padding: '0.8rem 1rem', fontWeight: 600, color: '#FFF' }}>{row.team}</td>
-                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center' }}>
+                        <td className="standings-td" style={{ padding: '0.8rem 1rem', fontWeight: 700, color: row.rank <= 3 ? '#FACC15' : '#9CA3AF' }}>#{row.rank}</td>
+                        <td className="standings-td" style={{ padding: '0.8rem 1rem', fontWeight: 600, color: '#FFF' }}>{row.team}</td>
+                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center' }}>
                           {Array.from({ length: row.wwcd }).map((_, i) => (
                             <span key={i} title="Chicken Dinner" style={{ fontSize: '1rem', marginRight: '2px' }}>🍗</span>
                           ))}
                         </td>
-                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.pp}</td>
-                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.ep}</td>
-                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>{row.tp}</td>
+                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.pp}</td>
+                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.ep}</td>
+                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>{row.tp}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -205,6 +205,44 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                 <style dangerouslySetInnerHTML={{
                   __html: `
                   .standing-row:hover { background: rgba(34, 197, 94, 0.05); }
+                  @media (max-width: 768px) {
+                    .standings-table-wrapper {
+                      overflow-x: hidden;
+                    }
+                    .standings-table {
+                      width: 100% !important;
+                      min-width: 0 !important;
+                      table-layout: fixed;
+                    }
+                    .standings-th,
+                    .standings-td {
+                      padding: 0.65rem 0.35rem !important;
+                      font-size: 0.72rem !important;
+                    }
+                    .standings-table th:nth-child(1),
+                    .standings-table td:nth-child(1) {
+                      width: 14%;
+                      white-space: nowrap;
+                    }
+                    .standings-table th:nth-child(2),
+                    .standings-table td:nth-child(2) {
+                      width: 34%;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                    .standings-table th:nth-child(3),
+                    .standings-table td:nth-child(3),
+                    .standings-table th:nth-child(4),
+                    .standings-table td:nth-child(4),
+                    .standings-table th:nth-child(5),
+                    .standings-table td:nth-child(5),
+                    .standings-table th:nth-child(6),
+                    .standings-table td:nth-child(6) {
+                      width: 13%;
+                      white-space: nowrap;
+                    }
+                  }
                 `}} />
               </div>
             ) : (
