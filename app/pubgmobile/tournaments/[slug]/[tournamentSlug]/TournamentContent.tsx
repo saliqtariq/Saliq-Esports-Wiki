@@ -207,7 +207,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   .standing-row:hover { background: rgba(34, 197, 94, 0.05); }
                   @media (max-width: 768px) {
                     .standings-section-content {
-                      padding: 0 0.7rem 1rem !important;
+                      padding: 0 0.15rem 1rem !important;
                     }
                     .standings-table-wrapper {
                       overflow-x: hidden;
