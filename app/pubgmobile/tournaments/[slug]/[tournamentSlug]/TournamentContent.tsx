@@ -120,7 +120,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', overflowX: 'auto' }}>
             <div className="custom-scrollbar" style={{ display: 'flex', gap: '0.6rem', marginBottom: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '0.25rem', borderRadius: '10px', width: 'fit-content', overflowX: 'auto', whiteSpace: 'nowrap', maxWidth: '100%' }}>
               {standingTabs.map((tab) => (
                 <button
@@ -145,8 +145,8 @@ export default function TournamentContent({ tournament, organization, isDailyBat
             </div>
 
             {playOffsData.length > 0 ? (
-              <div style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+              <div className="custom-scrollbar" style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <table style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
                       <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>RANK</th>
