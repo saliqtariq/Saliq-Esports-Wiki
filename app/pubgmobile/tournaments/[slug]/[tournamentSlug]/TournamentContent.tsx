@@ -147,7 +147,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
 
             {playOffsData.length > 0 ? (
               <>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginBottom: '0.6rem', position: 'sticky', top: 0, zIndex: 2 }}>
+                <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '0.5rem', marginBottom: '0.6rem', position: 'sticky', top: 0, zIndex: 2 }}>
                   <button
                     onClick={() => standingsScrollRef.current?.scrollBy({ left: -260, behavior: 'smooth' })}
                     style={{
@@ -189,7 +189,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                     Right
                   </button>
                 </div>
-              <div ref={standingsScrollRef} className="standings-horizontal-scroll" style={{ overflowX: 'scroll', overflowY: 'hidden', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <div ref={standingsScrollRef} className="standings-horizontal-scroll" style={{ overflowX: 'scroll', overflowY: 'auto', maxHeight: '420px', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <table style={{ minWidth: '920px', width: 'max-content', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
@@ -228,6 +228,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   }
                   .standings-horizontal-scroll::-webkit-scrollbar {
                     height: 10px;
+                    width: 10px;
                   }
                   .standings-horizontal-scroll::-webkit-scrollbar-track {
                     background: rgba(255, 255, 255, 0.08);
@@ -239,6 +240,11 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   }
                   .standings-horizontal-scroll::-webkit-scrollbar-thumb:hover {
                     background: rgba(34, 197, 94, 0.95);
+                  }
+                  @media (max-width: 768px) {
+                    .standings-horizontal-scroll {
+                      max-height: 56vh;
+                    }
                   }
                 `}} />
               </div>
