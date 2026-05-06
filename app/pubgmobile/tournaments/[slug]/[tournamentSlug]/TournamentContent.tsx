@@ -201,52 +201,52 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '1.5rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ padding: '1.25rem 0.75rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
             {/* Background Decor */}
             <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)', zIndex: 0 }} />
             
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <p style={{ color: '#22C55E', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Tournament Rewards</p>
-                <h2 style={{ color: '#FFF', fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.04em', margin: 0, fontStyle: 'italic', textShadow: '0 4px 15px rgba(0,0,0,0.6)', lineHeight: 0.9 }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+                <p style={{ color: '#22C55E', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Tournament Rewards</p>
+                <h2 style={{ color: '#FFF', fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.03em', margin: 0, fontStyle: 'italic', textShadow: '0 4px 15px rgba(0,0,0,0.6)', lineHeight: 0.95 }}>
                   Prizepool <br /> <span style={{ color: '#22C55E' }}>Distribution</span>
                 </h2>
               </div>
 
               {prizes.length > 0 ? (
                 <>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.6rem', marginBottom: '1rem', maxWidth: '500px', margin: '0 auto 1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.5rem', marginBottom: '0.75rem', maxWidth: '500px', margin: '0 auto 1rem' }}>
                     {prizes.map((p, index) => (
-                      <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '38px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
-                        <div style={{ width: '45px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', transform: 'skewX(-15deg)', marginLeft: '-6px', paddingLeft: '6px' }}>
-                          <span style={{ transform: 'skewX(15deg)' }}>{p.rank}</span>
+                      <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '36px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
+                        <div style={{ width: '40px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.85rem', transform: 'skewX(-12deg)', marginLeft: '-5px', paddingLeft: '5px' }}>
+                          <span style={{ transform: 'skewX(12deg)' }}>{p.rank}</span>
                         </div>
-                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1.1rem', fontWeight: 800, letterSpacing: '0.02em' }}>
+                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1rem', fontWeight: 800, letterSpacing: '0.01em' }}>
                           {p.amount}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'stretch', height: '44px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '300px', margin: '0 auto' }}>
-                    <div style={{ padding: '0 1.2rem', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', textTransform: 'uppercase' }}>
+                  <div style={{ display: 'flex', alignItems: 'stretch', height: '40px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '280px', margin: '0 auto' }}>
+                    <div style={{ padding: '0 1rem', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.85rem', textTransform: 'uppercase' }}>
                       MVP
                     </div>
-                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.3rem', fontWeight: 900, letterSpacing: '0.05em' }}>
+                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.2rem', fontWeight: 900, letterSpacing: '0.05em' }}>
                       $50
                     </div>
                   </div>
                 </>
               ) : (
-                <div style={{ padding: '2rem', textAlign: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', maxWidth: '500px', margin: '0 auto 1rem' }}>
-                  <p style={{ color: '#9CA3AF', fontSize: '0.9rem', margin: 0 }}>Specific distribution details will be announced shortly.</p>
+                <div style={{ padding: '1.5rem', textAlign: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', maxWidth: '500px', margin: '0 auto 1rem' }}>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.85rem', margin: 0 }}>Specific distribution details will be announced shortly.</p>
                 </div>
               )}
 
-              <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                <div style={{ display: 'inline-block', padding: '1rem 2rem', background: 'rgba(34, 197, 94, 0.03)', borderRadius: '20px', border: '1px solid rgba(34, 197, 94, 0.1)' }}>
-                  <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.1em' }}>Total Prize Pool</p>
-                  <p style={{ margin: 0, color: '#FFF', fontSize: '2rem', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', lineHeight: 1 }}>
+              <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
+                <div style={{ display: 'inline-block', padding: '0.75rem 1.5rem', background: 'rgba(34, 197, 94, 0.03)', borderRadius: '16px', border: '1px solid rgba(34, 197, 94, 0.1)' }}>
+                  <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.1em' }}>Total Prize Pool</p>
+                  <p style={{ margin: 0, color: '#FFF', fontSize: '1.75rem', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', lineHeight: 1 }}>
                     {tournament.prizePool}
                   </p>
                 </div>
