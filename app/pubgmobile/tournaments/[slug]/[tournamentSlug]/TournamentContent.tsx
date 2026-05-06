@@ -145,16 +145,16 @@ export default function TournamentContent({ tournament, organization, isDailyBat
             </div>
 
             {playOffsData.length > 0 ? (
-              <div className="custom-scrollbar" style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <table style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+              <div className="standings-horizontal-scroll" style={{ overflowX: 'scroll', overflowY: 'hidden', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <table style={{ minWidth: '920px', width: 'max-content', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
-                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>RANK</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>TEAM</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>WWCD</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>PP</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>EP</th>
-                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>TP</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>RANK</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>TEAM</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>WWCD</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>PP</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>EP</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>TP</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -177,6 +177,25 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                 <style dangerouslySetInnerHTML={{
                   __html: `
                   .standing-row:hover { background: rgba(34, 197, 94, 0.05); }
+                  .standings-horizontal-scroll {
+                    scrollbar-width: thin;
+                    scrollbar-color: rgba(34, 197, 94, 0.75) rgba(255, 255, 255, 0.08);
+                    -webkit-overflow-scrolling: touch;
+                  }
+                  .standings-horizontal-scroll::-webkit-scrollbar {
+                    height: 10px;
+                  }
+                  .standings-horizontal-scroll::-webkit-scrollbar-track {
+                    background: rgba(255, 255, 255, 0.08);
+                    border-radius: 999px;
+                  }
+                  .standings-horizontal-scroll::-webkit-scrollbar-thumb {
+                    background: rgba(34, 197, 94, 0.75);
+                    border-radius: 999px;
+                  }
+                  .standings-horizontal-scroll::-webkit-scrollbar-thumb:hover {
+                    background: rgba(34, 197, 94, 0.95);
+                  }
                 `}} />
               </div>
             ) : (
