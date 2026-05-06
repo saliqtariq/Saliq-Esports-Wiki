@@ -31,7 +31,7 @@ export const organizations: Organization[] = [
       {
         name: 'PMTM Season 4',
         listName: 'Maxebels Invitational Season 4',
-        status: 'Invitational',
+        status: 'In-Progress',
         format: 'Invitational',
         prizePool: '1000$',
         startDate: '25 April 2026',

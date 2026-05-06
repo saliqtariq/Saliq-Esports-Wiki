@@ -18,6 +18,27 @@ export default function TournamentContent({ tournament, organization, isDailyBat
 
   const tabs: Tab[] = ['Overview', 'Standings', 'Prize Pool', 'Rules'];
 
+  const scrollbarStyles = `
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #22C55E 0%, #16a34a 100%);
+      border-radius: 10px;
+      border: 2px solid rgba(15, 23, 42, 0.5);
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #4ade80 0%, #22C55E 100%);
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+    }
+  `;
+
   const renderContent = () => {
     switch (activeTab) {
       case 'Overview':
@@ -63,7 +84,14 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   </p>
                 </div>
               ) : (
-                <button style={{
+                <button 
+                  onClick={() => {
+                    if (organization.slug === '7sins') {
+                      const message = `Hello, I would like to register for ${tournament.name}`;
+                      window.open(`https://wa.me/923358746804?text=${encodeURIComponent(message)}`, '_blank');
+                    }
+                  }}
+                  style={{
                   width: '100%',
                   padding: '1.2rem',
                   background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)',
@@ -120,8 +148,8 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', overflowX: 'hidden' }}>
-            <div className="custom-scrollbar" style={{ display: 'flex', gap: '0.6rem', marginBottom: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '0.25rem', borderRadius: '10px', width: 'fit-content', overflowX: 'auto', whiteSpace: 'nowrap', maxWidth: '100%' }}>
+          <div style={{ padding: '0 1.5rem 1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '0.75rem', background: 'rgba(0,0,0,0.2)', padding: '0.25rem', borderRadius: '10px', width: 'fit-content', overflowX: 'auto', whiteSpace: 'nowrap', maxWidth: '100%' }}>
               {standingTabs.map((tab) => (
                 <button
                   key={tab}
@@ -145,32 +173,31 @@ export default function TournamentContent({ tournament, organization, isDailyBat
             </div>
 
             {playOffsData.length > 0 ? (
-              <>
-                <div className="standings-table-wrapper custom-scrollbar" style={{ overflowX: 'auto', overflowY: 'hidden', width: '100%', maxWidth: '100%', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)', WebkitOverflowScrolling: 'touch' }}>
-                <table className="standings-table" style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+              <div style={{ overflowX: 'auto', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <table style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'rgba(34, 197, 94, 0.1)', borderBottom: '1px solid rgba(34, 197, 94, 0.2)' }}>
-                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>RANK</th>
-                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>TEAM</th>
-                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>WWCD</th>
-                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>PP</th>
-                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>EP</th>
-                      <th className="standings-th" style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800, whiteSpace: 'nowrap' }}>TP</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>RANK</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', color: '#22C55E', fontWeight: 800 }}>TEAM</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>WWCD</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>PP</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>EP</th>
+                      <th style={{ padding: '1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>TP</th>
                     </tr>
                   </thead>
                   <tbody>
                     {playOffsData.map((row) => (
                       <tr key={row.rank} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', transition: 'background 0.2s' }} className="standing-row">
-                        <td className="standings-td" style={{ padding: '0.8rem 1rem', fontWeight: 700, color: row.rank <= 3 ? '#FACC15' : '#9CA3AF' }}>#{row.rank}</td>
-                        <td className="standings-td" style={{ padding: '0.8rem 1rem', fontWeight: 600, color: '#FFF' }}>{row.team}</td>
-                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center' }}>
+                        <td style={{ padding: '0.8rem 1rem', fontWeight: 700, color: row.rank <= 3 ? '#FACC15' : '#9CA3AF' }}>#{row.rank}</td>
+                        <td style={{ padding: '0.8rem 1rem', fontWeight: 600, color: '#FFF' }}>{row.team}</td>
+                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center' }}>
                           {Array.from({ length: row.wwcd }).map((_, i) => (
                             <span key={i} title="Chicken Dinner" style={{ fontSize: '1rem', marginRight: '2px' }}>🍗</span>
                           ))}
                         </td>
-                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.pp}</td>
-                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.ep}</td>
-                        <td className="standings-td" style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>{row.tp}</td>
+                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.pp}</td>
+                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#E5E7EB' }}>{row.ep}</td>
+                        <td style={{ padding: '0.8rem 1rem', textAlign: 'center', color: '#22C55E', fontWeight: 800 }}>{row.tp}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -178,46 +205,8 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                 <style dangerouslySetInnerHTML={{
                   __html: `
                   .standing-row:hover { background: rgba(34, 197, 94, 0.05); }
-                  @media (max-width: 768px) {
-                    .standings-table-wrapper {
-                      overflow-x: auto;
-                      overflow-y: hidden;
-                    }
-                    .standings-table {
-                      width: 100% !important;
-                      min-width: 0 !important;
-                      table-layout: fixed;
-                    }
-                    .standings-th,
-                    .standings-td {
-                      padding: 0.65rem 0.35rem !important;
-                      font-size: 0.72rem !important;
-                    }
-                    .standings-table th:nth-child(1),
-                    .standings-table td:nth-child(1) {
-                      width: 14%;
-                    }
-                    .standings-table th:nth-child(2),
-                    .standings-table td:nth-child(2) {
-                      width: 34%;
-                      white-space: nowrap;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    }
-                    .standings-table th:nth-child(3),
-                    .standings-table td:nth-child(3),
-                    .standings-table th:nth-child(4),
-                    .standings-table td:nth-child(4),
-                    .standings-table th:nth-child(5),
-                    .standings-table td:nth-child(5),
-                    .standings-table th:nth-child(6),
-                    .standings-table td:nth-child(6) {
-                      width: 13%;
-                    }
-                  }
                 `}} />
               </div>
-              </>
             ) : (
               <div style={{ padding: '4rem 2rem', textAlign: 'center', background: 'rgba(0,0,0,0.15)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.03)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.5 }}>📊</div>
@@ -231,6 +220,8 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         );
       case 'Prize Pool':
         const isPMTM_Prize = tournament.name.includes('PMTM');
+        const isIHS_Clash = tournament.name.includes('IHS CLASH S1');
+        
         const prizes = isPMTM_Prize ? [
           { rank: '#1', amount: '$300' },
           { rank: '#2', amount: '$200' },
@@ -238,7 +229,27 @@ export default function TournamentContent({ tournament, organization, isDailyBat
           { rank: '#4', amount: '$120' },
           { rank: '#5', amount: '$100' },
           { rank: '#6', amount: '$80' },
+        ] : isIHS_Clash ? [
+          { rank: '1ST', amount: '16,000 PKR' },
+          { rank: '2ND', amount: '12,000 PKR' },
+          { rank: '3RD', amount: '8,000 PKR' },
+          { rank: '4TH', amount: '5,000 PKR' },
+          { rank: '5TH', amount: '5,000 PKR' },
+          { rank: '6TH', amount: '3,000 PKR' },
+          { rank: '7TH', amount: '3,000 PKR' },
+          { rank: '8TH', amount: '3,000 PKR' },
+        ] : tournament.name.includes('IHS CLASH S2') ? [
+          { rank: '1ST', amount: '25,000 PKR' },
+          { rank: '2ND', amount: '12,000 PKR' },
+          { rank: '3RD', amount: '10,000 PKR' },
+          { rank: '4TH', amount: '8,000 PKR' },
+          { rank: '5TH', amount: '8,000 PKR' },
+          { rank: '6TH', amount: '4,000 PKR' },
+          { rank: '7TH', amount: '4,000 PKR' },
+          { rank: '8TH', amount: '4,000 PKR' },
         ] : [];
+
+        const isIHS = tournament.name.includes('IHS');
 
         return (
           <div style={{ padding: '1.5rem 1.25rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflowX: 'auto' }}>
@@ -258,10 +269,10 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.6rem', marginBottom: '1rem', maxWidth: '500px', margin: '0 auto 1.25rem' }}>
                     {prizes.map((p, index) => (
                       <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '38px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
-                        <div style={{ width: '45px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', transform: 'skewX(-15deg)', marginLeft: '-6px', paddingLeft: '6px' }}>
+                        <div style={{ width: '55px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.8rem', transform: 'skewX(-15deg)', marginLeft: '-6px', paddingLeft: '6px' }}>
                           <span style={{ transform: 'skewX(15deg)' }}>{p.rank}</span>
                         </div>
-                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1.1rem', fontWeight: 800, letterSpacing: '0.02em' }}>
+                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1rem', fontWeight: 800, letterSpacing: '0.02em' }}>
                           {p.amount}
                         </div>
                       </div>
@@ -269,11 +280,11 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'stretch', height: '44px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '300px', margin: '0 auto' }}>
-                    <div style={{ padding: '0 1.2rem', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', textTransform: 'uppercase' }}>
-                      MVP
+                    <div style={{ padding: '0 1.2rem', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.8rem', textTransform: 'uppercase' }}>
+                      {isIHS ? 'PER CHICKEN' : 'MVP'}
                     </div>
-                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.3rem', fontWeight: 900, letterSpacing: '0.05em' }}>
-                      $50
+                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.2rem', fontWeight: 900, letterSpacing: '0.05em' }}>
+                      {isIHS ? '500 PKR' : '$50'}
                     </div>
                   </div>
                 </>
@@ -373,6 +384,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
       </div>
 
       <main style={{ marginTop: '0' }}>
+        <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
         {renderContent()}
       </main>
     </div>
