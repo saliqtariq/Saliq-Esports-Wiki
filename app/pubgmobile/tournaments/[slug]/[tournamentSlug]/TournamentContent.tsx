@@ -147,40 +147,46 @@ export default function TournamentContent({ tournament, organization, isDailyBat
 
             {playOffsData.length > 0 ? (
               <>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginBottom: '0.6rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginBottom: '0.6rem', position: 'sticky', top: 0, zIndex: 2 }}>
                   <button
                     onClick={() => standingsScrollRef.current?.scrollBy({ left: -260, behavior: 'smooth' })}
                     style={{
-                      width: '34px',
+                      minWidth: '56px',
                       height: '34px',
                       borderRadius: '8px',
                       border: '1px solid rgba(34, 197, 94, 0.35)',
-                      background: 'rgba(34, 197, 94, 0.12)',
+                      background: 'rgba(11, 15, 25, 0.92)',
                       color: '#22C55E',
-                      fontWeight: 900,
+                      fontWeight: 800,
+                      fontSize: '0.72rem',
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
                       cursor: 'pointer'
                     }}
                     aria-label="Scroll standings left"
                     title="Scroll left"
                   >
-                    ←
+                    Left
                   </button>
                   <button
                     onClick={() => standingsScrollRef.current?.scrollBy({ left: 260, behavior: 'smooth' })}
                     style={{
-                      width: '34px',
+                      minWidth: '56px',
                       height: '34px',
                       borderRadius: '8px',
                       border: '1px solid rgba(34, 197, 94, 0.35)',
-                      background: 'rgba(34, 197, 94, 0.12)',
+                      background: 'rgba(11, 15, 25, 0.92)',
                       color: '#22C55E',
-                      fontWeight: 900,
+                      fontWeight: 800,
+                      fontSize: '0.72rem',
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
                       cursor: 'pointer'
                     }}
                     aria-label="Scroll standings right"
                     title="Scroll right"
                   >
-                    →
+                    Right
                   </button>
                 </div>
               <div ref={standingsScrollRef} className="standings-horizontal-scroll" style={{ overflowX: 'scroll', overflowY: 'hidden', borderRadius: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.05)' }}>
