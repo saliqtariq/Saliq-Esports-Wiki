@@ -22,13 +22,13 @@ export default function TournamentContent({ tournament, organization, isDailyBat
     switch (activeTab) {
       case 'Overview':
         const isInviteOnly = tournament.status.toLowerCase().includes('invitational') || tournament.format.toLowerCase().includes('invitational');
-        
+
         return (
           <div style={{ padding: '1.5rem', background: 'rgba(15, 23, 42, 0.2)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
             <h2 style={{ color: '#22C55E', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Tournament Information
             </h2>
-            
+
             <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(2, 1fr)', marginBottom: '2rem' }}>
               <div style={{ padding: '1.25rem', background: 'rgba(0,0,0,0.3)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.03)' }}>
                 <p style={{ color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Current Status</p>
@@ -50,10 +50,10 @@ export default function TournamentContent({ tournament, organization, isDailyBat
 
             <div style={{ textAlign: 'center' }}>
               {isInviteOnly ? (
-                <div style={{ 
-                  padding: '1.2rem', 
-                  background: 'rgba(234, 179, 8, 0.05)', 
-                  border: '2px solid rgba(234, 179, 8, 0.3)', 
+                <div style={{
+                  padding: '1.2rem',
+                  background: 'rgba(234, 179, 8, 0.05)',
+                  border: '2px solid rgba(234, 179, 8, 0.3)',
                   borderRadius: '16px',
                   display: 'inline-block',
                   width: '100%'
@@ -63,23 +63,23 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                   </p>
                 </div>
               ) : (
-                <button style={{ 
-                  width: '100%', 
-                  padding: '1.2rem', 
-                  background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', 
-                  border: 'none', 
-                  borderRadius: '16px', 
-                  color: '#000', 
-                  fontWeight: 900, 
-                  fontSize: '1.2rem', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.1em', 
+                <button style={{
+                  width: '100%',
+                  padding: '1.2rem',
+                  background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)',
+                  border: 'none',
+                  borderRadius: '16px',
+                  color: '#000',
+                  fontWeight: 900,
+                  fontSize: '1.2rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
                   cursor: 'pointer',
                   boxShadow: '0 8px 24px rgba(34, 197, 94, 0.2)',
                   transition: 'transform 0.2s, box-shadow 0.2s'
                 }}
-                onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(34, 197, 94, 0.3)'; }}
-                onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(34, 197, 94, 0.2)'; }}
+                  onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(34, 197, 94, 0.3)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(34, 197, 94, 0.2)'; }}
                 >
                   REGISTER YOUR TEAM
                 </button>
@@ -90,14 +90,14 @@ export default function TournamentContent({ tournament, organization, isDailyBat
       case 'Standings':
         const isPMTM = tournament.name.includes('PMTM');
         const isDaily = tournament.name.toLowerCase().includes('daily');
-        const standingTabs = isPMTM 
-          ? ['Play-Offs', 'Grand Finals'] 
-          : isDaily 
+        const standingTabs = isPMTM
+          ? ['Play-Offs', 'Grand Finals']
+          : isDaily
             ? ['Finals']
             : ['Qualifiers', 'Quarter Finals', 'Semi Finals', 'Grand Finals'];
-        
+
         const currentStandingTab = standingTabs.includes(standingTab as any) ? standingTab : standingTabs[0];
-        
+
         const playOffsData = isPMTM && currentStandingTab === 'Play-Offs' ? [
           { rank: 1, team: 'MAXEBELS', wwcd: 1, pp: 24, ep: 54, tp: 78 },
           { rank: 2, team: '4 THRIVES', wwcd: 1, pp: 19, ep: 53, tp: 72 },
@@ -174,7 +174,8 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                     ))}
                   </tbody>
                 </table>
-                <style dangerouslySetInnerHTML={{ __html: `
+                <style dangerouslySetInnerHTML={{
+                  __html: `
                   .standing-row:hover { background: rgba(34, 197, 94, 0.05); }
                 `}} />
               </div>
@@ -201,52 +202,52 @@ export default function TournamentContent({ tournament, organization, isDailyBat
         ] : [];
 
         return (
-          <div style={{ padding: '1.25rem 0.75rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ padding: '1.5rem 1rem', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
             {/* Background Decor */}
             <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)', zIndex: 0 }} />
-            
+
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
-                <p style={{ color: '#22C55E', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Tournament Rewards</p>
-                <h2 style={{ color: '#FFF', fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.03em', margin: 0, fontStyle: 'italic', textShadow: '0 4px 15px rgba(0,0,0,0.6)', lineHeight: 0.95 }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <p style={{ color: '#22C55E', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Tournament Rewards</p>
+                <h2 style={{ color: '#FFF', fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.04em', margin: 0, fontStyle: 'italic', textShadow: '0 4px 15px rgba(0,0,0,0.6)', lineHeight: 0.9 }}>
                   Prizepool <br /> <span style={{ color: '#22C55E' }}>Distribution</span>
                 </h2>
               </div>
 
               {prizes.length > 0 ? (
                 <>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.5rem', marginBottom: '0.75rem', maxWidth: '500px', margin: '0 auto 1rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.6rem', marginBottom: '1.25rem', maxWidth: '600px', margin: '0 auto' }}>
                     {prizes.map((p, index) => (
-                      <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '36px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
-                        <div style={{ width: '40px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.85rem', transform: 'skewX(-12deg)', marginLeft: '-5px', paddingLeft: '5px' }}>
-                          <span style={{ transform: 'skewX(12deg)' }}>{p.rank}</span>
+                      <div key={index} style={{ display: 'flex', alignItems: 'stretch', height: '40px', background: 'rgba(0,0,0,0.4)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.03)' }}>
+                        <div style={{ width: '45px', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', transform: 'skewX(-15deg)', marginLeft: '-8px', paddingLeft: '8px' }}>
+                          <span style={{ transform: 'skewX(15deg)' }}>{p.rank}</span>
                         </div>
-                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1rem', fontWeight: 800, letterSpacing: '0.01em' }}>
+                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '1.2rem', fontWeight: 800, letterSpacing: '0.02em' }}>
                           {p.amount}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'stretch', height: '40px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '280px', margin: '0 auto' }}>
-                    <div style={{ padding: '0 1rem', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.85rem', textTransform: 'uppercase' }}>
+                  <div style={{ display: 'flex', alignItems: 'stretch', height: '44px', background: 'rgba(34, 197, 94, 0.05)', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(34, 197, 94, 0.2)', maxWidth: '320px', margin: '0 auto' }}>
+                    <div style={{ width: '70px', background: 'linear-gradient(90deg, #22C55E 0%, #16a34a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 900, fontSize: '0.9rem', textTransform: 'uppercase' }}>
                       MVP
                     </div>
-                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.2rem', fontWeight: 900, letterSpacing: '0.05em' }}>
+                    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22C55E', fontSize: '1.5rem', fontWeight: 900, letterSpacing: '0.05em' }}>
                       $50
                     </div>
                   </div>
                 </>
               ) : (
-                <div style={{ padding: '1.5rem', textAlign: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', maxWidth: '500px', margin: '0 auto 1rem' }}>
-                  <p style={{ color: '#9CA3AF', fontSize: '0.85rem', margin: 0 }}>Specific distribution details will be announced shortly.</p>
+                <div style={{ padding: '2rem', textAlign: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', maxWidth: '500px', margin: '0 auto 1rem' }}>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.9rem', margin: 0 }}>Specific distribution details will be announced shortly.</p>
                 </div>
               )}
 
-              <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
-                <div style={{ display: 'inline-block', padding: '0.75rem 1.5rem', background: 'rgba(34, 197, 94, 0.03)', borderRadius: '16px', border: '1px solid rgba(34, 197, 94, 0.1)' }}>
-                  <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.1em' }}>Total Prize Pool</p>
-                  <p style={{ margin: 0, color: '#FFF', fontSize: '1.75rem', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', lineHeight: 1 }}>
+              <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                <div style={{ display: 'inline-block', padding: '1rem 2rem', background: 'rgba(34, 197, 94, 0.03)', borderRadius: '20px', border: '1px solid rgba(34, 197, 94, 0.1)' }}>
+                  <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.1em' }}>Total Prize Pool</p>
+                  <p style={{ margin: 0, color: '#FFF', fontSize: '2rem', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', lineHeight: 1 }}>
                     {tournament.prizePool}
                   </p>
                 </div>
@@ -295,10 +296,10 @@ export default function TournamentContent({ tournament, organization, isDailyBat
           </div>
         </section>
 
-        <nav style={{ 
-          display: 'flex', 
-          gap: '0.5rem', 
-          overflowX: 'auto', 
+        <nav style={{
+          display: 'flex',
+          gap: '0.5rem',
+          overflowX: 'auto',
           padding: '0.8rem 1.2rem',
           background: 'rgba(0, 0, 0, 0.15)',
           scrollbarWidth: 'none',
