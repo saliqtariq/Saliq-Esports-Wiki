@@ -100,7 +100,7 @@ export default function Home() {
               onKeyDown={(e) => { if (e.key === 'Enter') { cardClick(e.currentTarget as HTMLElement); setTimeout(() => router.push('/pubgmobile'), 150); } }}
             >
               {/* Top row — compact, title forced to one line */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
 
                 {/* Smaller icon ring */}
                 <div style={{
@@ -138,7 +138,7 @@ export default function Home() {
                       PUBG Mobile Esports
                     </h3>
                   </div>
-                  <p style={{ fontSize: '0.75rem', color: '#6B7280', margin: 0, lineHeight: 1.4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <p style={{ fontSize: '0.75rem', color: '#FFFFFF', margin: 0, lineHeight: 1.4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     Teams, players &amp; tournaments in Pakistan
                   </p>
                 </div>
@@ -152,54 +152,36 @@ export default function Home() {
               </div>
 
               {/* Divider */}
-              <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '1rem' }} />
+              <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '1rem', marginTop: '1rem' }} />
 
               {/* Stat row — compact */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px', marginBottom: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px' }}>
 
                 {/* Teams */}
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #22C55E, transparent)' }} />
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#22C55E', lineHeight: 1, marginBottom: '3px' }}>1+</div>
-                  <div style={{ fontSize: '10px', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Teams</div>
-                  <div style={{ fontSize: '9px', color: '#374151', marginTop: '3px' }}>Registered</div>
+                  <div style={{ fontSize: '10px', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Teams</div>
+                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Registered</div>
                 </div>
 
                 {/* Players */}
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #FACC15, transparent)' }} />
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FACC15', lineHeight: 1, marginBottom: '3px' }}>5</div>
-                  <div style={{ fontSize: '10px', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Players</div>
-                  <div style={{ fontSize: '9px', color: '#374151', marginTop: '3px' }}>Profiled</div>
+                  <div style={{ fontSize: '10px', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Players</div>
+                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Profiled</div>
                 </div>
 
                 {/* Tournaments */}
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, rgba(255,255,255,0.12), transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#4B5563', lineHeight: 1, marginBottom: '3px' }}>0</div>
-                  <div style={{ fontSize: '10px', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Tournaments</div>
-                  <div style={{ fontSize: '9px', color: '#374151', marginTop: '3px' }}>Coming soon</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: '3px' }}>0</div>
+                  <div style={{ fontSize: '10px', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Tournaments</div>
+                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Coming soon</div>
                 </div>
 
               </div>
-
-              {/* Progress bar — compact */}
-              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '8px', padding: '8px 12px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', alignItems: 'center' }}>
-                  <span style={{ fontSize: '10px', color: '#6B7280', fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase' }}>Data coverage</span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                    <span style={{ display: 'inline-block', width: '5px', height: '5px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 5px #22C55E' }} />
-                    <span style={{ fontSize: '10px', color: '#22C55E', fontWeight: 700 }}>0.2% complete</span>
-                  </div>
-                </div>
-                <div style={{ height: '3px', borderRadius: '99px', background: 'rgba(255,255,255,0.05)', overflow: 'hidden' }}>
-                  <div style={{ height: '100%', width: '0.2%', background: 'linear-gradient(90deg,#22C55E,#FACC15)', borderRadius: '99px', minWidth: '4px' }} />
-                </div>
-                <p style={{ fontSize: '9.5px', color: '#374151', marginTop: '6px', marginBottom: 0, lineHeight: 1.4 }}>
-                  🚧 Early access — data is being added actively.
-                </p>
-              </div>
-
             </div>
             {/* end card */}
 

@@ -2,24 +2,19 @@ import React from 'react';
 
 export default function TournamentRules() {
   return (
-    <div style={{ 
-      padding: '2rem', 
-      background: 'rgba(15, 23, 42, 0.2)', 
-      borderRadius: '16px', 
+    <div className="custom-scrollbar" style={{
+      padding: '0.25rem 2rem 1.5rem',
+      background: 'rgba(15, 23, 42, 0.2)',
+      borderRadius: '16px',
       border: '1px solid rgba(255,255,255,0.05)',
       maxHeight: '600px',
       overflowY: 'auto'
     }}>
-      <div style={{ textAlign: 'center', marginBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1.5rem' }}>
-        <h2 style={{ color: '#FFF', margin: '0 0 0.5rem 0', fontSize: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-          2026 PUBG MOBILE NATIONAL CHAMPIONSHIP PAKISTAN - SPRING RULEBOOK
-        </h2>
-        <p style={{ color: '#9CA3AF', margin: 0 }}>(ver 1.0.2, February 09, 2026)</p>
-      </div>
-
       <div className="rules-content" style={{ color: '#D1D5DB', fontSize: '0.95rem', lineHeight: '1.7' }}>
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .rules-content h3 { color: #22C55E; font-size: 1.25rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(34, 197, 94, 0.2); padding-bottom: 0.5rem; font-weight: 800; text-transform: uppercase; }
+          .rules-content h3:first-of-type { margin-top: 0; }
           .rules-content h4 { color: #FACC15; font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.75rem; font-weight: 700; }
           .rules-content h5 { color: #E5E7EB; font-size: 0.95rem; margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 700; }
           .rules-content p { margin-bottom: 1rem; }
@@ -29,27 +24,40 @@ export default function TournamentRules() {
           .rules-content th, .rules-content td { border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem; text-align: center; }
           .rules-content th { background: rgba(250, 204, 21, 0.1); color: #FACC15; font-weight: 700; }
           .rules-content td { color: #E5E7EB; }
+          
+          /* Advanced Scrollbar - Premium Edition */
+          .custom-scrollbar { scrollbar-width: thin; scrollbar-color: #22C55E transparent; }
+          .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+          .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+          .custom-scrollbar::-webkit-scrollbar-thumb { 
+            background: linear-gradient(180deg, #22C55E 0%, rgba(34, 197, 94, 0.4) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover { 
+            background: linear-gradient(180deg, #22C55E 0%, #FACC15 100%);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+          }
         `}} />
-        
         <h3>1. Introduction</h3>
         <h4>1.1 Background and Purpose</h4>
-        <p>The 2026 PUBG MOBILE National Championship Pakistan Spring (2026 PMNC PK - Spring) is a premier amateur esports competition designed to provide a structured competitive pathway for emerging teams in Pakistan. As a qualifier for the 2026 PMGO S1 SOUTH ASIA FINALS, the tournament serves as a stepping stone for amateur teams aiming to enter the professional PUBG MOBILE esports ecosystem. With a tiered competition structure, teams will advance through multiple rounds, ensuring fair progression based on performance.</p>
+        <p>Official PUBG MOBILE Esports competitions are designed to provide a structured competitive pathway for emerging and professional teams. These tournaments serve as a stepping stone for teams aiming to enter the elite PUBG MOBILE esports ecosystem. With a tiered competition structure, teams advance through multiple rounds, ensuring fair progression based on performance and skill.</p>
 
         <h4>1.2 Tournament Overview</h4>
-        <p>The 2026 PUBG MOBILE National Championship Pakistan Spring (2026 PMNC PK - Spring) is a premier esports tournament designed to identify and nurture emerging PUBG MOBILE talent across the Pakistan region. This championship offers a structured pathway for teams from Pakistan to progress from amateur status to the professional esports scene.</p>
-        
+        <p>PUBG MOBILE Esports represents the pinnacle of mobile competitive gaming, designed to identify and nurture talent across various regions. These championships offer a structured pathway for teams to progress from amateur status to the professional world stage.</p>
+
         <h4>1.3 Definitions and Terminology</h4>
         <ul>
           <li><strong>Tournament Organizer:</strong> The official entity overseeing and coordinating the tournament.</li>
           <li><strong>Tournament Vendor:</strong> The appointed entity responsible for managing and enforcing the tournament rules.</li>
-          <li><strong>Participant:</strong> Any player or team registered to compete in the 2026 PMNC PK Spring.</li>
-          <li><strong>Grand Finals:</strong> The concluding stage where the best Pakistan teams compete for the championship title and seeding into professional leagues.</li>
+          <li><strong>Participant:</strong> Any player or team registered to compete in official PUBG Mobile Esports events.</li>
+          <li><strong>Grand Finals:</strong> The concluding stage where the best teams compete for the championship title and seeding into higher-tier professional leagues.</li>
           <li><strong>Match Lobby:</strong> A custom in-game room where official tournament matches are conducted.</li>
         </ul>
 
         <h3>2. General Terms</h3>
         <h4>2.1 Eligibility and Acceptance</h4>
-        <p>All participants in the 2026 PMNC PK Spring must meet the eligibility criteria outlined in this rulebook. By registering for and participating in the tournament, each participant acknowledges and agrees to abide by all rules and regulations set forth by the tournament organizers. Failure to comply with any of the rules may result in disqualification or other disciplinary actions.</p>
+        <p>All participants in PUBG Mobile Esports must meet the eligibility criteria outlined in this rulebook. By registering for and participating in the tournament, each participant acknowledges and agrees to abide by all rules and regulations set forth by the tournament organizers. Failure to comply with any of the rules may result in disqualification or other disciplinary actions.</p>
         <h5>2.1.1 Age Requirement</h5>
         <ul>
           <li>Participants must be at least 16 years of age by the start of the tournament.</li>
@@ -57,7 +65,7 @@ export default function TournamentRules() {
           <li>The tournament organizer holds the authority to disqualify any team if they fail to meet the eligibility criteria or provide false information.</li>
         </ul>
         <h5>2.1.2 Residency Requirement</h5>
-        <p>All Team members must be legal residents of an eligible country within the Pakistan region.</p>
+        <p>All Team members must be legal residents of an eligible country within the designated tournament region.</p>
         <h5>2.1.3 Team Composition</h5>
         <ul>
           <li>Teams must consist of a minimum of four (4) players and may include one (1) or two (2) substitutes.</li>
@@ -86,7 +94,7 @@ export default function TournamentRules() {
         <p>Any violation of the rules may result in penalties, including but not limited to: Warnings, Point deductions, Match forfeiture, Disqualification from the tournament, Suspension or bans from future tournaments.</p>
 
         <h4>2.3 Tournament Changes</h4>
-        <p>The organizers of the 2026 PMNC PK Spring reserve the right to modify the tournament structure, schedule, format, or any other aspect of the competition as necessary to ensure a fair and competitive environment. Changes may be made to accommodate unforeseen circumstances, ensure participant safety, or improve the overall quality of the event.</p>
+        <p>The organizers reserve the right to modify the tournament structure, schedule, format, or any other aspect of the competition as necessary to ensure a fair and competitive environment. Changes may be made to accommodate unforeseen circumstances, ensure participant safety, or improve the overall quality of the event.</p>
         <h5>2.3.1 Schedule Adjustments</h5>
         <ul>
           <li>The organizers may adjust match schedules, including dates and times, to address logistical concerns or conflicts.</li>
@@ -98,7 +106,7 @@ export default function TournamentRules() {
         <p>All changes to the tournament structure or schedule will be communicated to participants as soon as possible through official channels such as: Tournament website, Email notifications, Designated communication platforms (e.g., Discord).</p>
 
         <h4>2.4 Privacy and Data Protection</h4>
-        <p>The organizers of the 2026 PMNC PK Spring are committed to protecting the privacy and personal data of all participants. By registering for the tournament, participants consent to the collection, use, and disclosure of their personal information in accordance with applicable privacy laws and the terms outlined in this rulebook.</p>
+        <p>The organizers are committed to protecting the privacy and personal data of all participants. By registering for the tournament, participants consent to the collection, use, and disclosure of their personal information in accordance with applicable privacy laws and the terms outlined in this rulebook.</p>
         <h5>2.4.1 Data Collection</h5>
         <p>Personal information, including but not limited to names, contact details, and identification documents, will be collected for the purpose of verifying eligibility and managing tournament operations.</p>
         <h5>2.4.2 Data Use</h5>
@@ -113,21 +121,21 @@ export default function TournamentRules() {
 
         <h3>3. Tournament Structure</h3>
         <p>All matches will follow the official tournament schedule unless communicated otherwise by the tournament organizers. Teams must be prepared and available for all scheduled matches.</p>
-        <p>The 2026 PMNC Pakistan - Spring serves as the gateway to the 2026 PMGO S1 SOUTH ASIA FINALS, a pro-level tournament featuring the top teams from South Asia and Pakistan. Teams that succeed in the 2026 PMGO S1 SOUTH ASIA FINALS can advance to 2026 PMGO - Main Event, offering a chance to compete on the world stage.</p>
+        <p>Official PUBG MOBILE Esports competitions serve as the gateway to regional finals and professional-level tournaments featuring the top teams from across the globe. Teams that succeed in regional events can advance to Global Main Events, offering a chance to compete on the world stage.</p>
 
         <h3>4. Team and Player Eligibility</h3>
         <h4>4.1 Eligibility Criteria</h4>
-        <p>To ensure a fair and competitive environment, all teams and players must meet the following eligibility criteria to participate in the 2026 PUBG MOBILE National Championship - Pakistan.</p>
+        <p>To ensure a fair and competitive environment, all teams and players must meet the following eligibility criteria to participate in official PUBG MOBILE Esports competitions.</p>
         <h5>4.1.1 Eligible Country List</h5>
-        <p>The team captain must be a citizen of one of the following eligible countries: Pakistan.</p>
+        <p>The team captain must be a citizen or legal resident of one of the eligible countries defined for the specific tournament region.</p>
         <h5>4.1.2 Residency Requirement</h5>
         <ul>
-          <li>More than 50% of the players on a team’s roster must be citizens of the team's home country.</li>
-          <li>More than 50% of the players in any tournament match must be citizens of the team’s home country.</li>
+          <li>More than 50% of the players on a team’s roster must be citizens or residents of the team's designated home country/region.</li>
+          <li>More than 50% of the players in any tournament match must be citizens or residents of the team’s home country/region.</li>
         </ul>
         <h5>4.1.3 Age Requirement</h5>
         <ul>
-          <li>Participants must be at least 16 years of age by the start date of the tournament (Feb 05, 2026).</li>
+          <li>Participants must be at least 16 years of age by the start date of the tournament.</li>
           <li>Players under the age of 18 must provide parental or guardian consent to participate.</li>
           <li>Consent forms must be submitted during registration.</li>
           <li>Tournament officials may request proof of age (Government-issued ID or Passport) at any time.</li>
@@ -135,39 +143,39 @@ export default function TournamentRules() {
         <h5>4.1.4 Account Requirements</h5>
         <p>All players must have a valid PUBG MOBILE account in good standing. Players with a history of bans or suspensions related to cheating, hacking, or misconduct will be disqualified.</p>
         <h5>4.1.5 Professional Status & Seeding Eligibility</h5>
-        <p>The tournament is open to all teams, including professional teams, but seeding slots for 2026 PMGO S1 SOUTH ASIA FINALS are reserved for non-invited teams.</p>
+        <p>Tournaments are open to teams as specified in the event-specific registration. Seeding slots for professional regional finals are reserved for teams that qualify through the official tournament pathway.</p>
 
         <h4>4.2 Team Registration Process</h4>
-        <p>Teams must follow the official registration process to be eligible to compete in the 2026 PMNC PK Spring.</p>
+        <p>Teams must follow the official registration process to be eligible to compete in PUBG Mobile Esports events.</p>
         <h5>4.2.1 Team Registration Guidelines</h5>
-        <p>Teams must complete their registration through In-game PUBG MOBILE Tournament Platform.</p>
+        <p>Teams must complete their registration through the official In-game PUBG MOBILE Tournament Platform or designated registration portal.</p>
         <h5>4.2.2 Required Information for Registration</h5>
         <ul>
           <li>Team Name (Must comply with PUBG MOBILE naming policies).</li>
           <li>Captain’s Contact Information (Name, Email, Discord, or Phone).</li>
           <li>Player Information: PUBG MOBILE Username, PUBG MOBILE Character ID, Country of Residency, Date of Birth, Proof of Residency (if required).</li>
           <li>Parental Consent Form (for players under 18).</li>
-          <li>Substitute Player (Optional): Teams may register two substitutes during the registration phase.</li>
+          <li>Substitute Player (Optional): Teams may register substitutes during the registration phase.</li>
         </ul>
         <h5>4.2.3 Registration Confirmation</h5>
-        <p>Once a team has completed the registration process, the team captain will receive a confirmation email. Incomplete or incorrect registrations will be rejected.</p>
+        <p>Once a team has completed the registration process, the team captain will receive a confirmation. Incomplete or incorrect registrations will be rejected.</p>
         <h5>4.2.4 Late Registrations</h5>
         <p>No late registrations will be accepted under any circumstances.</p>
 
         <h4>4.3 Player Age Requirements</h4>
         <ul>
           <li><strong>Minimum Age Requirement:</strong> All players must be at least 16 years old by the start of the tournament.</li>
-          <li><strong>Age Verification:</strong> Tournament officials may request proof of age (such as a government-issued ID or student card or National Passport) at any time.</li>
+          <li><strong>Age Verification:</strong> Tournament officials may request proof of age (such as a government-issued ID or National Passport) at any time.</li>
           <li><strong>Failure to Verify Age:</strong> Any player unable to verify their age upon request will be immediately disqualified.</li>
         </ul>
 
         <h4>4.4 Team Composition Rules</h4>
         <h5>4.4.1 Official Team Size</h5>
-        <p>Each team must consist of a minimum of four (4) players and a maximum of six (6) players (four active players and one/two substitutes). Teams must designate one player as the team captain, who will be responsible for all communication with tournament officials.</p>
+        <p>Each team must consist of a minimum of four (4) players and a maximum of six (6) players (four active players and up to two substitutes). Teams must designate one player as the team captain, who will be responsible for all communication with tournament officials.</p>
         <ul>
-          <li><strong>Team of 4:</strong> 4 players from Eligible Country (Pakistan).</li>
-          <li><strong>Team of 5:</strong> 5 players from Eligible Country (Pakistan), OR 4 Players from Eligible Country (Pakistan) + 1 Foreign player holding Nationality of Eligible Country.</li>
-          <li><strong>Team of 6:</strong> 6 players from Eligible Country (Pakistan), OR 4 Players from Pakistan + 2 Foreign players holding Nationality, OR 5 Players from Pakistan + 1 Foreign player holding Nationality.</li>
+          <li><strong>Team of 4:</strong> 4 players from the Eligible Country/Region.</li>
+          <li><strong>Team of 5:</strong> 5 players from the Eligible Country/Region, OR 4 Players from the Eligible Country/Region + 1 Foreign player holding appropriate residency.</li>
+          <li><strong>Team of 6:</strong> 6 players from the Eligible Country/Region, OR 4-5 Players from the Eligible Country/Region + 1-2 Foreign players holding appropriate residency.</li>
         </ul>
         <h5>4.4.2 Team Captain & Responsibilities</h5>
         <p>The Team Captain is responsible for communicating with tournament officials, ensuring all team members follow tournament schedules and rules, and submitting results or disputes if necessary.</p>
@@ -176,7 +184,7 @@ export default function TournamentRules() {
 
         <h4>4.5 Player Name and Team Name Regulations</h4>
         <h5>4.5.1 Player Nickname Format</h5>
-        <p>Starting from the Online Qualifiers, each player's nickname must include their Team Name (or an abbreviation) followed by their player name. Format: "TeamNamePlayerName". Example: "Asi8CRYPTO". The Player Tag must be finalized during registration.</p>
+        <p>Each player's nickname must include their Team Name (or an abbreviation) followed by their player name. Format: "TeamNamePlayerName". The Player Tag must be finalized during registration.</p>
         <h5>4.5.2 Prohibited Player Names and Team Names</h5>
         <ul>
           <li>Cannot include any sponsor name, product name, or description.</li>
@@ -190,8 +198,8 @@ export default function TournamentRules() {
         <h4>4.6 Prohibited Devices</h4>
         <ul>
           <li>Players may only use iOS and Android smartphones. Tablets, iPads, and emulators are prohibited. "Trigger Clickers" or smartphones with built-in triggers are not allowed.</li>
-          <li>Only original apps developed by Tencent Games installed thru Apple apps store or Google play store are allowed.</li>
-          <li>Any participant caught using third-party apps will be banned for the whole squad.</li>
+          <li>Only original apps developed by Tencent Games installed via official app stores are allowed.</li>
+          <li>Any participant caught using third-party apps will result in a ban for the entire squad.</li>
           <li>No additional accessories EXCEPT for USB cables, power banks, adapters, and headphones are allowed.</li>
           <li>Rooted / Bootloader Unlocked Phones (Android) and Jailbroken Phones (iPhone) are strictly prohibited.</li>
         </ul>
@@ -211,7 +219,7 @@ export default function TournamentRules() {
 
         <h4>5.2 Map Selection and Rotation</h4>
         <ul>
-          <li><strong>Map Pool:</strong> Erangel, Miramar, Rondo</li>
+          <li><strong>Map Pool:</strong> Erangel, Miramar, Sanhok, Vikendi (As specified by the organizer).</li>
           <li><strong>Map Rotation:</strong> Announced prior to each phase. Teams should be prepared to compete on any of the maps.</li>
         </ul>
 
@@ -287,7 +295,7 @@ export default function TournamentRules() {
         <h3>10. Communication</h3>
         <p>Official channels (Email/Discord) must be monitored. Official requests must meet deadlines. Failure to respond may result in penalties.</p>
         <h4>10.4 Payment Policy</h4>
-        <p>Prize money is distributed within 75 days post-tournament if proper documentation is provided within the initial deadline. Players forfeit prizes if documentation is not submitted within 6 months.</p>
+        <p>Prize money is distributed within the timeframe specified by the organizer post-tournament if proper documentation is provided. Players forfeit prizes if documentation is not submitted within 6 months.</p>
         <h4>10.5 Dispute Resolution</h4>
         <p>Disputes are reviewed by officials. Unresolved issues may go to arbitration, governed by relevant jurisdictional laws.</p>
 
@@ -303,7 +311,6 @@ export default function TournamentRules() {
         <p>By participating, all members agree to follow the Competition Rules. Failure to sign means exclusion from official competitions.</p>
         <h4>12.4 Parent or Guardian Consent Form</h4>
         <p>Required for players under 18.</p>
-
       </div>
     </div>
   );
