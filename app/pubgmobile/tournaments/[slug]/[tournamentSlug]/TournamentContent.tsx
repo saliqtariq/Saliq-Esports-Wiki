@@ -216,17 +216,17 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                     }
                     .standings-th,
                     .standings-td {
-                      padding: 0.65rem 0.35rem !important;
-                      font-size: 0.72rem !important;
+                      padding: 0.68rem 0.5rem !important;
+                      font-size: 0.78rem !important;
                     }
                     .standings-table th:nth-child(1),
                     .standings-table td:nth-child(1) {
-                      width: 14%;
+                      width: 15%;
                       white-space: nowrap;
                     }
                     .standings-table th:nth-child(2),
                     .standings-table td:nth-child(2) {
-                      width: 34%;
+                      width: 37%;
                       white-space: nowrap;
                       overflow: hidden;
                       text-overflow: ellipsis;
@@ -239,7 +239,7 @@ export default function TournamentContent({ tournament, organization, isDailyBat
                     .standings-table td:nth-child(5),
                     .standings-table th:nth-child(6),
                     .standings-table td:nth-child(6) {
-                      width: 13%;
+                      width: 12%;
                       white-space: nowrap;
                     }
                   }
