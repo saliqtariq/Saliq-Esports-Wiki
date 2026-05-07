@@ -8,13 +8,13 @@ const actionCards = [
   {
     title: 'Players',
     stats: '4+ Players',
-    image: '/players.jpg',
+    image: '/Players-Newpic.png',
     variant: 'players',
   },
   {
     title: 'Tournaments',
     stats: '',
-    image: '/tournaments.webp',
+    image: '/Tournaments-Picnew.jpg',
     variant: 'tournaments',
   },
   {
@@ -105,7 +105,7 @@ export default function PUBGPage() {
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.035em', lineHeight: 1.08, marginBottom: '2.5rem', color: 'var(--text-primary)' }}>
               PUBG Mobile
               <br />
-              <span style={{ color: '#22C55E' }}>Esports</span>
+              <span style={{ color: '#22C55E' }}>Esports Pakistan</span>
             </h2>
 
             <div className="pubg-action-grid" style={{
