@@ -15,8 +15,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SALIQ ESPORTS",
-  description: "Pakistan's competitive esports platform — player stats, tournaments, and achievements",
+  title: "Saliq Esports",
+  description: "Saliq Esports is a platform showcasing esports player profiles, achievements, teams, and stats. Discover PUBG players and their history.",
   viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover",
 };
 
