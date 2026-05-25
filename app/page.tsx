@@ -1,28 +1,15 @@
 'use client';
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Footer from './components/Footer';
+import PageShell from './components/PageShell';
+import ThemeToggle from './components/ThemeToggle';
+import StatCard from './components/StatCard';
+import { useTheme } from './components/ThemeProvider';
 
 export default function Home() {
-  const [isLight, setIsLight] = useState(false);
+  const { isLight } = useTheme();
   const router = useRouter();
-
-  const toggleTheme = () => {
-    const nextLight = !isLight;
-    setIsLight(nextLight);
-
-    // Batch DOM updates for better performance
-    requestAnimationFrame(() => {
-      if (nextLight) {
-        document.documentElement.classList.add('light');
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.classList.remove('light');
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    });
-  };
 
   const cardClick = (el: HTMLElement) => {
     el.style.transform = 'scale(0.97)';
@@ -33,15 +20,7 @@ export default function Home() {
 
   return (
     <div style={{ width: '100%', overflowX: 'hidden', background: 'var(--bg-primary)' }}>
-      {/* Background blobs */}
-      <div className="blob" style={{ width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' }} />
-      <div className="blob" style={{ width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 }} />
-      <div className="blob" style={{ width: '300px', height: '300px', top: '50%', left: '55%', background: '#22C55E', opacity: 0.07 }} />
-
-      {/* Grid pattern overlay */}
-      <div className="dynamic-grid" />
-
-      <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
+      <PageShell>
 
         {/* ===== HEADER ===== */}
         <header style={{ padding: '1.75rem 2rem 0', width: '100%' }}>
@@ -61,15 +40,8 @@ export default function Home() {
             </div>
 
             {/* Dark/light toggle */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingTop: '4px' }}>
-              <span style={{ fontSize: '12px', color: '#9CA3AF', fontWeight: 500, letterSpacing: '0.03em', transition: 'color 0.3s' }}>
-                {isLight ? 'Light' : 'Dark'}
-              </span>
-              <button className="toggle-track" onClick={toggleTheme} aria-label="Toggle light/dark mode">
-                <div className="toggle-thumb">
-                  <span>{isLight ? '☀️' : '🌙'}</span>
-                </div>
-              </button>
+            <div style={{ paddingTop: '4px' }}>
+              <ThemeToggle />
             </div>
 
           </div>
@@ -156,31 +128,9 @@ export default function Home() {
 
               {/* Stat row — compact */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px' }}>
-
-                {/* Teams */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #22C55E, transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#22C55E', lineHeight: 1, marginBottom: '3px' }}>1+</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Teams</div>
-                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Registered</div>
-                </div>
-
-                {/* Players */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #FACC15, transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FACC15', lineHeight: 1, marginBottom: '3px' }}>5</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Players</div>
-                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Profiled</div>
-                </div>
-
-                {/* Tournaments */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, rgba(255,255,255,0.12), transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1, marginBottom: '3px' }}>0</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Tournaments</div>
-                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Coming soon</div>
-                </div>
-
+                <StatCard value="1+" label="Teams" sublabel="Registered" accentColor="#22C55E" />
+                <StatCard value="5" label="Players" sublabel="Profiled" accentColor="#FACC15" />
+                <StatCard value="0" label="Tournaments" sublabel="Coming soon" accentColor="var(--text-primary)" />
               </div>
             </div>
             {/* end card */}
@@ -242,7 +192,7 @@ export default function Home() {
         </main>
 
         <Footer />
-      </div>
+      </PageShell>
     </div>
   );
 }

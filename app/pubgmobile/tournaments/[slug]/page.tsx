@@ -2,6 +2,7 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import { notFound } from 'next/navigation';
 import Footer from '@/app/components/Footer';
+import PageShell from '@/app/components/PageShell';
 import { organizationsBySlug, toTournamentSlug } from '../data';
 
 type PageProps = {
@@ -14,12 +15,13 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
 
   if (!organization) notFound();
 
-  return (
-    <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', background: 'var(--bg-primary)' }}>
-      <div className="blob" style={{ width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' }} />
-      <div className="blob" style={{ width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 }} />
-      <div className="dynamic-grid" />
+  const TWO_BLOB = [
+    { width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' },
+    { width: '400px', height: '400px', bottom: '80px', right: '-100px', background: '#FACC15', opacity: 0.1 },
+  ];
 
+  return (
+    <PageShell blobs={TWO_BLOB}>
       <header style={{ padding: '1.75rem 2rem 1rem', width: '100%', position: 'relative', zIndex: 2 }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <Link
@@ -167,6 +169,6 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
       </main>
 
       <Footer />
-    </div>
+    </PageShell>
   );
 }
