@@ -43,7 +43,7 @@ export default function StatCard({ value, label, sublabel, accentColor }: StatCa
       <div
         style={{
           fontSize: '10px',
-          color: '#FFFFFF',
+          color: 'var(--text-primary)',
           textTransform: 'uppercase',
           letterSpacing: '0.06em',
           fontWeight: 500,

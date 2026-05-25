@@ -110,7 +110,7 @@ export default function Home() {
                       PUBG Mobile Esports
                     </h3>
                   </div>
-                  <p style={{ fontSize: '0.75rem', color: '#FFFFFF', margin: 0, lineHeight: 1.4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--text-primary)', margin: 0, lineHeight: 1.4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     Teams, players &amp; tournaments in Pakistan
                   </p>
                 </div>
@@ -130,7 +130,7 @@ export default function Home() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px' }}>
                 <StatCard value="1+" label="Teams" sublabel="Registered" accentColor="#22C55E" />
                 <StatCard value="5" label="Players" sublabel="Profiled" accentColor="#FACC15" />
-                <StatCard value="0" label="Tournaments" sublabel="Coming soon" accentColor="#FFFFFF" />
+                <StatCard value="0" label="Tournaments" sublabel="Coming soon" accentColor="var(--text-primary)" />
               </div>
             </div>
             {/* end card */}
@@ -196,3 +196,4 @@ export default function Home() {
     </div>
   );
 }
+

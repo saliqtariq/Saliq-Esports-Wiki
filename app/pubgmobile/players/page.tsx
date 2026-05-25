@@ -61,8 +61,20 @@ const players: Player[] = [
     realName: 'Muhammad Imad Habib',
     team: 'Freestyle',
     teamLogo: '/freestyle-logo.jpg',
-    links: {}
-  }
+    links: {
+      instagram: 'https://www.instagram.com/beastopie'
+    }
+  },
+   { 
+    id: 'Falak', 
+    realName: 'Falak Sher', 
+    team: '4Thrives',
+    teamLogo: '/4thirveslogo.png',
+    links: { 
+      instagram: 'https://www.instagram.com/falakpubgm' 
+    } 
+  },
+  
 ];
 
 export default function PlayersPage() {
@@ -215,19 +227,19 @@ export default function PlayersPage() {
                                 <a href={player.links.instagram} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
                                   <div style={{ 
                                     background: '#000', 
-                                    borderRadius: '4px', 
-                                    width: '18px', 
-                                    height: '18px', 
+                                    borderRadius: '6px', 
+                                    width: '24px', 
+                                    height: '24px', 
                                     display: 'flex', 
                                     alignItems: 'center', 
                                     justifyContent: 'center',
                                     overflow: 'hidden'
                                   }}>
                                     <NextImage 
-                                      src="/instagram-logo.jpeg" 
+                                      src="/Instareallogo.jpeg" 
                                       alt="Instagram" 
-                                      width={14} 
-                                      height={14} 
+                                      width={28} 
+                                      height={28} 
                                       style={{ objectFit: 'contain' }}
                                     />
                                   </div>

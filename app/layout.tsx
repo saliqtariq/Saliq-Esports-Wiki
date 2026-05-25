@@ -16,8 +16,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SALIK — Pakistan Esports",
-  description: "Stats, rosters, and tournament history for Pakistan's competitive gaming scene — all in one place.",
+  title: "SALIQ ESPORTS",
+  description: "Pakistan's competitive esports platform — player stats, tournaments, and achievements",
   viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover",
 };
 

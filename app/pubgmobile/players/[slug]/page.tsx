@@ -135,6 +135,9 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { date: '2023-04-09', place: '12th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: 'Team QWERTY' },
       { date: '2022-11-22', place: '16th', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Asia Fall 2022', team: '7Sins' },
       { date: '2022-07-31', place: '14th', tier: 'B-Tier', tourney: 'Gamenow Summer Clash', team: 'DTDxEsports' },
+       { date: '2023-03-20', place: '1st', tier: 'D-Tier', tourney: 'PUBG Mobile The Survival', team: 'Team QWERTY' },
+      { date: '2026-03-9', place: '1st', tier: 'D-Tier', tourney: '4Sight Ramadan Grind S2', team: 'Galacticous' },
+      { date: '2026-02-12', place: '2nd', tier: 'D-Tier', tourney: '7Shore Stranger Things S1', team: 'Galacticous' },
     ],
     history: [
       { join: '-', leave: '-', team: 'RPG' },
@@ -207,7 +210,42 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2025', leave: '2025', team: 'NEVERBACK' },
       { join: '2025 Nov', leave: 'Present', team: 'FREESTYLE' },
     ]
-  }
+  },
+   'falak': {
+    name: 'Falak Sher',
+    nick: 'Falak',
+    image: '/4tfalak-picfix.jpg',
+    teamLogo: '/4thirveslogo.png',
+    teamName: '4Thrives',
+    nationality: 'Pakistan',
+    born: 'April 25, 2007(age 19)',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Falak Sher <strong style={{ color: '#fff' }}>"Falak"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ background: 'linear-gradient(to right, #f7e7a1, #e0b84f, #b8860b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>4thrives Esports</span>.
+      </p>
+    ),
+    achievements: [
+      { date: '2026-05-17', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Global Open 2026 Season 1 - South Asia Finals', team: '4thrives' },
+      { date: '2025-12-07', place: '19th', tier: 'S-Tier', tourney: 'PUBG Mobile Global Championship 2025', team: 'Inner Circle' },
+      { date: '2025-08-03', place: '7th', tier: 'S-Tier', tourney: 'PUBG Mobile World Cup 2025', team: '4thrives' },
+      { date: '2025-06-22', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Super League - Central & South Asia Spring 2025	', team: '4thrives' },
+      { date: '2023-09-03', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Fall 2023', team: 'Agonxi8 Esports' },
+      { date: '2023-08-20', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2023', team: 'Agonxi8 Esports' },
+      { date: '2023-07-13', place: '8th', tier: 'A-Tier', tourney: 'PUBG Mobile World Invitational 2023: Allstars Stage', team: 'Agonxi8 Esports' },
+      { date: '2023-04-09', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: 'Agonxi8 Esports' },
+      { date: '2023-02-12', place: '1st', tier: 'B-Tier', tourney: 'Gamekey Arena', team: 'Agonxi8 Esports' },
+      { date: '2022-10-02', place: '2nd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2022', team: 'Team QWERTY' },
+    ],
+    history: [
+      { join: '2022-01-22', leave: '2022-01-24', team: '4thieves' },
+  { join: '2022-01-24', leave: '2022-10-20', team: 'TEAM QWERTY' },
+  { join: '2022-10-20', leave: '2023-04-19', team: 'Agonxi8 Esports' },
+  { join: '2024-12-01', leave: '2025-09-06', team: '4thrives Esports' },
+  { join: '2025-09-06', leave: '2025-12-15', team: 'Inner Circle' },
+  { join: '2025-12-15', leave: 'Present', team: '4thrives Esports' }
+    ]
+  },
 };
 
 export default function PlayerProfilePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -459,11 +497,14 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'ATX') && (
                                 <NextImage src="/atx-logo.png" alt="ATX" width={48} height={30} style={{ objectFit: 'contain' }} title="ATX" />
                               )}
-                              {ach.team === 'Flames 1' && (
-                                <span style={{ fontSize: '0.85rem', color: '#ff0000', fontWeight: 700 }}>Flames 1</span>
+                              {ach.team === '4thrives' && (
+                                <NextImage src="/4thirveslogo.png" alt="4thrives" width={48} height={30} style={{ objectFit: 'contain' }} title="4Thrives" />
                               )}
-                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Flames 1', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX'].includes(ach.team) && (
-                                <span style={{ fontSize: '0.85rem', color: '#3498db', fontWeight: 700 }}>{ach.team}</span>
+                              {ach.team === 'Agonxi8 Esports' && (
+                                <NextImage src="/i8logo.png" alt="i8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="i8 Esports" />
+                              )}
+                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports'].includes(ach.team) && (
+                                <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
                           </td>
