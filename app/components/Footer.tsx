@@ -29,7 +29,7 @@ export default function Footer() {
             
             <nav style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               <a href="#" className="footer-link-v2">Contact</a>
-              <a href="#" className="footer-link-v2">Disclaimer</a>
+              <Link href="/disclaimer" className="footer-link-v2">Disclaimer</Link>
               <Link href="/privacy-policy" className="footer-link-v2">Privacy Policy</Link>
             </nav>
           </div>
