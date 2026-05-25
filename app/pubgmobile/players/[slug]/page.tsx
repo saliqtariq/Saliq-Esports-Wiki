@@ -162,6 +162,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ),
     achievements: [
       { date: '2024-03-18', place: '3rd', tier: 'C-Tier', tourney: 'NIL League S14', team: 'FMA Esports' },
+      { date: '2026-05-17', place: '16th', tier: 'A-Tier', tourney: 'PUBG Mobile Global Open 2026 Season 1 - South Asia Finals', team: 'Red Saints' },
       { date: '2024-06-15', place: '1st', tier: 'D-Tier', tourney: 'The Clash Last Circle', team: 'FMA Esports' },
       { date: '2024-08-26', place: '3rd', tier: 'D-Tier', tourney: 'IHS League S11', team: 'FMA Esports' },
       { date: '2025-08-31', place: '9th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'FMA Esports' },
@@ -502,6 +503,9 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'Team QWERTY') && (
                                 <NextImage src="/Qwerty-Logo.png" alt="Team QWERTY" width={48} height={30} style={{ objectFit: 'contain' }} title="Team QWERTY" />
                               )}
+                               {(ach.team === 'Red Saints') && (
+                                <NextImage src="/RST Esports.png" alt="Red Saints" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Saints" />
+                              )}
                               {(ach.team === '7Sins') && (
                                 <NextImage src="/7Sins-Logo.png" alt="7Sins" width={48} height={30} style={{ objectFit: 'contain' }} title="7Sins" />
                               )}
@@ -538,7 +542,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {ach.team === 'Agonxi8 Esports' && (
                                 <NextImage src="/i8logo.png" alt="i8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="i8 Esports" />
                               )}
-                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports'].includes(ach.team) && (
+                              {!['Seventh Element', 'Koxav Esports', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>

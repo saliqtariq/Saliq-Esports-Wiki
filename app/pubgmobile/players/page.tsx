@@ -29,6 +29,15 @@ const players: Player[] = [
     } 
   },
   { 
+    id: 'Falak', 
+    realName: 'Falak Sher', 
+    team: '4Thrives',
+    teamLogo: '/4thirveslogo.png',
+    links: { 
+      instagram: 'https://www.instagram.com/falakpubgm' 
+    } 
+  },
+  { 
     id: 'AlphaBoy', 
     realName: 'Muhammad Huzaifa Ali', 
     team: 'Seventh Element',
@@ -63,15 +72,6 @@ const players: Player[] = [
     links: {
       instagram: 'https://www.instagram.com/beastopie'
     }
-  },
-   { 
-    id: 'Falak', 
-    realName: 'Falak Sher', 
-    team: '4Thrives',
-    teamLogo: '/4thirveslogo.png',
-    links: { 
-      instagram: 'https://www.instagram.com/falakpubgm' 
-    } 
   },
   
 ];
