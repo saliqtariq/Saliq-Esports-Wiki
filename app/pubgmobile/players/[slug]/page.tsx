@@ -3,8 +3,10 @@
 import { use, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import NextImage from 'next/image';
-import Link from 'next/link';
 import Footer from '@/app/components/Footer';
+import PageShell from '@/app/components/PageShell';
+import BackButton from '@/app/components/BackButton';
+import ImageLightbox from '@/app/components/ImageLightbox';
 
 type Achievement = {
   date: string;
@@ -233,62 +235,25 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
     );
   }
 
-  return (
-    <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', background: 'var(--bg-primary)' }}>
-      <div className="dynamic-grid" />
+  const PLAYER_BLOBS = [
+    { width: '520px', height: '520px', top: '-120px', left: '-140px', background: '#22C55E' },
+  ];
 
-      {/* Lightbox Overlay */}
+  return (
+    <PageShell blobs={PLAYER_BLOBS}>
       {isLightboxOpen && (
-        <div 
-          onClick={() => setIsLightboxOpen(false)}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            background: 'rgba(0,0,0,0.9)',
-            backdropFilter: 'blur(8px)',
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'zoom-out',
-            animation: 'fadeIn 0.3s ease'
-          }}
-        >
-          <div style={{ position: 'absolute', top: '20px', right: '30px', color: '#fff', fontSize: '2rem', fontWeight: 300, cursor: 'pointer' }}>&times;</div>
-          <div style={{ position: 'relative', maxWidth: '90vw', maxHeight: '90vh' }}>
-            <NextImage 
-              src={player.image} 
-              alt={player.nick} 
-              width={800} 
-              height={1000} 
-              style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '90vh', borderRadius: '8px', boxShadow: '0 0 50px rgba(34, 197, 94, 0.2)' }} 
-            />
-          </div>
-        </div>
+        <ImageLightbox
+          src={player.image}
+          alt={player.nick}
+          onClose={() => setIsLightboxOpen(false)}
+        />
       )}
 
       <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
         
         {/* Header Navigation */}
         <header style={{ padding: '1.5rem 1rem 0', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-          <button
-            onClick={() => router.back()}
-            style={{
-              background: 'rgba(34, 197, 94, 0.08)',
-              border: '1.5px solid rgba(34, 197, 94, 0.2)',
-              borderRadius: '12px',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              color: '#22C55E',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-            }}
-          >
-            &larr; Back
-          </button>
+          <BackButton label="Back" showArrow />
         </header>
 
         {/* Main Content Area */}
@@ -594,6 +559,6 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
           }
         `}</style>
       </div>
-    </div>
+    </PageShell>
   );
 }

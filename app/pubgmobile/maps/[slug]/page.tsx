@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import NextImage from 'next/image';
 import Footer from '../../../components/Footer';
+import PageShell from '../../../components/PageShell';
+import BackButton from '../../../components/BackButton';
 
 type MapInfo = {
   creator: string[];
@@ -221,40 +223,19 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
     );
   }
 
+  const MAP_BLOBS = [
+    { width: '500px', height: '500px', top: '-150px', left: '-100px', background: '#22C55E', opacity: 0.15 },
+    { width: '300px', height: '300px', bottom: '100px', right: '-50px', background: '#FACC15', opacity: 0.05 },
+  ];
+
   return (
-    <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', background: 'var(--bg-primary)' }}>
-      {/* Background blobs */}
-      <div className="blob" style={{ width: '500px', height: '500px', top: '-150px', left: '-100px', background: '#22C55E', opacity: 0.15 }} />
-      <div className="blob" style={{ width: '300px', height: '300px', bottom: '100px', right: '-50px', background: '#FACC15', opacity: 0.05 }} />
-
-      <div className="dynamic-grid" />
-
-      <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
-
-        {/* ===== HEADER ===== */}
-        <header style={{ padding: '1.5rem 2rem', width: '100%' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            <button
-              onClick={() => router.back()}
-              style={{
-                background: 'rgba(34, 197, 94, 0.1)',
-                border: '1px solid rgba(34, 197, 94, 0.2)',
-                borderRadius: '12px',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                color: '#22C55E',
-                fontSize: '0.875rem',
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              <span>&larr;</span> Back to Maps
-            </button>
-          </div>
-        </header>
+    <PageShell blobs={MAP_BLOBS}>
+      {/* ===== HEADER ===== */}
+      <header style={{ padding: '1.5rem 2rem', width: '100%' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <BackButton label="Back to Maps" showArrow />
+        </div>
+      </header>
 
         {/* ===== MAIN CONTENT ===== */}
         <main style={{ flex: 1, padding: '0 1.5rem 4rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -353,8 +334,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
 
         </main>
 
-        <Footer />
-      </div>
+      <Footer />
 
       {/* ===== FULL SCREEN MAP MODAL ===== */}
       {isOpen && (
@@ -476,7 +456,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
           }
         }
       `}</style>
-    </div>
+    </PageShell>
   );
 }
 

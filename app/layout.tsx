@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from './components/ThemeProvider';
 
 const syne = Syne({
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${dmSans.variable} h-full w-full overflow-x-hidden antialiased`}
     >
-      <body className="min-h-full w-full flex flex-col font-body overflow-x-hidden">{children}</body>
+      <body className="min-h-full w-full flex flex-col font-body overflow-x-hidden">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
