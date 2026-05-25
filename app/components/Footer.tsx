@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -29,7 +30,7 @@ export default function Footer() {
             <nav style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               <a href="#" className="footer-link-v2">Contact</a>
               <a href="#" className="footer-link-v2">Disclaimer</a>
-              <a href="#" className="footer-link-v2">Privacy Policy</a>
+              <Link href="/privacy-policy" className="footer-link-v2">Privacy Policy</Link>
             </nav>
           </div>
 
