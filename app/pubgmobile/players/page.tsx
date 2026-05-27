@@ -37,6 +37,15 @@ const players: Player[] = [
       instagram: 'https://www.instagram.com/falakpubgm' 
     } 
   },
+   { 
+    id: 'Maade', 
+    realName: 'Muhammad MaadeKarab', 
+    team: 'Rising Phantom Gunners',
+    teamLogo: '/rpglogo.jpg',
+    links: { 
+      instagram: 'https://www.instagram.com/ig_maade' 
+    }
+  }, 
   { 
     id: 'AlphaBoy', 
     realName: 'Muhammad Huzaifa Ali', 
@@ -73,7 +82,34 @@ const players: Player[] = [
       instagram: 'https://www.instagram.com/beastopie'
     }
   },
-  
+  {
+    id: 'Chaos',
+    realName: 'Ali',
+    team: 'H2E Esports',
+    teamLogo: '/h2elogo.png',
+    links: {
+      instagram: 'https://www.instagram.com/chaos.xi'
+    }
+  },
+   {
+    id: 'Falcon',
+    realName: 'Fardeen Rogatia',
+    team: 'Oxy Esports',
+    teamLogo: '/Oxylogo.png',
+    links: {
+      instagram: 'https://www.instagram.com/ig_falcongaming'
+    }
+  },
+  {
+    id: 'Smokie',
+    realName: 'Muhammad Ali',
+    team: 'Son of Anarchy',
+    teamLogo: '/SonofAnarchylogo.jpeg',
+    links: {
+      instagram: 'https://www.instagram.com/smokiefps'
+    }
+    
+  },
 ];
 
 export default function PlayersPage() {
