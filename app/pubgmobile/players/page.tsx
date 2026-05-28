@@ -122,7 +122,7 @@ const players: Player[] = [
     id: 'Jagga',
     realName: 'Muhammad Saqib Khan Niazi',
     team: 'Hyper Esports',
-    teamLogo: '/',
+    teamLogo: '/Hyperlogo.jpg',
     links: {
       instagram: 'https://www.instagram.com/pubg.jagga'
     }
