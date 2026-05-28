@@ -89,7 +89,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     statusColor: '#e74c3c',
     bio: (
       <p style={{ margin: 0 }}>
-        Saliq <strong style={{ color: '#fff' }}>"Shurta G"</strong> Tariq (born August 17, 2005) is a <span style={{ color: '#e74c3c', fontWeight: 600 }}>Not-Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who last played for <span style={{ color: '#e74c3c', fontWeight: 600 }}>Destroyer Esports</span>.
+        Saliq <strong style={{ color: '#fff' }}>"Shurta"</strong> Tariq is a <span style={{ color: '#e74c3c', fontWeight: 600 }}>Not-Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who last played for <span style={{ color: '#e74c3c', fontWeight: 600 }}>Destroyer Esports</span>.
       </p>
     ),
     achievements: [
@@ -241,6 +241,33 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2025 Nov', leave: 'Present', team: 'FREESTYLE' },
     ]
   },
+   'aspekt': {
+    name: 'Ahmed',
+    nick: 'Aspekt',
+    image: '/Aspekt-Esportpicreplace.jpg',
+    teamLogo: '/F2D-EsportLogo.jpg',
+    teamName: 'F2D Esports',
+    nationality: 'Pakistan',
+    born: 'May 24, 2004 (age 22)',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Ahmed <strong style={{ color: '#fff' }}>"Aspekt"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#FACC15', fontWeight: 700 }}>F2D Esports</span>.
+      </p>
+    ),
+    achievements: [
+      { date: '2025-08-06', place: '9th', tier: 'C-Tier', tourney: 'PUBG Mobile realme NUMBER 14', team: 'F2D Esports' },
+      { date: '2025-08-14', place: '9th', tier: 'C-Tier', tourney: 'PUBG Mobile Titans Clash 2025', team: 'F2D Esports' },
+      { date: '2024-10-27', place: '4th', tier: 'B-Tier', tourney: 'Pubg Mobile Iron Showdown City Finals Pindi', team: 'Question 1' },
+      { date: '2024-03-30', place: '6th', tier: 'B-Tier', tourney: 'IESF National Qualifiers Pakistan 2024', team: 'Hellraisers' },
+      { date: '2025-04-27', place: '14th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'Red Death' },
+      { date: '2025-08-31', place: '14th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'Unique Esports' },
+      { date: '2025-07-20', place: '7th', tier: 'C-Tier', tourney: 'PUBG Mobile Summer Clash 2025', team: 'F2D Esports' },
+    ],
+    history: [
+      { join: '', leave: 'Present', team: 'F2D Esports' },
+    ]
+  },
    'falak': {
     name: 'Falak Sher',
     nick: 'Falak',
@@ -348,7 +375,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     achievements: [
         { date: '2025-07-20', place: '7th', tier: 'C-Tier', tourney: 'PUBG Mobile Summer Clash 2025', team: 'F2D Esports' },
       { date: '2025-04-27', place: '11th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'ViperxS1' },
-      { date: '2025-04-30', place: '2nd', tier: 'B-Tier', tourney: 'IESF National Qualifiers - Pakistan 2025', team: 'ViperxS1' }, 
+      { date: '2025-04-30', place: '2nd', tier: 'B-Tier', tourney: 'IESF National Qualifiers - Pakistan 2025', team: 'ViperxS1' },
        { date: '2024-10-27', place: '6th', tier: 'B-Tier', tourney: 'PUBG Mobile Iron Squad Showdown', team: 'VLR Esports' },
       { date: '2025-04-27', place: '11th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'ViperxS1' },
       { date: '2025-03-16', place: '6th', tier: 'C-Tier', tourney: 'PUBG Mobile Iftar Showdown 2025', team: 'ViperxS1' },
@@ -358,18 +385,86 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
        { date: '2025-11-19', place: '3rd', tier: 'C-Tier', tourney: 'PUBG Mobile Stallions Series 2025: South Asia Qualifier', team: 'Red Death' },
       { date: '2022-10-09', place: '2nd', tier: 'D-Tier', tourney: 'Team Chronicles All Talent Pro League', team: 'F2D Esports' },
       { date: '2025-01-12', place: '1st', tier: 'D-Tier', tourney: 'Proving Grounds By Bloodmoon Esports', team: 'Metershot Esports' },
+       { date: '2023-09-01', place: '1st', tier: 'D-Tier', tourney: 'Smokey Esport Aniversary Event', team: 'Metershot Esports' },
+      { date: '2021-09-30', place: '3rd', tier: 'D-Tier', tourney: 'Pubg Mobile Trophy of Independance', team: 'B4xNFPTCG' },
+      { date: '2025-12-06', place: '3rd', tier: 'D-Tier', tourney: 'IHS Elite Battle', team: 'Oxy Esports' },
+       { date: '2026-04-19', place: '10th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2026 Spring', team: 'Oxy Esports' },
+    ],
+
+    history: [
+      { join: '2022', leave: '-', team: 'B4xTCG' },
+      { join: '2022', leave: '-', team: 'Flames 1' },
+      { join: '2023-01-17', leave: '2023-06-21', team: 'The Finishers' },
+      { join: '2023-06-28', leave: '2024-04-28', team: 'F2D Esports' },
+      { join: '2024-05-02', leave: '2024-08-21', team: 'Valyrian Esport' },
+      { join: '2024-08-28', leave: '2024-11-15', team: 'Metershot Esports' },
+      { join: '2025-03-01', leave: '2025-5-24', team: 'ViperxS1' },
+       { join: '2025-10-12', leave: '2025-06-02', team: 'F2D Esports' },
+      { join: '2026-01-03', leave: 'Present', team: 'Oxy Esports' },
+    ]
+  },
+  'hadee': {
+    name: 'Abdul Hadi',
+    nick: 'Hadi',
+    image: '/mythhadiesppic.jpg',
+    teamLogo: '/mythicalslogo.jpg',
+    teamName: 'Mythicals',
+    nationality: 'Pakistan',
+    born: 'Sep 6, 2006 (age 19)',
+    status: 'Not Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Abdul Hadi <strong style={{ color: '#fff' }}>"Hadi"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Not Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who last played for <span style={{ color: '#22C55E', fontWeight: 700 }}>Mythicals</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2022-12-15', place: '11th', tier: 'C-Tier', tourney: 'B4 Lan Fiesta Multan', team: 'Qrf Esports' },
+      { date: '2021-01-18', place: '11th', tier: 'B-Tier', tourney: 'Pubg Mobile PakvsInd By KOD Esports', team: 'Mythicals' },
+      { date: '2023-02-11', place: '7th', tier: 'B-Tier', tourney: 'PUBG Mobile Underdog Clash Season 1', team: 'PTG Gaming' },
+       { date: '2023-02-12', place: '11th', tier: 'B-Tier', tourney: 'Gamekey Arena', team: 'KOD Esports' },
+        { date: '2025-12-28', place: '16th', tier: 'C-Tier', tourney: 'PUBG Mobile Campus Battle Pakistan 2025', team: '4Pro Marshals' },
+          { date: '2023-02-12', place: '6th', tier: 'D-Tier', tourney: 'North Face Pakistan Winter League', team: '4Pro Marshals' },
+    ],
+    history: []
+  },
+   'jagga': {
+    name: 'Muhammad Saqib Khan',
+    nick: 'Jagga',
+    image: '/jaggaesppic.jpg',
+    teamLogo: '/Hyperlogo.jpg',
+    teamName: 'Hyper Esports',
+    nationality: 'Pakistan',
+    born: 'May 4, 2004 (age 22)',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Muhammad Saqib Khan Niazi <strong style={{ color: '#fff' }}>"Jagga"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Hyper Esports</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2021-07-30', place: '3rd', tier: 'D-Tier', tourney: 'Pubg Mobile Sage League Season 2', team: 'TFD Esports' },
+      { date: '2021-09-03', place: '2nd', tier: 'D-Tier', tourney: 'PMC Season 2', team: 'TFD Esports' },
+      { date: '2021-09-30', place: '', tier: 'B-Tier', tourney: 'Codashop Global Series Pakistan', team: 'TFD Esports' },
+       { date: '2021-11-04', place: '1st', tier: 'D-Tier', tourney: 'Pubg Mobile Queen Empire Mini Cup Season 1', team: 'TFD Esports' },
+        { date: '2022-10-11', place: '2nd', tier: 'D-Tier', tourney: 'Smokey Summer Clash Season 1', team: 'Metershot Esports' },
+          { date: '2023-04-05', place: '3rd', tier: 'D-Tier', tourney: 'Dark Cube Esports Ramadan League', team: 'Tag Esports' },
+            { date: '2022-08-24', place: '1st', tier: 'D-Tier', tourney: 'Summer Riot Cup Presented By BHL', team: 'Flex Esports' },
+      { date: '2022-11-22', place: '16th', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Asia Fall 2022', team: '7Sins' },
+      { date: '2023-05-20', place: '12th', tier: 'C-Tier', tourney: 'Saadat of Umrah', team: 'TFD Esports' },
     ],
     history: [
-      { join: '-', leave: '-', team: 'B4xTCG' },
-      { join: '-', leave: '-', team: 'Flames 1' },
-      { join: '-', leave: '-', team: 'F2D Esports' },
-      { join: '-', leave: '-', team: 'AS Esports' },
-      { join: '-', leave: 'Present', team: 'Valyrian Esport' },
-      { join: '-', leave: '-', team: 'ViperxS1' },
-      { join: '-', leave: 'Present', team: 'Oxy Esports' },
+      { join: '2019', leave: '2022-04-01', team: 'TFD Esports' },
+      { join: '2022-04-01', leave: '2022-07-01', team: 'LQ5' },
+      { join: '2022-07-01', leave: '2022-10-01', team: 'Flex Esports' },
+      { join: '2022-10-01', leave: '2023-05-01', team: '7Sins' },
+      { join: '2023-05-01', leave: '2024-01-01', team: 'Tag Esports' },
+      { join: '2024-01-01', leave: '2025-05-01', team: 'GPA' },
+      { join: '2025-05-01', leave: '2026-01-01', team: 'Tag Esports' },
+      { join: '2026-01-01', leave: 'Present', team: 'Hyper Esports' },
     ]
   },
 };
+
 
 export default function PlayerProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
@@ -579,7 +674,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                         <tr key={idx} style={{ borderBottom: '1px solid #3c3c3c', background: idx % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent' }}>
                           <td style={{ padding: '14px 15px', fontSize: '1.1rem', borderRight: '1px solid #3c3c3c', color: '#eee', fontWeight: 500 }}>{ach.date}</td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c', textAlign: 'center' }}>
-                            <span style={{ display: 'inline-block', width: '60px', padding: '4px 0', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 800, background: (ach.place === '1st' || ach.place === '3rd') ? '#a08a00' : ach.place === '5th' ? '#c9a227' : (ach.place === '8th' || ach.place === '9th') ? '#FFD700' : '#2c5f63', color: '#fff' }}>
+                            <span style={{ display: 'inline-block', width: '60px', padding: '4px 0', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 800, background: (ach.place === '1st' || ach.place === '3rd') ? '#a08a00' : ach.place === '5th' ? '#c9a227' : (ach.place === '7th' || ach.place === '8th') ? '#FFD700' : '#2c5f63', color: '#fff' }}>
                               {ach.place}
                             </span>
                           </td>
@@ -639,8 +734,17 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'Galacticous') && (
                                 <NextImage src="/Galacticous-logo.jpeg" alt="Galacticous" width={48} height={30} style={{ objectFit: 'contain' }} title="Galacticous" />
                               )}
+                               {(ach.team === 'Hellraisers') && (
+                                <NextImage src="/Hrlogo.png" alt="Hellraisers" width={48} height={30} style={{ objectFit: 'contain' }} title="Hellraisers" />
+                              )}
+                              {(ach.team === 'Unique Esports') && (
+                                <NextImage src="/unqlogo.jpg" alt="Unique Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Unique Esports" />
+                              )}
                               {(ach.team === 'Team QWERTY') && (
                                 <NextImage src="/Qwerty-Logo.png" alt="Team QWERTY" width={48} height={30} style={{ objectFit: 'contain' }} title="Team QWERTY" />
+                              )}
+                               {(ach.team === 'TFD Esports') && (
+                                <NextImage src="/Tfdlogo.png" alt="TFD Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="TFD Esports" />
                               )}
                                {(ach.team === 'Red Saints') && (
                                 <NextImage src="/RST Esports.png" alt="Red Saints" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Saints" />
@@ -675,6 +779,22 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'GPA') && (
                                 <NextImage src="/GPA-logo.png" alt="GPA" width={48} height={30} style={{ objectFit: 'contain' }} title="GPA" />
                               )}
+                               {(ach.team === 'Oxy Esports') && (
+                                <NextImage src="/Oxylogo.png" alt="Oxy Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Oxy Esports" />
+                              )}
+                              {(ach.team === 'Mythicals') && (
+                                <NextImage src="/mythicalslogo.jpg" alt="Mythicals" width={48} height={30} style={{ objectFit: 'contain' }} title="Mythicals" />
+                              )}
+                              {(ach.team === 'KOD Esports') && (
+                                <NextImage src="/Kodlogo.png" alt="KOD Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="KOD Esports" />
+                              )}
+                              {(ach.team === '4Pro Marshals') && (
+                                <NextImage src="/4ProMarshalls.png" alt="4Pro Marshals" width={48} height={30} style={{ objectFit: 'contain' }} title="4Pro Marshals" />
+                              )}
+                              {(ach.team === 'PTG Gaming') && (
+                                <NextImage src="/PTG Gaming.png" alt="PTG Gaming" width={48} height={30} style={{ objectFit: 'contain' }} title="PTG Gaming" />
+                              )}
+                             
                               {(ach.team === 'ATX') && (
                                 <NextImage src="/atx-logo.png" alt="ATX" width={48} height={30} style={{ objectFit: 'contain' }} title="ATX" />
                               )}
@@ -686,6 +806,12 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               )}
                                {ach.team === 'NED 99' && (
                                 <NextImage src="/NED99logo.png" alt="NED 99" width={48} height={30} style={{ objectFit: 'contain' }} title="NED 99" />
+                              )}
+                               {ach.team === 'Flex Esports' && (
+                                <NextImage src="/Flexlogo.png" alt="Flex Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Flex Esports" />
+                              )}
+                               {ach.team === 'Tag Esports' && (
+                                <NextImage src="/Taglogo.png" alt="Tag Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Tag Esports" />
                               )}
                                {ach.team === 'Team RPG' && (
                                 <NextImage src="/rpglogo.jpg" alt="Team RPG" width={48} height={30} style={{ objectFit: 'contain' }} title="Team RPG" />
@@ -702,7 +828,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>

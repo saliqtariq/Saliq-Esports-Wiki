@@ -46,6 +46,15 @@ const players: Player[] = [
       instagram: 'https://www.instagram.com/ig_maade' 
     }
   }, 
+   {
+    id: 'Aspekt',
+    realName: 'Ahmed',
+    team: 'F2D Esports',
+    teamLogo: '/F2D-EsportLogo.jpg',
+    links: {
+      instagram: 'https://www.instagram.com/aspekt_pubgm'
+    }
+  },
   { 
     id: 'AlphaBoy', 
     realName: 'Muhammad Huzaifa Ali', 
@@ -108,8 +117,25 @@ const players: Player[] = [
     links: {
       instagram: 'https://www.instagram.com/smokiefps'
     }
-    
   },
+   {
+    id: 'Jagga',
+    realName: 'Muhammad Saqib Khan Niazi',
+    team: 'Hyper Esports',
+    teamLogo: '/',
+    links: {
+      instagram: 'https://www.instagram.com/pubg.jagga'
+    }
+  },
+   { 
+    id: 'Hadee', 
+    realName: 'Abdul Hadi Khan', 
+    team: 'The Mythicals',
+    teamLogo: '/mythicalslogo.jpg',
+    links: { 
+      instagram: 'https://www.instagram.com/_hadihehe' 
+    }
+  }, 
 ];
 
 export default function PlayersPage() {
