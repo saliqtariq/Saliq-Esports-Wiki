@@ -127,13 +127,22 @@ const players: Player[] = [
       instagram: 'https://www.instagram.com/pubg.jagga'
     }
   },
-   { 
-    id: 'Hadee', 
-    realName: 'Abdul Hadi Khan', 
-    team: 'The Mythicals',
-    teamLogo: '/mythicalslogo.jpg',
+    { 
+    id: 'Bunny', 
+    realName: 'Arbaz', 
+    team: 'Demolition 5',
+    teamLogo: '/d5logo.png',
     links: { 
-      instagram: 'https://www.instagram.com/_hadihehe' 
+      instagram: 'https://www.instagram.com/ig.bunnypubgm' 
+    }
+  }, 
+   { 
+    id: 'Arsim', 
+    realName: 'Arsim ', 
+    team: '404 Esports',
+    teamLogo: '/404logo.png',
+    links: { 
+      instagram: 'https://www.instagram.com/ig.arsimop' 
     }
   }, 
 ];

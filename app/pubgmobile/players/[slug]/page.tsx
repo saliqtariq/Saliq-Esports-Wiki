@@ -310,7 +310,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     teamLogo: '/SonofAnarchylogo.jpeg',
     teamName: 'Son of Anarchy',
     nationality: 'Pakistan',
-    born: '10 Nov 2006 (age 19)',
+    born: '10 Nov 2008 (age 17)',
     status: 'Active',
     bio: (
       <p style={{ margin: 0 }}>
@@ -321,9 +321,9 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
         { date: '2023-09-24', place: 'FINALS', tier: 'C-Tier', tourney: 'PUBG Mobile Jazba Series 2023', team: 'Cracked Mind' },
       { date: '2026-03-06', place: '7th', tier: 'D-Tier', tourney: 'PUBG Mobile Crescent Clash - Phase II', team: 'Son of Anarchy' },
       { date: '2025-08-03', place: '1st', tier: 'D-Tier', tourney: 'DHQ Grind Series', team: 'Son of Anarchy' }, 
-       { date: '2026-03-20', place: '1st', tier: 'D-Tier', tourney: 'IHS Mini Cup S3(100k)', team: 'Son of Anarchy' },
+       { date: '2024-10-27', place: '7th', tier: 'B-Tier', tourney: 'PUBG Mobile Iron Squad Showdown City Finals Hyderabad', team: 'Stalkers' },
         { date: '2026-02-15', place: '5th', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Son of Anarchy' },
-         { date: '16-09-2025', place: '10th', tier: 'D-Tier', tourney: 'Maxbels Creed Rebels S2', team: 'Jk Nation' },
+         { date: '2025-04-30', place: 'Finals', tier: 'B-Tier', tourney: 'IESF National Qualifiers - Pakistan 2025', team: 'ViperxS1' },
     ],
     history: [
       { join: '2023', leave: '2024', team: 'Cracked Minds' },
@@ -424,6 +424,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
        { date: '2023-02-12', place: '11th', tier: 'B-Tier', tourney: 'Gamekey Arena', team: 'KOD Esports' },
         { date: '2025-12-28', place: '16th', tier: 'C-Tier', tourney: 'PUBG Mobile Campus Battle Pakistan 2025', team: '4Pro Marshals' },
           { date: '2023-02-12', place: '6th', tier: 'D-Tier', tourney: 'North Face Pakistan Winter League', team: '4Pro Marshals' },
+          { date: '2021-01-04', place: '13th', tier: 'A-Tier', tourney: 'PUBG Mobile Pakistan Challenge 2020', team: 'Virus' },
     ],
     history: []
   },
@@ -434,7 +435,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     teamLogo: '/Hyperlogo.jpg',
     teamName: 'Hyper Esports',
     nationality: 'Pakistan',
-    born: 'May 4, 2004 (age 22)',
+    born: 'May 4, 2002 (age 24)',
     status: 'Active',
     bio: (
       <p style={{ margin: 0 }}>
@@ -461,6 +462,58 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2024-01-01', leave: '2025-05-01', team: 'GPA' },
       { join: '2025-05-01', leave: '2026-01-01', team: 'Tag Esports' },
       { join: '2026-01-01', leave: 'Present', team: 'Hyper Esports' },
+    ]
+  },
+   'bunny': {
+    name: 'Arbaz',
+    nick: 'Bunny',
+    image: '/d5bunnypic.jpg',
+    teamLogo: '/d5logo.png',
+    teamName: 'Demolition 5',
+    nationality: 'Pakistan',
+    born: '26 October 2007 (age 19)',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Arbaz <strong style={{ color: '#fff' }}>"Bunny"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Demolition 5</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2026-02-15', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Demolition 5' },
+      { date: '2025-08-06', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile realme NUMBER 14', team: 'Demolition 5' },
+      { date: '2025-09-18', place: '1st', tier: 'C-Tier', tourney: 'The Mite University Lan Event Season 2 ', team: 'Demolition 5' }, 
+      { date: '2026-02-16', place: '4th', tier: 'C-Tier', tourney: 'SMEC 2026 x Kovax Tribe', team: 'Demolition 5' },
+       { date: '2026-03-09', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBGM RAMZAN SERIES 2026', team: 'Demolition 5' },
+    ],
+  
+    history: [
+      { join: '-', leave: 'Present', team: 'Demolition 5' },
+    ]
+  },
+  'arsim': {
+    name: 'Arsim',
+    nick: 'Arsim',
+    image: '/arsimnew.jpg',
+    teamLogo: '/404logo.png',
+    teamName: '404 Esports',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Arsim <strong style={{ color: '#fff' }}>"Arsimop"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>404 Esports</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2024-01-17', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG MOBILE IGE Masters: Pakistan', team: 'Trouble Makers' },
+      { date: '2025-07-20', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Summer Clash 2025', team: '404 Esports' },
+      { date: '2026-01-04', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Winter Rumble 2025', team: '404 Esports' }, 
+      { date: '2024-02-01', place: '18th', tier: 'C-Tier', tourney: 'Levitate Breakpoint 1.0', team: 'Bloodmoon' },
+       { date: '2025-03-17', place: '3rd', tier: 'C-Tier', tourney: 'PUBGM Kaza Lan Event', team: 'Radical Death' },
+    ],
+  
+    history: [
+      { join: '-', leave: 'Present', team: 'Demolition 5' },
     ]
   },
 };
@@ -674,7 +727,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                         <tr key={idx} style={{ borderBottom: '1px solid #3c3c3c', background: idx % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent' }}>
                           <td style={{ padding: '14px 15px', fontSize: '1.1rem', borderRight: '1px solid #3c3c3c', color: '#eee', fontWeight: 500 }}>{ach.date}</td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c', textAlign: 'center' }}>
-                            <span style={{ display: 'inline-block', width: '60px', padding: '4px 0', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 800, background: (ach.place === '1st' || ach.place === '3rd') ? '#a08a00' : ach.place === '5th' ? '#c9a227' : (ach.place === '7th' || ach.place === '8th') ? '#FFD700' : '#2c5f63', color: '#fff' }}>
+                            <span style={{ display: 'inline-block', width: ach.place === 'SemiFinals' ? '90px' : '60px', padding: '6px 0', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 800, background: (ach.place === '1st' || ach.place === '3rd') ? '#a08a00' : ach.place === '5th' ? '#c9a227' : (ach.place === '7th' || ach.place === '8th') ? '#FFD700' : '#2c5f63', color: '#fff' }}>
                               {ach.place}
                             </span>
                           </td>
@@ -725,11 +778,17 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'MSxDTD') && (
                                 <NextImage src="/Metershotxlogo.png" alt="MSxDTD" width={48} height={30} style={{ objectFit: 'contain' }} title="MSxDTD" />
                               )}
+                              {(ach.team === 'Virus') && (
+                                <NextImage src="/Viruslogo.png" alt="Virus" width={48} height={30} style={{ objectFit: 'contain' }} title="Virus Esport" />
+                              )}
                               {(ach.team === '247Esports') && (
                                 <NextImage src="/247Esp-Logo.png" alt="247Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="247Esports" />
                               )}
                               {(ach.team === 'Hashtag Esports') && (
                                 <NextImage src="/HashtagEsports-logo.png" alt="Hashtag Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Hashtag Esports" />
+                              )}
+                              {(ach.team === 'Bloodmoon') && (
+                                <NextImage src="/Bloodmoonlogo.png" alt="Bloodmoon" width={48} height={30} style={{ objectFit: 'contain' }} title="Bloodmoon" />
                               )}
                               {(ach.team === 'Galacticous') && (
                                 <NextImage src="/Galacticous-logo.jpeg" alt="Galacticous" width={48} height={30} style={{ objectFit: 'contain' }} title="Galacticous" />
@@ -739,6 +798,9 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               )}
                               {(ach.team === 'Unique Esports') && (
                                 <NextImage src="/unqlogo.jpg" alt="Unique Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Unique Esports" />
+                              )}
+                                 {(ach.team === 'Demolition 5') && (
+                                <NextImage src="/d5logo.png" alt="Demolition 5" width={48} height={30} style={{ objectFit: 'contain' }} title="Demolition 5" />
                               )}
                               {(ach.team === 'Team QWERTY') && (
                                 <NextImage src="/Qwerty-Logo.png" alt="Team QWERTY" width={48} height={30} style={{ objectFit: 'contain' }} title="Team QWERTY" />
@@ -828,7 +890,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ slug: 
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
