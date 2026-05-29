@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -17,7 +17,14 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Saliq Esports",
   description: "Saliq Esports is a platform showcasing esports player profiles, achievements, teams, and stats. Discover PUBG players and their history.",
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

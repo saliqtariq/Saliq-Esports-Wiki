@@ -5,147 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import Footer from '../../components/Footer';
-
-interface Player {
-  id: string;
-  realName: string;
-  team: string;
-  teamLogo?: string;
-  links: {
-    instagram?: string;
-    youtube?: string;
-    twitter?: string;
-  };
-}
-
-const players: Player[] = [
-  { 
-    id: 'Shurta G', 
-    realName: 'Saliq Tariq', 
-    team: 'Destroyer Esports',
-    teamLogo: '/Des-Logo.jpg',
-    links: { 
-      instagram: 'https://www.instagram.com/ig_shurta' 
-    } 
-  },
-  { 
-    id: 'Falak', 
-    realName: 'Falak Sher', 
-    team: '4Thrives',
-    teamLogo: '/4thirveslogo.png',
-    links: { 
-      instagram: 'https://www.instagram.com/falakpubgm' 
-    } 
-  },
-   { 
-    id: 'Maade', 
-    realName: 'Muhammad MaadeKarab', 
-    team: 'Rising Phantom Gunners',
-    teamLogo: '/rpglogo.jpg',
-    links: { 
-      instagram: 'https://www.instagram.com/ig_maade' 
-    }
-  }, 
-   {
-    id: 'Aspekt',
-    realName: 'Ahmed',
-    team: 'F2D Esports',
-    teamLogo: '/F2D-EsportLogo.jpg',
-    links: {
-      instagram: 'https://www.instagram.com/aspekt_pubgm'
-    }
-  },
-  { 
-    id: 'AlphaBoy', 
-    realName: 'Muhammad Huzaifa Ali', 
-    team: 'Seventh Element',
-    teamLogo: '/SeventhElement-Logo.png',
-    links: { 
-      instagram: 'https://www.instagram.com/alphaboyy.1' 
-    } 
-  },
-  { 
-    id: 'Chief OG', 
-    realName: 'Muhammad Izhar', 
-    team: 'Galacticous',
-    teamLogo: '/Galacticous-logo.jpeg',
-    links: { 
-      instagram: 'https://www.instagram.com/cheifog_pubg' 
-    } 
-  },
-  { 
-    id: 'Eminent', 
-    realName: 'Khuzaima', 
-    team: 'FMA Esports',
-    teamLogo: '/fma-esports-logo.jpg',
-    links: { 
-      instagram: 'https://www.instagram.com/lazy_.khuzaima' 
-    } 
-  },
-  {
-    id: 'Beastopie',
-    realName: 'Muhammad Imad Habib',
-    team: 'Freestyle',
-    teamLogo: '/freestyle-logo.jpg',
-    links: {
-      instagram: 'https://www.instagram.com/beastopie'
-    }
-  },
-  {
-    id: 'Chaos',
-    realName: 'Ali',
-    team: 'H2E Esports',
-    teamLogo: '/h2elogo.png',
-    links: {
-      instagram: 'https://www.instagram.com/chaos.xi'
-    }
-  },
-   {
-    id: 'Falcon',
-    realName: 'Fardeen Rogatia',
-    team: 'Oxy Esports',
-    teamLogo: '/Oxylogo.png',
-    links: {
-      instagram: 'https://www.instagram.com/ig_falcongaming'
-    }
-  },
-  {
-    id: 'Smokie',
-    realName: 'Muhammad Ali',
-    team: 'Son of Anarchy',
-    teamLogo: '/SonofAnarchylogo.jpeg',
-    links: {
-      instagram: 'https://www.instagram.com/smokiefps'
-    }
-  },
-   {
-    id: 'Jagga',
-    realName: 'Muhammad Saqib Khan Niazi',
-    team: 'Hyper Esports',
-    teamLogo: '/Hyperlogo.jpg',
-    links: {
-      instagram: 'https://www.instagram.com/pubg.jagga'
-    }
-  },
-    { 
-    id: 'Bunny', 
-    realName: 'Arbaz', 
-    team: 'Demolition 5',
-    teamLogo: '/d5logo.png',
-    links: { 
-      instagram: 'https://www.instagram.com/ig.bunnypubgm' 
-    }
-  }, 
-   { 
-    id: 'Arsim', 
-    realName: 'Arsim ', 
-    team: '404 Esports',
-    teamLogo: '/404logo.png',
-    links: { 
-      instagram: 'https://www.instagram.com/ig.arsimop' 
-    }
-  }, 
-];
+import { players } from './data';
 
 export default function PlayersPage() {
   const [isLight, setIsLight] = useState(false);
@@ -299,7 +159,7 @@ export default function PlayersPage() {
                       </thead>
                       <tbody>
                         {players.map((player) => (
-                          <tr key={player.id} style={{ borderBottom: '1px solid #3c3c3c' }}>
+                          <tr key={player.slug} style={{ borderBottom: '1px solid #3c3c3c' }}>
                             <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c' }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <NextImage 
@@ -310,7 +170,7 @@ export default function PlayersPage() {
                                   style={{ objectFit: 'contain' }}
                                 />
                                 <Link 
-                                  href={`/pubgmobile/players/${player.id.toLowerCase().replace(/\s+/g, '-')}`}
+                                  href={`/pubgmobile/players/${player.slug}`}
                                   style={{ 
                                     color: '#22C55E', 
                                     fontWeight: 700, 
@@ -318,31 +178,31 @@ export default function PlayersPage() {
                                     whiteSpace: 'nowrap'
                                   }}
                                 >
-                                  {player.id}
+                                  {player.nick}
                                 </Link>
                               </div>
                             </td>
                             <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', whiteSpace: 'nowrap' }}>
-                              {player.realName}
+                              {player.name}
                             </td>
-                            <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', color: player.team ? '#22C55E' : '#fff', whiteSpace: 'nowrap' }}>
+                            <td className="mobile-table-cell" style={{ padding: '10px 15px', borderRight: '1px solid #3c3c3c', color: player.teamName ? '#22C55E' : '#fff', whiteSpace: 'nowrap' }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 {player.teamLogo && (
                                   <NextImage 
                                     src={player.teamLogo} 
-                                    alt={player.team} 
+                                    alt={player.teamName} 
                                     width={16} 
                                     height={16} 
                                     style={{ borderRadius: '4px', objectFit: 'contain' }}
                                   />
                                 )}
-                                {player.team}
+                                {player.teamName}
                               </div>
                             </td>
                             <td className="mobile-table-cell" style={{ padding: '10px 15px' }}>
                               <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '8px' }}>
-                                {player.links.instagram && (
-                                  <a href={player.links.instagram} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
+                                {player.instagram && (
+                                  <a href={player.instagram} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
                                     <div style={{ 
                                       background: '#000', 
                                       borderRadius: '6px', 
