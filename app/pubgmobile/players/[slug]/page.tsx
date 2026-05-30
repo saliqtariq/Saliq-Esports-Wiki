@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import PlayerProfileClient from './PlayerProfileClient';
-import { getAbsoluteUrl, getPlayer, getPlayerDescription, players } from '../data';
+import { getAbsoluteUrl, getPlayer, getPlayerDescription, getPlayerSeoTitle, players } from '../data';
 
 type PlayerPageProps = {
   params: Promise<{ slug: string }>;
@@ -29,9 +29,10 @@ export async function generateMetadata({ params }: PlayerPageProps): Promise<Met
   const url = getAbsoluteUrl(path);
   const imageUrl = getAbsoluteUrl(player.image);
   const description = getPlayerDescription(player);
+  const title = getPlayerSeoTitle(player);
 
   return {
-    title: `${player.nick} PUBG Mobile Player Profile | Saliq Esports`,
+    title: `${title} | Saliq Esports`,
     description,
     keywords: [
       player.nick,
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: PlayerPageProps): Promise<Met
       canonical: url,
     },
     openGraph: {
-      title: `${player.nick} PUBG Mobile Player Profile`,
+      title,
       description,
       url,
       siteName: 'Saliq Esports',
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: PlayerPageProps): Promise<Met
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${player.nick} PUBG Mobile Player Profile`,
+      title,
       description,
       images: [imageUrl],
     },
@@ -98,7 +99,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
     mainEntityOfPage: {
       '@type': 'ProfilePage',
       '@id': url,
-      name: `${player.nick} PUBG Mobile Player Profile`,
+      name: getPlayerSeoTitle(player),
     },
   };
 

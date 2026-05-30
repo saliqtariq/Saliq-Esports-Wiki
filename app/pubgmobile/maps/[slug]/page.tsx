@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import NextImage from 'next/image';
 import Footer from '../../../components/Footer';
+import BackButton from '../../../components/BackButton';
 
 type MapInfo = {
   creator: string[];
@@ -160,7 +160,6 @@ const mapData: Record<string, MapContent> = {
 };
 
 export default function MapDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const router = useRouter();
   const { slug } = React.use(params);
   const data = mapData[slug.toLowerCase()];
 
@@ -216,7 +215,7 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
     return (
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-primary)' }}>
         <h1 style={{ color: 'var(--text-secondary)' }}>{`Map ${slug} not found.`}</h1>
-        <button onClick={() => router.back()} style={{ marginTop: '1rem', color: '#22C55E' }}>Go Back</button>
+        <BackButton variant="default" style={{ marginTop: '1rem' }}>Go Back</BackButton>
       </div>
     );
   }
@@ -234,25 +233,9 @@ export default function MapDetailPage({ params }: { params: Promise<{ slug: stri
         {/* ===== HEADER ===== */}
         <header style={{ padding: '1.5rem 2rem', width: '100%' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            <button
-              onClick={() => router.back()}
-              style={{
-                background: 'rgba(34, 197, 94, 0.1)',
-                border: '1px solid rgba(34, 197, 94, 0.2)',
-                borderRadius: '12px',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                color: '#22C55E',
-                fontSize: '0.875rem',
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                transition: 'all 0.3s ease',
-              }}
-            >
+            <BackButton style={{ borderRadius: '12px', padding: '10px 20px', gap: '8px' }}>
               <span>&larr;</span> Back to Maps
-            </button>
+            </BackButton>
           </div>
         </header>
 
@@ -512,4 +495,3 @@ function InfoRow({ label, value, last, isHoverable }: { label: string; value: st
     </div>
   );
 }
-

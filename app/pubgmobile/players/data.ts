@@ -179,6 +179,7 @@ export const players: PlayerSeoData[] = [
     born: 'Sep 6, 2006 (age 19)',
     status: 'Not Active',
     image: '/mythhadiesppic.jpg',
+    instagram: 'https://www.instagram.com/_hadihehe',
     seoAliases: ['Hadi PUBG', 'Hadee PUBG', 'Hadi PUBGM'],
   },
   {
@@ -221,7 +222,11 @@ export function getPlayerDescription(player: PlayerSeoData) {
   const aliases = player.seoAliases?.slice(0, 2).join(', ');
   const aliasText = aliases ? ` Also known as ${aliases}.` : '';
 
-  return `${player.nick} (${player.name}) is a ${player.nationality} PUBG Mobile player for ${player.teamName}. View ${player.nick}'s Saliq Esports profile, status, team history, and achievements.${aliasText}`;
+  return `${player.nick.toUpperCase()} PUBG Mobile Player. (${player.teamName}) > ${player.nick} esports statistics overview, tournaments, achievements, team history, status, and profile.${aliasText}`;
+}
+
+export function getPlayerSeoTitle(player: PlayerSeoData) {
+  return `${player.nick.toUpperCase()} - PUBG Mobile Player Profile`;
 }
 
 export function getSiteUrl() {

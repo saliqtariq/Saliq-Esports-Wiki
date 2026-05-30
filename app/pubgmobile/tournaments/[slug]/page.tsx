@@ -2,6 +2,7 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import { notFound } from 'next/navigation';
 import Footer from '@/app/components/Footer';
+import BackButton from '@/app/components/BackButton';
 import { organizationsBySlug, toTournamentSlug } from '../data';
 
 type PageProps = {
@@ -22,22 +23,7 @@ export default async function OrganizationTournamentsPage({ params }: PageProps)
 
       <header style={{ padding: '1.75rem 2rem 1rem', width: '100%', position: 'relative', zIndex: 2 }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <Link
-            href="/pubgmobile/tournaments"
-            style={{
-              display: 'inline-flex',
-              textDecoration: 'none',
-              background: 'rgba(34, 197, 94, 0.1)',
-              border: '1px solid rgba(34, 197, 94, 0.2)',
-              borderRadius: '10px',
-              padding: '9px 16px',
-              color: '#22C55E',
-              fontSize: '0.875rem',
-              fontWeight: 600,
-            }}
-          >
-            Back
-          </Link>
+          <BackButton href="/pubgmobile/tournaments">Back</BackButton>
         </div>
       </header>
 

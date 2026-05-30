@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import NextImage from 'next/image';
+import BackButton from '../components/BackButton';
 
 const actionCards = [
   {
@@ -58,33 +59,7 @@ export default function PUBGPage() {
         <header style={{ padding: '1.75rem 2rem 1rem', width: '100%' }}>
           <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-              <button
-                onClick={() => router.push('/')}
-                style={{
-                  background: 'rgba(34, 197, 94, 0.1)',
-                  border: '1px solid rgba(34, 197, 94, 0.2)',
-                  borderRadius: '10px',
-                  padding: '9px 16px',
-                  cursor: 'pointer',
-                  color: '#22C55E',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.background = 'rgba(34, 197, 94, 0.15)';
-                  (e.target as HTMLElement).style.borderColor = 'rgba(34, 197, 94, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLElement).style.background = 'rgba(34, 197, 94, 0.1)';
-                  (e.target as HTMLElement).style.borderColor = 'rgba(34, 197, 94, 0.2)';
-                }}
-              >
-                Back
-              </button>
+              <BackButton href="/">Back</BackButton>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -148,28 +123,9 @@ export default function PUBGPage() {
               ))}
             </div>
 
-            <button
-              onClick={() => router.push('/')}
-              style={{
-                padding: '0.75rem 1.5rem',
-                borderRadius: '8px',
-                background: 'rgba(34, 197, 94, 0.1)',
-                border: '1px solid rgba(34, 197, 94, 0.3)',
-                color: '#22C55E',
-                fontWeight: 600,
-                cursor: 'pointer',
-                fontSize: '0.875rem',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.background = 'rgba(34, 197, 94, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.background = 'rgba(34, 197, 94, 0.1)';
-              }}
-            >
+            <BackButton href="/" variant="default" style={{ padding: '0.75rem 1.5rem', borderRadius: '8px', border: '1px solid rgba(34, 197, 94, 0.3)' }}>
               Go Back
-            </button>
+            </BackButton>
           </div>
         </main>
         <Footer />

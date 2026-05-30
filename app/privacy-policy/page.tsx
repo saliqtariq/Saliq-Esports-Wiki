@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import NextImage from 'next/image';
+import BackButton from '../components/BackButton';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -15,23 +14,7 @@ export default function PrivacyPolicyPage() {
         {/* Header */}
         <header style={{ padding: '1.75rem 2rem 1rem', width: '100%' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
-            <Link
-              href="/"
-              style={{
-                background: 'rgba(34, 197, 94, 0.08)',
-                border: '1.5px solid rgba(34, 197, 94, 0.2)',
-                borderRadius: '12px',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                color: '#22C55E',
-                fontSize: '0.9rem',
-                fontWeight: 700,
-                transition: 'all 0.3s ease',
-                textDecoration: 'none',
-              }}
-            >
-              Back to Home
-            </Link>
+            <BackButton href="/" variant="compact">Back to Home</BackButton>
           </div>
         </header>
 

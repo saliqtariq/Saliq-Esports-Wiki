@@ -1,16 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import Footer from '../../components/Footer';
+import BackButton from '../../components/BackButton';
 import { players } from './data';
 
 export default function PlayersPage() {
   const [isLight, setIsLight] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const router = useRouter();
 
   const toggleTheme = () => {
     const nextLight = !isLight;
@@ -37,22 +36,7 @@ export default function PlayersPage() {
         {/* ===== HEADER ===== */}
         <header style={{ padding: '1.75rem 2rem 1rem', width: '100%' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
-            <button
-              onClick={() => router.back()}
-              style={{
-                background: 'rgba(34, 197, 94, 0.08)',
-                border: '1.5px solid rgba(34, 197, 94, 0.2)',
-                borderRadius: '12px',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                color: '#22C55E',
-                fontSize: '0.9rem',
-                fontWeight: 700,
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Back
-            </button>
+            <BackButton variant="compact">Back</BackButton>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ fontSize: '11px', color: 'var(--text-secondary)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>

@@ -1,10 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import NextImage from 'next/image';
-import Link from 'next/link';
 import Footer from '@/app/components/Footer';
+import BackButton from '@/app/components/BackButton';
 
 type Achievement = {
   date: string;
@@ -523,7 +522,6 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
 
 
 export default function PlayerProfileClient({ slug }: { slug: string }) {
-  const router = useRouter();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const player = PLAYERS_DATA[slug.toLowerCase()];
@@ -540,7 +538,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
       <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
         <div style={{ textAlign: 'center' }}>
           <h1>Player Not Found</h1>
-          <button onClick={() => router.back()} style={{ color: '#22C55E', cursor: 'pointer', background: 'none', border: '1px solid #22C55E', padding: '10px 20px', borderRadius: '8px', marginTop: '20px' }}>Go Back</button>
+          <BackButton variant="default" style={{ marginTop: '20px', borderRadius: '8px' }}>Go Back</BackButton>
         </div>
       </div>
     );
@@ -587,21 +585,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
         
         {/* Header Navigation */}
         <header style={{ padding: '1.5rem 1rem 0', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-          <button
-            onClick={() => router.back()}
-            style={{
-              background: 'rgba(34, 197, 94, 0.08)',
-              border: '1.5px solid rgba(34, 197, 94, 0.2)',
-              borderRadius: '12px',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              color: '#22C55E',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-            }}
-          >
-            &larr; Back
-          </button>
+          <BackButton variant="compact">&larr; Back</BackButton>
         </header>
 
         {/* Main Content Area */}

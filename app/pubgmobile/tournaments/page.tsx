@@ -1,15 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import Footer from '../../components/Footer';
+import BackButton from '../../components/BackButton';
 import { organizations } from './data';
 
 export default function TournamentsPage() {
   const [isLight, setIsLight] = useState(false);
-  const router = useRouter();
 
   const toggleTheme = () => {
     const nextLight = !isLight;
@@ -34,21 +33,7 @@ export default function TournamentsPage() {
 
       <header style={{ padding: '1.75rem 2rem 1rem', width: '100%' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
-          <button
-            onClick={() => router.push('/pubgmobile')}
-            style={{
-              background: 'rgba(34, 197, 94, 0.1)',
-              border: '1px solid rgba(34, 197, 94, 0.2)',
-              borderRadius: '10px',
-              padding: '9px 16px',
-              cursor: 'pointer',
-              color: '#22C55E',
-              fontSize: '0.875rem',
-              fontWeight: 600,
-            }}
-          >
-            Back
-          </button>
+          <BackButton href="/pubgmobile">Back</BackButton>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ fontSize: '11px', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
