@@ -530,7 +530,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     status: 'Active',
     bio: (
        <p style={{ margin: 0 }}>
-        Inam-ur-Rehman <strong style={{ color: '#fff' }}>"Gyro"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Unix Esports & Coach at A8 Academy</span>.
+        Inam-ur-Rehman <strong style={{ color: '#fff' }}>"Gyro"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Hox Esports & Coach at A8 Academy</span>.
       </p>
     ),
     achievements: [
