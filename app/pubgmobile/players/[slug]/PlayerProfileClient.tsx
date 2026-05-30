@@ -526,7 +526,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     teamLogo: '/Unixlogo.jpg',
     teamName: 'Unix Esports',
     nationality: 'Pakistan',
-    born: '01 January 2006 (age 20)',
+    born: '04 January 2006 (age 20)',
     status: 'Active',
     bio: (
        <p style={{ margin: 0 }}>
@@ -535,6 +535,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ),
     achievements: [
         { date: '2025-04-24', place: '13th', tier: 'C-Tier', tourney: 'PUBG Mobile 141 Survivor Rumble Chapter 2', team: 'Unix Esport' },
+          { date: '2025-08-17', place: 'SemiFinals', tier: 'D-Tier', tourney: 'Pubg Mobile Creeds Rebel Season 2 by Maxebels', team: 'Unix Esport' },
       { date: '2024-10-29', place: '9th', tier: 'C-Tier', tourney: 'PUBGM Juggernaut S2 Presented by SSP', team: 'Unix Esport' },
       { date: '2025-08-29', place: 'SemiFinals', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'Unix Esport' }, 
       { date: '2025-08-06', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile realme NUMBER 14', team: 'Unix Esport' },
