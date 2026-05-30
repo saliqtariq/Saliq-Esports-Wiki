@@ -419,6 +419,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ),
     achievements: [
         { date: '2022-12-15', place: '11th', tier: 'C-Tier', tourney: 'B4 Lan Fiesta Multan', team: 'Qrf Esports' },
+         { date: '2022-12-25', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2022', team: 'XGeneration' },
       { date: '2021-01-18', place: '11th', tier: 'B-Tier', tourney: 'Pubg Mobile PakvsInd By KOD Esports', team: 'Mythicals' },
       { date: '2023-02-11', place: '7th', tier: 'B-Tier', tourney: 'PUBG Mobile Underdog Clash Season 1', team: 'PTG Gaming' },
        { date: '2023-02-12', place: '11th', tier: 'B-Tier', tourney: 'Gamekey Arena', team: 'KOD Esports' },
