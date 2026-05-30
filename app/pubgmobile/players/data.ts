@@ -179,7 +179,7 @@ export const players: PlayerSeoData[] = [
     born: 'Sep 6, 2006 (age 19)',
     status: 'Not Active',
     image: '/mythhadiesppic.jpg',
-    instagram: 'https://www.instagram.com/_hadihehe',
+     instagram: 'https://www.instagram.com/_hadihehe',
     seoAliases: ['Hadi PUBG', 'Hadee PUBG', 'Hadi PUBGM'],
   },
   {
@@ -207,6 +207,19 @@ export const players: PlayerSeoData[] = [
     image: '/arsimnew.jpg',
     instagram: 'https://www.instagram.com/ig.arsimop',
     seoAliases: ['Arsim PUBG', 'Arsimop PUBG', 'Arsim PUBGM', 'ig.arsimop'],
+  },
+   {
+    slug: 'gyro',
+    nick: 'Gyro',
+    name: 'Inam-ur-Rehman',
+    teamName: 'Unix Esports',
+    teamLogo: '/Unixlogo.jpg',
+    nationality: 'Pakistan',
+    born: '01 January 2006 (age 20)',
+    status: 'Active',
+    image:'/gyroEsp-pic.png',
+    instagram: 'https://www.instagram.com/ig.gyronub',
+    seoAliases: ['Gyro PUBG', 'Unixgyro PUBG', 'Gyro PUBGM', 'Inam gyro'],
   },
 ];
 

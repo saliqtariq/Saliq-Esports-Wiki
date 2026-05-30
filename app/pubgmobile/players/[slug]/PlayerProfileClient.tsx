@@ -518,6 +518,34 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
         { join: '2024-09-20', leave: 'Present', team: '404 Esports' },
     ]
   },
+   'gyro': {
+    name: 'Inam-ur-Rehman',
+    nick: 'Gyro',
+    image: '/gyroEsp-pic.png',
+    teamLogo: '/Unixlogo.jpg',
+    teamName: 'Unix Esports',
+    nationality: 'Pakistan',
+    born: '01 January 2006 (age 20)',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Inam-ur-Rehman <strong style={{ color: '#fff' }}>"Gyro"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Unix Esports & Coach at A8 Academy</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2025-04-24', place: '13th', tier: 'C-Tier', tourney: 'PUBG Mobile 141 Survivor Rumble Chapter 2', team: 'Unix Esport' },
+      { date: '2024-10-29', place: '9th', tier: 'C-Tier', tourney: 'PUBGM Juggernaut S2 Presented by SSP', team: 'Unix Esport' },
+      { date: '2025-08-29', place: 'SemiFinals', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'Unix Esport' }, 
+      { date: '2025-08-06', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile realme NUMBER 14', team: 'Unix Esport' },
+       { date: '2025-11-19', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Stallions Series 2025: South Asia Qualifier', team: 'Unix Esport' },
+    ],
+  
+    history: [
+       { join: '', leave: '', team: 'Unix Esport' },
+      { join: '', leave: 'Present', team: 'Hox Esports' },
+       { join: '2026-03-23', leave: 'Present', team: 'A8 Academy' },
+    ]
+  },
 };
 
 
@@ -746,6 +774,11 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Spins Esport') && (
                                 <NextImage src="/spinslogo.png" alt="Spins Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="Spins Esport" />
                               )}
+                              {(ach.team.trim() === 'Unix Esport' || ach.team.trim() === 'Unix Esports') && (
+                                <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '54px', height: '34px', borderRadius: '5px', background: '#050505' }}>
+                                  <NextImage src="/Unixlogo.jpg" alt="Unix Esport" width={48} height={30} unoptimized style={{ objectFit: 'contain' }} title="Unix Esports" />
+                                </span>
+                              )}
                               {(ach.team === 'FMA Esports') && (
                                 <NextImage src="/fma-esports-logo.jpg" alt="FMA Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="FMA Esports" />
                               )}
@@ -756,8 +789,9 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                                 <NextImage src="/52-Esport Logo.png" alt="52 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="52 Esports" />
                               )}
                                {(ach.team === 'VLR Esports') && (
-                                <NextImage src="/VLRlogo.png" alt="VLR Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="52 Esports" />
+                                <NextImage src="/VLRlogo.png" alt="VLR Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="VLR Esports" />
                               )}
+                              
                               {(ach.team === 'F2D Esports') && (
                                 <NextImage src="/F2D-EsportLogo.jpg" alt="F2D Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="F2D Esports" />
                               )}
@@ -783,7 +817,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                                 <NextImage src="/Hrlogo.png" alt="Hellraisers" width={48} height={30} style={{ objectFit: 'contain' }} title="Hellraisers" />
                               )}
                               {(ach.team === 'Unique Esports') && (
-                                <NextImage src="/unqlogo.jpg" alt="Unique Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Unique Esports" />
+                                <NextImage src="/Unixlogo.jpg" alt="Unique Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Unique Esports" />
                               )}
                                  {(ach.team === 'Demolition 5') && (
                                 <NextImage src="/d5logo.png" alt="Demolition 5" width={48} height={30} style={{ objectFit: 'contain' }} title="Demolition 5" />
@@ -885,7 +919,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Unix Esport','Unix Esports','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
