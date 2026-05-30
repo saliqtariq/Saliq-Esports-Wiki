@@ -546,6 +546,35 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
        { join: '2026-03-23', leave: 'Present', team: 'A8 Academy' },
     ]
   },
+   'hackur': {
+    name: 'Umair Mengal',
+    nick: 'Hackur',
+    image: '/HackurEspPic.png',
+    teamLogo: '/fma-esports-logo.jpg',
+    teamName: 'FMA Esports',
+    nationality: 'Pakistan',
+    born: '11 February 2004 (age 22)',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Umair Mengal <strong style={{ color: '#fff' }}>"Hackur"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>FMA Esports</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2024-10-27', place: '6th', tier: 'B-Tier', tourney: 'PUBG Mobile Iron Squad Showdown', team: 'VLR Esports' },
+         { date: '2024-10-27', place: '3rd', tier: 'B-Tier', tourney: 'PUBG Mobile Iron Squad Showdown City Finals Multan', team: 'VLR Esports' },
+      { date: '2025-04-27', place: '8th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'FMA Esports' },
+      { date: '2025-08-31', place: '9th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'FMA Esports' }, 
+      { date: '2026-04-19', place: '16th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2026 Spring', team: 'Team RPG' },
+    ],
+  
+    history: [
+       { join: '2024-10-27', leave: '', team: 'Valyrians' },
+       { join: '2025-04-27', leave: '2026-04-12', team: 'FMA Esports' },
+      { join: '2026-04-18', leave: '2026-04-19', team: 'RPG Esports' },
+      { join: '2026-04-25', leave: 'Present', team: 'FMA Esports' },
+    ]
+  },
 };
 
 

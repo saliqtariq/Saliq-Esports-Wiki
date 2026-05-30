@@ -221,6 +221,19 @@ export const players: PlayerSeoData[] = [
     instagram: 'https://www.instagram.com/ig.gyronub',
     seoAliases: ['Gyro PUBG', 'Unixgyro PUBG', 'Gyro PUBGM', 'Inam gyro'],
   },
+  {
+    slug: 'hackur',
+    nick: 'Hackur',
+    name: 'Umair Mengal',
+    teamName: 'FMA Esports',
+    teamLogo: '/fma-esports-logo.jpg',
+    nationality: 'Pakistan',
+    born: '01 January 2006 (age 20)',
+    status: 'Active',
+    image:'/HackurEspPic.png',
+    instagram: 'https://www.instagram.com/ig_hackur1',
+    seoAliases: ['Umair PUBG', 'fmaHackur PUBG', 'fma PUBGM', 'hackur pubg'],
+  },
 ];
 
 export const playersBySlug = Object.fromEntries(
