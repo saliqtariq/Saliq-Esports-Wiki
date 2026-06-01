@@ -306,7 +306,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
   'smokie': {
     name: 'Muhammad Ali',
     nick: 'Smokie',
-    image: '/SmokieEspPic.jpeg',
+    image: '/SmokieupdatedPic.png',
     teamLogo: '/SonofAnarchylogo.jpeg',
     teamName: 'Son of Anarchy',
     nationality: 'Pakistan',
