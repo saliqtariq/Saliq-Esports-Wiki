@@ -26,6 +26,13 @@ type HistoryEntry = {
   team: string;
 };
 
+type StaffHistoryEntry = {
+  join: string;
+  leave: string;
+  team: string;
+  role: string;
+};
+
 type PlayerData = {
   name: string;
   nick: string;
@@ -39,6 +46,7 @@ type PlayerData = {
   bio: React.ReactNode;
   achievements: Achievement[];
   history: HistoryEntry[];
+  staffHistory?: StaffHistoryEntry[];
 };
 
 const PLAYERS_DATA: Record<string, PlayerData> = {
@@ -577,6 +585,55 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2026-04-25', leave: 'Present', team: 'FMA Esports' },
     ]
   },
+  'codex': {
+    name: 'Muhammad Ghous',
+    nick: 'Codex',
+    image: '/Codex-EspPic.png',
+    teamLogo: '/A8Logo.jpg',
+    teamName: 'A8 Academy',
+    nationality: 'Pakistan',
+    born: '20 January 2005 (age 21)',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Muhammad Ghous <strong style={{ color: '#fff' }}>"Codex"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> Coach & Analyst who is currently working with <span style={{ color: '#22C55E', fontWeight: 700 }}>A8 Academy & Hyper Esports</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2026-04-21', place: '2nd', tier: 'D-Tier', tourney: 'SSP Rumble Showdown', team: 'F4K Esports' },
+         { date: '2026-04-14', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile FFC Season 3 by AJ', team: 'F4K Esports' },
+      { date: '2026-04-27', place: '1st', tier: 'D-Tier', tourney: 'PUBG Mobile SFA Season 3 by AJ', team: 'F4K Esports' },
+      { date: '2026-04-22', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile Ultimate Showdown', team: 'F4K Esports' }, 
+      { date: '2026-02-15', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Hyper Esports' },
+    ],
+  
+    history: [],
+    staffHistory: [
+      { join: '2026-04-17', leave: 'Present', team: 'A8 Academy', role: 'Analyst' },
+      { join: '-', leave: 'Present', team: 'Hyper Esports', role: 'Analyst' }
+    ]
+  },
+   'gunda': {
+    name: 'Uzair Khalid',
+    nick: 'Gunda',
+    image: '/GundaEspPic.jpeg',
+    teamLogo: '/globalwizesportslogo.jpg',
+    teamName: 'Global Wiz Esports',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Uzair Khalid <strong style={{ color: '#fff' }}>"Gunda"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Global Wiz Esports</span>.
+      </p>
+    ),
+    achievements: [
+    ],
+  
+    history: [
+    ]
+  },
+  
   
 };
 
@@ -833,6 +890,9 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Virus') && (
                                 <NextImage src="/Viruslogo.png" alt="Virus" width={48} height={30} style={{ objectFit: 'contain' }} title="Virus Esport" />
                               )}
+                              {(ach.team === 'F4K Esports') && (
+                                <NextImage src="/f4klogo.jpg" alt="F4K Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="F4K Esports" />
+                              )}
                               {(ach.team === '247Esports') && (
                                 <NextImage src="/247Esp-Logo.png" alt="247Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="247Esports" />
                               )}
@@ -951,7 +1011,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','Unix Esport','Unix Esports','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
@@ -1008,6 +1068,56 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                   </table>
                 </div>
               </section>
+
+              {/* Staff / Coaching History Section */}
+              {player.staffHistory && player.staffHistory.length > 0 && (
+                <section>
+                  <div style={{ 
+                    background: '#1a1a1a', 
+                    padding: '12px 20px', 
+                    border: '1px solid #3c3c3c', 
+                    borderBottom: 'none',
+                    borderTopLeftRadius: '8px', 
+                    borderTopRightRadius: '8px',
+                    height: '52px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px'
+                  }}>
+                    <div style={{ width: '4px', height: '18px', background: '#f39c12', borderRadius: '2px' }} />
+                    <h2 style={{ fontSize: '1rem', fontWeight: 900, color: '#fff', margin: 0, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Staff / Coaching History</h2>
+                  </div>
+                  
+                  <div style={{ 
+                    border: '1px solid #3c3c3c', 
+                    borderBottomLeftRadius: '8px', 
+                    borderBottomRightRadius: '8px', 
+                    overflow: 'hidden', 
+                    background: '#1a1a1a'
+                  }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', color: '#fff' }}>
+                      <thead style={{ background: 'linear-gradient(180deg, #2c2c2c 0%, #222 100%)', fontSize: '0.8rem', textTransform: 'uppercase', color: '#ccc', fontWeight: 800 }}>
+                        <tr>
+                          <th style={{ padding: '15px 20px', borderRight: '1px solid #3c3c3c', width: '20%', letterSpacing: '0.05em' }}>Join</th>
+                          <th style={{ padding: '15px 20px', borderRight: '1px solid #3c3c3c', width: '20%', letterSpacing: '0.05em' }}>Leave</th>
+                          <th style={{ padding: '15px 20px', borderRight: '1px solid #3c3c3c', width: '35%', letterSpacing: '0.05em' }}>Team</th>
+                          <th style={{ padding: '15px 20px', letterSpacing: '0.05em' }}>Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[...player.staffHistory].reverse().map((hist, idx) => (
+                          <tr key={idx} style={{ borderBottom: idx === player.staffHistory!.length - 1 ? 'none' : '1px solid #3c3c3c', background: idx % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent' }}>
+                            <td style={{ padding: '15px 20px', borderRight: '1px solid #3c3c3c', fontSize: '0.95rem', color: '#9CA3AF', fontWeight: 600 }}>{hist.join}</td>
+                            <td style={{ padding: '15px 20px', borderRight: '1px solid #3c3c3c', fontSize: '0.95rem', color: hist.leave.toLowerCase() === 'present' ? '#22C55E' : '#9CA3AF', fontWeight: hist.leave.toLowerCase() === 'present' ? 800 : 600 }}>{hist.leave}</td>
+                            <td style={{ padding: '15px 20px', borderRight: '1px solid #3c3c3c', fontSize: '1rem', color: '#fff', fontWeight: 700 }}>{hist.team}</td>
+                            <td style={{ padding: '15px 20px', fontSize: '0.95rem', color: '#f39c12', fontWeight: 700 }}>{hist.role}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              )}
 
             </div>
 
