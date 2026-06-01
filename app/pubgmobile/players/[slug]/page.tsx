@@ -107,7 +107,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <PlayerProfileClient slug={player.slug} />
     </>

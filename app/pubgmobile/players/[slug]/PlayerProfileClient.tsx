@@ -604,13 +604,14 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
          { date: '2026-04-14', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile FFC Season 3 by AJ', team: 'F4K Esports' },
       { date: '2026-04-27', place: '1st', tier: 'D-Tier', tourney: 'PUBG Mobile SFA Season 3 by AJ', team: 'F4K Esports' },
       { date: '2026-04-22', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile Ultimate Showdown', team: 'F4K Esports' }, 
-      { date: '2026-02-15', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Hyper Esports' },
+      { date: '2026-02-15', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Hyper Esport' },
     ],
   
     history: [],
     staffHistory: [
       { join: '2026-04-17', leave: 'Present', team: 'A8 Academy', role: 'Analyst' },
-      { join: '-', leave: 'Present', team: 'Hyper Esports', role: 'Analyst' }
+      { join: '-', leave: 'Present', team: 'Hyper Esports', role: 'Analyst' },
+       { join: '2026-04-08', leave: '2026-05-27', team: 'Demon Esports', role: 'Analyst' }
     ]
   },
    'gunda': {
@@ -917,6 +918,9 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Team QWERTY') && (
                                 <NextImage src="/Qwerty-Logo.png" alt="Team QWERTY" width={48} height={30} style={{ objectFit: 'contain' }} title="Team QWERTY" />
                               )}
+                              {(ach.team === 'Hyper Esport') && (
+                                <NextImage src="/hyperlogo.png" alt="Hyper Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="Hyper Esport" />
+                              )}
                                {(ach.team === 'TFD Esports') && (
                                 <NextImage src="/Tfdlogo.png" alt="TFD Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="TFD Esports" />
                               )}
@@ -1011,7 +1015,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>

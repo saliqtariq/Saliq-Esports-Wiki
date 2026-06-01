@@ -15,6 +15,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: "Saliq Esports",
   description: "Saliq Esports is a platform showcasing esports player profiles, achievements, teams, and stats. Discover PUBG players and their history.",
 };
