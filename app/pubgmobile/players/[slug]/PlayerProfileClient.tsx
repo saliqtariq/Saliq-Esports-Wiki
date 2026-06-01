@@ -577,6 +577,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2026-04-25', leave: 'Present', team: 'FMA Esports' },
     ]
   },
+  
 };
 
 

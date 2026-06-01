@@ -234,6 +234,32 @@ export const players: PlayerSeoData[] = [
     instagram: 'https://www.instagram.com/ig_hackur1',
     seoAliases: ['Umair PUBG', 'fmaHackur PUBG', 'fma PUBGM', 'hackur pubg'],
   },
+   {
+    slug: 'codex',
+    nick: 'Codex',
+    name: 'Muhammad Ghous',
+    teamName: 'A8 Academy',
+    teamLogo: '/A8Logo.jpg',
+    nationality: 'Pakistan',
+    born: '20 January 2005 (age 21)',
+    status: 'Active',
+    image:'/Codex-EspPic.png',
+    instagram: 'https://www.instagram.com/codex.sys',
+    seoAliases: ['Codex PUBG', 'Ghous PUBG', 'Codex Ghous PUBGM', 'Coach Pakistan pubg'],
+  },
+   {
+    slug: 'gunda',
+    nick: 'Gunda',
+    name: 'Uzair Khalid',
+    teamName: 'Global Wiz Esports',
+    teamLogo: '/globalwizesportslogo.jpg',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Active',
+    image:'/GundaEspPic.jpeg',
+    instagram: 'https://www.instagram.com/iggunda111',
+    seoAliases: ['Uzair Khalid PUBG', 'Gunda PUBGM', 'iggunda111'],
+  },
 ];
 
 export const playersBySlug = Object.fromEntries(
