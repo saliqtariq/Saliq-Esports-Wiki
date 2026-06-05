@@ -519,6 +519,8 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { date: '2026-01-04', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Winter Rumble 2025', team: '404 Esports' }, 
       { date: '2024-02-01', place: '18th', tier: 'C-Tier', tourney: 'Levitate Breakpoint 1.0', team: 'Bloodmoon' },
        { date: '2025-03-17', place: '3rd', tier: 'C-Tier', tourney: 'PUBGM Kaza Lan Event', team: 'Radical Death' },
+       { date: '2026-05-06', place: '1st', tier: 'D-Tier', tourney: 'Ultimate Showdown Season 1 by Virtual Assasins', team: '404 Esports' },
+
     ],
   
     history: [
@@ -632,6 +634,34 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ],
   
     history: [
+    ]
+  },
+   'sami': {
+    name: 'Muhammad Sami',
+    nick: 'Sami',
+    image: '/samiUpdated Pic.jpg',
+    teamLogo: '/executorlogo.jpg',
+    teamName: 'The Executor',
+    nationality: 'Pakistan',
+    born: '11 Nov 2003 (age 23)',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Muhammad Sami <strong style={{ color: '#fff' }}>"Sami"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>The Executor</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2022-12-15', place: '7th', tier: 'C-Tier', tourney: 'B4 Lan Fiesta Multan', team: 'Murshad Esport' },
+    ],
+  
+    history: [
+      { join: '2019', leave: '2020', team: 'SINNER' },
+      { join: '2020', leave: '2022', team: 'Vanguard' },
+      { join: '2022', leave: '2024', team: 'Murshad' },
+      { join: '2024', leave: '2025', team: '9Eleven' },
+      { join: '2025', leave: '2025', team: 'HYPER' },
+      { join: '2025', leave: '2026', team: 'CHRONICALLY FORCE' },
+      { join: '2026', leave: 'Present', team: 'THE EXECUTOR' },
     ]
   },
   

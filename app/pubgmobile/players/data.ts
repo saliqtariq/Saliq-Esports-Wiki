@@ -260,6 +260,19 @@ export const players: PlayerSeoData[] = [
     instagram: 'https://www.instagram.com/iggunda111',
     seoAliases: ['Uzair Khalid PUBG', 'Gunda PUBGM', 'iggunda111'],
   },
+   {
+    slug: 'sami',
+    nick: 'Sami',
+    name: 'Muhammad Sami',
+    teamName: 'The Executor',
+    teamLogo: '/executorlogo.jpg',
+    nationality: 'Pakistan',
+    born: '11 November 2003 (age 23)',
+    status: 'Active',
+    image:'/MuhammadSamiEspPic.jpg',
+    instagram: 'https://www.instagram.com/samijaved07_',
+    seoAliases: ['Sami pubg', 'Muhammad Sami PUBGM', 'samijaved07_'],
+  },
 ];
 
 export const playersBySlug = Object.fromEntries(

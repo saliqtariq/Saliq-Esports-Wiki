@@ -41,6 +41,18 @@ export default function Home() {
       {/* Grid pattern overlay */}
       <div className="dynamic-grid" />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Saliq Esports",
+            "url": "https://saliqesports.com/"
+          })
+        }}
+      />
+
       <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
 
         {/* ===== HEADER ===== */}
