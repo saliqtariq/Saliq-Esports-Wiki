@@ -5,19 +5,19 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer style={{ padding: '4rem 2rem 3rem', width: '100%', background: 'var(--footer-bg)', borderTop: '1px solid var(--footer-border)' }}>
+    <footer style={{ padding: '4rem 2rem 3rem', width: '100%', background: '#000000', borderTop: '1px solid var(--footer-border)' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
         {/* Top Row: Branding & Primary Links */}
-        <div className="mobile-stack" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '3rem', marginBottom: '3rem' }}>
+        <div className="mobile-stack" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '2rem', marginBottom: '3rem' }}>
           
           {/* Left Column: Tagline & Nav */}
-          <div style={{ flex: '1', minWidth: '280px' }}>
+          <div style={{ flex: '1', minWidth: '200px' }}>
             <p style={{ 
               fontFamily: 'var(--font-display)',
               fontSize: '0.875rem', 
-              color: 'var(--text-secondary)', 
-              marginBottom: '2rem',
+              color: '#ffffff', 
+              marginBottom: '0.75rem',
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
               fontWeight: 600,
@@ -26,16 +26,86 @@ export default function Footer() {
             }}>
               The Ultimate Home for <span style={{ color: '#22C55E' }}>Pakistan</span> Esports
             </p>
-            
-            <nav style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-              <a href="#" className="footer-link-v2">Contact</a>
+            <p style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.7rem',
+              color: '#ffffff',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              fontWeight: 600,
+              marginBottom: '0.6rem',
+            }}>
+              Official Partner
+            </p>
+            <a href="https://www.instagram.com/tyson_globalesports" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', opacity: 0.85, transition: 'opacity 0.2s ease', textDecoration: 'none' }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.85')}
+            >
+              <img 
+                src="/tysonlogo.jpg" 
+                alt="Tyson Esports" 
+                style={{ height: '36px', width: 'auto', borderRadius: '4px' }} 
+              />
+              <span style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '0.8rem',
+                color: '#ffffff',
+                fontWeight: 600,
+                letterSpacing: '0.02em',
+              }}>Tyson Esports</span>
+            </a>
+          </div>
+
+          {/* Middle Column: Legal */}
+          <div style={{ flexShrink: 0, textAlign: 'left', marginRight: '3rem' }}>
+            <p style={{ 
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.9rem', 
+              color: '#ffffff', 
+              marginBottom: '0.75rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              fontWeight: 700,
+            }}>
+              Legal
+            </p>
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
               <Link href="/disclaimer" className="footer-link-v2">Disclaimer</Link>
               <Link href="/privacy-policy" className="footer-link-v2">Privacy Policy</Link>
             </nav>
           </div>
 
-          {/* Right Column: Site Info */}
+          {/* Games Column */}
+          <div style={{ flexShrink: 0, textAlign: 'left', marginRight: '3rem' }}>
+            <p style={{ 
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.9rem', 
+              color: '#ffffff', 
+              marginBottom: '0.75rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              fontWeight: 700,
+            }}>
+              Games
+            </p>
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <Link href="/pubgmobile" className="footer-link-v2">PUBG Mobile</Link>
+            </nav>
+          </div>
+
+          {/* Right Column: Contact */}
           <div style={{ flexShrink: 0, textAlign: 'left', maxWidth: '350px' }}>
+            <p style={{ 
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.9rem', 
+              color: '#ffffff', 
+              marginBottom: '0.5rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              fontWeight: 700,
+            }}>
+              Contact
+            </p>
             <p style={{ 
               fontFamily: 'var(--font-display)', 
               fontSize: '0.9rem', 
@@ -44,11 +114,33 @@ export default function Footer() {
               letterSpacing: '0.01em', 
               fontWeight: 500,
               opacity: 0.9,
-              borderLeft: '2px solid var(--accent-green)',
-              paddingLeft: '1.25rem',
+              marginBottom: '1rem',
             }}>
-              Archiving the legacy and evolution of Pakistan&apos;s competitive esports landscape — with precision and passion.
+              Want to get featured? Reach out to us!
             </p>
+            <a 
+              href="https://wa.me/923358746804" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                padding: '0.6rem 2.5rem',
+                background: '#25D366',
+                color: '#000000',
+                borderRadius: '4px',
+                fontSize: '0.9rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+                textDecoration: 'none',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                transition: 'opacity 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              WHATSAPP
+            </a>
           </div>
         </div>
 
@@ -60,7 +152,7 @@ export default function Footer() {
           
           {/* License text removed as requested */}
           <div style={{ fontSize: '0.75rem', color: '#6B7280', maxWidth: '400px' }}>
-            <p style={{ margin: 0, opacity: 0.8 }}>&copy; 2025 SALIK. All rights reserved.</p>
+            <p style={{ margin: 0, opacity: 0.8 }}>&copy; 2026 Saliq Esports all rights reserved.</p>
           </div>
 
           {/* Social Icons */}

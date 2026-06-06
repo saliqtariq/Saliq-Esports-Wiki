@@ -38,15 +38,24 @@ export default function PlayersPage() {
           <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
             <BackButton variant="compact">Back</BackButton>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '11px', color: 'var(--text-secondary)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                {isLight ? 'Light' : 'Dark'}
+            {/* Official Partner */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px', paddingTop: '4px' }}>
+              <a href="https://www.instagram.com/tyson_globalesports" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', opacity: 0.85, transition: 'opacity 0.2s ease' }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.85')}
+              >
+                <img 
+                  src="/tysonlogo.jpg" 
+                  alt="Tyson Esports" 
+                  style={{ height: '32px', width: 'auto', borderRadius: '4px' }} 
+                />
+                <span style={{ fontSize: '15px', color: '#ffffff', fontWeight: 700, letterSpacing: '0.02em', fontFamily: 'var(--font-display)' }}>
+                  Tyson Esports
+                </span>
+              </a>
+              <span style={{ fontSize: '10px', color: '#ffffff', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginRight: '2px' }}>
+                Official Partner
               </span>
-              <button className="toggle-track" onClick={toggleTheme} aria-label="Toggle light/dark mode">
-                <div className="toggle-thumb">
-                  <span>{isLight ? '☀️' : '🌙'}</span>
-                </div>
-              </button>
             </div>
           </div>
         </header>
