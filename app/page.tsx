@@ -66,7 +66,7 @@ export default function Home() {
                 <h1 className="logo-text-v2">
                   SALIK
                 </h1>
-                <p className="tagline-v2">
+                <p className="tagline-v2" style={{ background: 'none', WebkitTextFillColor: '#22C55E', color: '#22C55E' }}>
                   The Home of Pakistan Esports
                 </p>
               </div>
@@ -169,28 +169,28 @@ export default function Home() {
               {/* Stat row — compact */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '8px' }}>
 
-                {/* Teams */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #22C55E, transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#22C55E', lineHeight: 1, marginBottom: '3px' }}>1+</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Teams</div>
-                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Registered</div>
-                </div>
-
                 {/* Players */}
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #FACC15, transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FACC15', lineHeight: 1, marginBottom: '3px' }}>5</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#FACC15', lineHeight: 1, marginBottom: '3px' }}>20</div>
                   <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Players</div>
                   <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Profiled</div>
                 </div>
 
-                {/* Tournaments */}
+                {/* Tourney Orgs */}
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, rgba(255,255,255,0.12), transparent)' }} />
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1, marginBottom: '3px' }}>0</div>
-                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Tournaments</div>
-                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Coming soon</div>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #3B82F6, transparent)' }} />
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#3B82F6', lineHeight: 1, marginBottom: '3px' }}>10</div>
+                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Orgs</div>
+                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Listed</div>
+                </div>
+
+                {/* Maps */}
+                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '10px 8px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #22C55E, transparent)' }} />
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 800, color: '#22C55E', lineHeight: 1, marginBottom: '3px' }}>7</div>
+                  <div style={{ fontSize: '10px', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 500 }}>Maps</div>
+                  <div style={{ fontSize: '9px', color: '#4B5563', marginTop: '3px' }}>Tracked</div>
                 </div>
 
               </div>
