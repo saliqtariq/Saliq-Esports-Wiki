@@ -652,6 +652,11 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ),
     achievements: [
         { date: '2022-12-15', place: '7th', tier: 'C-Tier', tourney: 'B4 Lan Fiesta Multan', team: 'Murshad Esport' },
+        { date: '2025-09-12', place: '1st', tier: 'D-Tier', tourney: 'The Dead Sea by Global Clan Wars', team: 'Exora Titans' },
+        { date: '2026-01-10', place: '1st', tier: 'D-Tier', tourney: 'Pubg Mobile Winter Clash Season 3', team: 'Team FLC' },
+        { date: '2025-07-18', place: 'SemiFinals', tier: 'C-Tier', tourney: 'GameBird PUBG Mobile Summer Series', team: 'CNF Esports' },
+        { date: '2025-06-12', place: '1st', tier: 'D-Tier', tourney: 'Pubg Mobile Summer Blast by Valor Edge', team: '9Eleven Esport' },
+          { date:'2025-08-18', place: '1st', tier: 'D-Tier', tourney: 'Pubg Mobile Conquest Series Season 1', team: '9Eleven Esport' },
     ],
   
     history: [
@@ -891,6 +896,13 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                                {(ach.team === 'Red Death') && (
                                 <NextImage src="/RedDeathEsp.png" alt="Red Death" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Death" />
                               )}
+                              {(ach.team === '9Eleven Esport') && (
+                                <NextImage src="/9Elevenlogo.jpeg" alt="9Eleven Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="9Eleven Esport" />
+                              )}
+                              {(ach.team === 'CNF Esports') && (
+                                <NextImage src="/CNFlogo.jpg" alt="CNF Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="CNF Esports" />
+                              )}
+
                               {(ach.team === 'Spins Esport') && (
                                 <NextImage src="/spinslogo.png" alt="Spins Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="Spins Esport" />
                               )}
@@ -1045,7 +1057,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
