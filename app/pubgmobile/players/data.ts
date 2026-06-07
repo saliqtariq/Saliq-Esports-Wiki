@@ -273,6 +273,19 @@ export const players: PlayerSeoData[] = [
     instagram: 'https://www.instagram.com/samijaved07_',
     seoAliases: ['Sami pubg', 'Muhammad Sami PUBGM', 'samijaved07_'],
   },
+   {
+    slug: 'jin',
+    nick: 'Jin',
+    name: 'Touseef Haider',
+    teamName: '3x Esports',
+    teamLogo: '/3xlogo.png',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Active',
+    image:'/jinEsportPic.jpg',
+    instagram: 'https://www.instagram.com/ig_jin.op',
+    seoAliases: ['Jin pubg', 'Touseef Haider PUBGM', 'ig_jin.op'],
+  },
 ];
 
 export const playersBySlug = Object.fromEntries(
