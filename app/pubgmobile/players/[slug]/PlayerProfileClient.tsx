@@ -671,13 +671,13 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ]
   },
    'jin': {
-    name: 'Touseef Haider',
+    name: 'Toseef Haider',
     nick: 'Jin',
     image: '/jinEsportPic.jpg',
     teamLogo: '/3xlogo.png',
     teamName: '3x Esports',
     nationality: 'Pakistan',
-    born: '',
+    born: '24 December 2002 (age 24)',
     status: 'Active',
     bio: (
        <p style={{ margin: 0 }}>
@@ -705,6 +705,34 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '-', leave: '-', team: 'Megatron' },
       { join: '-', leave: '-', team: 'C4' },
       { join: '-', leave: 'Present', team: '3x Esports' },
+    ]
+  },
+   'captain': {
+    name: 'Shahzada Anzal',
+    nick: 'Captain',
+    image: '/captnEspPic.jpg',
+    teamLogo: '/RST Esports.png',
+    teamName: 'Red Saints',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Active',
+    bio: (
+       <p style={{ margin: 0 }}>
+        Shahzada Anzal <strong style={{ color: '#fff' }}>"Captain"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#22C55E', fontWeight: 700 }}>Red Saints</span>.
+      </p>
+    ),
+    achievements: [
+        { date: '2022-12-25', place: '15th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2022', team: 'Myth Esports' },
+        { date: '2024-04-21', place: '7th', tier: 'B-Tier', tourney: 'Gamers Galaxy Pakistan 2024', team: 'Red Saints' },
+        { date: '2024-05-09', place: '1st', tier: 'D-Tier', tourney: 'Destroyer Clan War Seaon Zero', team: 'Red Saints' },
+        { date: '2024-07-27', place: '5th', tier: 'C-Tier', tourney: 'PUBG Mobile Jazba Series 2024', team: 'Red Saints' },
+        { date: '2026-02-15', place: '2nd', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Red Saints' },
+          { date:'2026-04-19', place: '4th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2026 Spring', team: 'Red Saints' },
+          { date:'2026-05-17', place: '16th', tier: 'A-Tier', tourney: 'PUBG Mobile Global Open 2026 Season 1 - South Asia Finals', team: 'Red Saints' },
+    ],
+  
+    history: [
+      { join: '', leave: 'Present', team: 'Red Saints' },
     ]
   },
   
@@ -1047,6 +1075,9 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Mythicals') && (
                                 <NextImage src="/mythicalslogo.jpg" alt="Mythicals" width={48} height={30} style={{ objectFit: 'contain' }} title="Mythicals" />
                               )}
+                              {(ach.team === 'Myth Esports') && (
+                                <NextImage src="/MythLogo.png" alt="Myth Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Myth Esports" />
+                              )}
                               {(ach.team === 'KOD Esports') && (
                                 <NextImage src="/Kodlogo.png" alt="KOD Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="KOD Esports" />
                               )}
@@ -1102,7 +1133,7 @@ export default function PlayerProfileClient({ slug }: { slug: string }) {
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
