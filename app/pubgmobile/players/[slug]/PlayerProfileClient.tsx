@@ -86,9 +86,9 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2026-03-01', leave: 'Present', team: 'Seventh Element' },
     ]
   },
-  'shurta-g': {
+  'shurta': {
     name: 'Saliq Tariq',
-    nick: 'Shurta G',
+    nick: 'Shurta',
     image: '/ShurtaG-Esport Pic.jpg',
     teamLogo: '/Des-Logo.jpg',
     teamName: 'Destroyer Esports',
@@ -98,7 +98,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     statusColor: '#e74c3c',
     bio: (
       <p style={{ margin: 0 }}>
-        Saliq <strong style={{ color: '#fff' }}>"Shurta"</strong> Tariq is a <span style={{ color: '#e74c3c', fontWeight: 600 }}>Not-Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who last played for <span style={{ color: '#e74c3c', fontWeight: 600 }}>Destroyer Esports</span>.
+        Saliq Tariq <strong style={{ color: '#fff' }}>"Shurta"</strong>  is a <span style={{ color: '#e74c3c', fontWeight: 600 }}>Not-Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who last played for <span style={{ color: '#e74c3c', fontWeight: 600 }}>Destroyer Esports</span>.
       </p>
     ),
     achievements: [

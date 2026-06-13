@@ -14,8 +14,8 @@ export type PlayerSeoData = {
 
 export const players: PlayerSeoData[] = [
   {
-    slug: 'shurta-g',
-    nick: 'Shurta G',
+    slug: 'shurta',
+    nick: 'Shurta',
     name: 'Saliq Tariq',
     teamName: 'Destroyer Esports',
     teamLogo: '/Des-Logo.jpg',
