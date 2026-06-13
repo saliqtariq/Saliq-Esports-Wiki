@@ -14,10 +14,11 @@ type Achievement = {
 };
 
 const TIER_PRIORITY: Record<string, number> = {
-  'A-Tier': 0,
-  'B-Tier': 1,
-  'C-Tier': 2,
-  'D-Tier': 3,
+  'S-Tier': 0,
+  'A-Tier': 1,
+  'B-Tier': 2,
+  'C-Tier': 3,
+  'D-Tier': 4,
 };
 
 type HistoryEntry = {
@@ -47,6 +48,7 @@ type PlayerData = {
   achievements: Achievement[];
   history: HistoryEntry[];
   staffHistory?: StaffHistoryEntry[];
+  instagram?: string;
 };
 
 const PLAYERS_DATA: Record<string, PlayerData> = {
@@ -741,10 +743,66 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
 };
 
 
-export default function PlayerProfileClient({ slug }: { slug: string }) {
+import { urlForImage } from '../../../../sanity/image';
+
+function renderSanityBio(bioText: string, teamName: string) {
+  if (!bioText) return null;
+  const escapedTeamName = teamName ? teamName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : '';
+  const teamRegexPart = escapedTeamName ? `|${escapedTeamName}` : '';
+  const regex = new RegExp(`("[^"]+"|Pakistani|Active|Not Active|Not-Active|Free Agent${teamRegexPart})`, 'gi');
+  const parts = bioText.split(regex);
+  
+  return (
+    <p style={{ margin: 0 }}>
+      {parts.map((part, index) => {
+        if (!part) return null;
+        const lowerPart = part.toLowerCase();
+        
+        if (part.startsWith('"') && part.endsWith('"')) {
+          return <strong key={index} style={{ color: '#fff' }}>{part}</strong>;
+        }
+        if (lowerPart === 'pakistani') {
+          return <span key={index} style={{ color: '#fff', fontWeight: 600 }}>{part}</span>;
+        }
+        if (lowerPart === 'active' || lowerPart === 'free agent') {
+          return <span key={index} style={{ color: '#22C55E', fontWeight: 600 }}>{part}</span>;
+        }
+        if (lowerPart === 'not active' || lowerPart === 'not-active') {
+          return <span key={index} style={{ color: '#e74c3c', fontWeight: 600 }}>{part}</span>;
+        }
+        if (escapedTeamName && lowerPart === teamName.toLowerCase()) {
+          return <span key={index} style={{ color: '#22C55E', fontWeight: 700 }}>{part}</span>;
+        }
+        
+        return <span key={index}>{part}</span>;
+      })}
+    </p>
+  );
+}
+
+export default function PlayerProfileClient({ slug, sanityData }: { slug: string, sanityData?: any }) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  const player = PLAYERS_DATA[slug.toLowerCase()];
+  const localPlayer = PLAYERS_DATA[slug.toLowerCase()];
+  
+  // Combine local and sanity data. Sanity takes precedence.
+  const player = sanityData || localPlayer ? {
+    ...localPlayer,
+    name: sanityData?.name || localPlayer?.name || '',
+    nick: sanityData?.nick || localPlayer?.nick || '',
+    teamName: sanityData?.teamName || localPlayer?.teamName || '',
+    teamLogo: sanityData?.teamLogo ? urlForImage(sanityData.teamLogo).url() : localPlayer?.teamLogo || '',
+    nationality: sanityData?.nationality || localPlayer?.nationality || '',
+    born: sanityData?.born || localPlayer?.born || '',
+    status: sanityData?.status || localPlayer?.status || '',
+    image: sanityData?.image ? urlForImage(sanityData.image).url() : localPlayer?.image || '',
+    instagram: sanityData?.instagram || localPlayer?.instagram || '',
+    bio: sanityData?.bio ? renderSanityBio(sanityData.bio, sanityData.team || localPlayer?.teamName || '') : localPlayer?.bio,
+    achievements: sanityData?.achievements || localPlayer?.achievements || [],
+    history: sanityData?.history || localPlayer?.history || [],
+    staffHistory: sanityData?.staffHistory || localPlayer?.staffHistory || [],
+  } : null;
+
   const sortedAchievements = player
     ? [...player.achievements].sort((a, b) => {
         const tierDiff = (TIER_PRIORITY[a.tier] ?? 99) - (TIER_PRIORITY[b.tier] ?? 99);
