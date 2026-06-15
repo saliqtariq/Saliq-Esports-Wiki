@@ -36,3 +36,10 @@ export const getPlayerBySlugQuery = groq`
     staffHistory
   }
 `
+
+export const getAllTeamsQuery = groq`
+  *[_type == "team"] {
+    name,
+    "logoUrl": logo.asset->url
+  }
+`
