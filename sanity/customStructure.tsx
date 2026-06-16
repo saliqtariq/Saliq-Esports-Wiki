@@ -46,12 +46,6 @@ export const customStructure = (S: any) =>
             .title('Tournaments')
         ),
       S.listItem()
-        .title('Esports Teams')
-        .child(
-          S.documentTypeList('team')
-            .title('Teams')
-        ),
-      S.listItem()
         .title('Site Settings')
         .icon(SettingsIcon)
         .child(
@@ -62,6 +56,6 @@ export const customStructure = (S: any) =>
         ),
       S.divider(),
       ...S.documentTypeListItems().filter(
-        (listItem: any) => !['player', 'tournament', 'siteSettings', 'team'].includes(listItem.getId())
+        (listItem: any) => !['player', 'tournament', 'siteSettings'].includes(listItem.getId())
       ),
     ])

@@ -782,98 +782,8 @@ function renderSanityBio(bioText: string, teamName: string) {
   );
 }
 
-// Hardcoded team logo map (fallback for teams not in CMS)
-const HARDCODED_LOGOS: Record<string, string> = {
-  'Seventh Element': '/SeventhElement-Logo.png',
-  'Koxav Esports': '/Koxav-Logo.jpeg',
-  'XGeneration': '/Xg-Logo.jpeg',
-  'xgenerator': '/Xg-Logo.jpeg',
-  'ViperxS1': '/S1logo.png',
-  'Metershot Esports': '/Mslogo.png',
-  'Red Death': '/RedDeathEsp.png',
-  '3x Esports': '/3xlogo.png',
-  '9Eleven Esport': '/9Elevenlogo.jpeg',
-  'CNF Esports': '/CNFlogo.jpg',
-  'Spins Esport': '/spinslogo.png',
-  'Unix Esport': '/Unixlogo.jpg',
-  'Unix Esports': '/Unixlogo.jpg',
-  'FMA Esports': '/fma-esports-logo.jpg',
-  'Destroyer Esports': '/Des-Logo.jpg',
-  '52 Esports': '/52-Esport Logo.png',
-  'VLR Esports': '/VLRlogo.png',
-  'F2D Esports': '/F2D-EsportLogo.jpg',
-  'MSxDTD': '/Metershotxlogo.png',
-  'Virus': '/Viruslogo.png',
-  'F4K Esports': '/f4klogo.jpg',
-  '247Esports': '/247Esp-Logo.png',
-  'Hashtag Esports': '/HashtagEsports-logo.png',
-  'Bloodmoon': '/Bloodmoonlogo.png',
-  'Galacticous': '/Galacticous-logo.jpeg',
-  'Hellraisers': '/Hrlogo.png',
-  'Unique Esports': '/Unixlogo.jpg',
-  'Demolition 5': '/d5logo.png',
-  'Team QWERTY': '/Qwerty-Logo.png',
-  'Hyper Esport': '/hyperlogo.png',
-  'TFD Esports': '/Tfdlogo.png',
-  'Red Saints': '/RST Esports.png',
-  '7Sins': '/7Sins-Logo.png',
-  'DTDxEsports': '/DTDxEsports Logo.png',
-  'Unbeatables': '/Unbeatables-logo.png',
-  'Team Star': '/Starlogo.png',
-  'Freestyle': '/freestyle-logo.jpg',
-  'TOB': '/TOB-esportlogo.png',
-  'Ext': '/Ext-logo.png',
-  'H4K': '/h4k-logo.png',
-  'Unstoppable': '/Unstoppable-logo.jpeg',
-  'GPA': '/GPA-logo.png',
-  'ATX': '/atx-logo.png',
-  '4thrives': '/4thirveslogo.png',
-  'AS Esports': '/aslogo.jpg',
-  'NED 99': '/NED99logo.png',
-  'Flex Esports': '/Flexlogo.png',
-  'Tag Esports': '/Taglogo.png',
-  'R360 Esports': '/r360logo.jpg',
-  'Team RPG': '/rpglogo.jpg',
-  'Agonxi8 Esports': '/i8logo.png',
-  'Son of Anarchy': '/SonofAnarchylogo.jpeg',
-  'Sons of Anarchy': '/SonofAnarchylogo.jpeg',
-  'Cracked Mind': '/Cmlogo.png',
-  'Cracked Minds': '/Cmlogo.png',
-  'Radical Death': '/RadicalDeath-Logo.jpeg',
-  'Trouble Makers': '/troublemakerlogo.png',
-  '404 Esports': '/404logo.png',
-  'Jk Nation': '/Jknationlogo.png',
-  'JK Nation': '/Jknationlogo.png',
-  'Oxy Esports': '/Oxylogo.png',
-  'Mythicals': '/mythicalslogo.jpg',
-  'Myth Esports': '/MythLogo.png',
-  'KOD Esports': '/Kodlogo.png',
-  '4Pro Marshals': '/4ProMarshalls.png',
-  'PTG Gaming': '/PTG Gaming.png',
-  'Qrf Esports': '/Qrflogo.png',
-  'Stalkers': '/Stalkerslogo.png',
-  'Murshad Esport': '/Murshadlogo.png',
-};
-
-type SanityTeam = { name: string; logoUrl: string | null };
-
-export default function PlayerProfileClient({ slug, sanityData, sanityTeams = [] }: { slug: string, sanityData?: any, sanityTeams?: SanityTeam[] }) {
+export default function PlayerProfileClient({ slug, sanityData }: { slug: string, sanityData?: any }) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-
-  // Build a lookup map from CMS teams
-  const cmsTeamLogos: Record<string, string> = {};
-  for (const t of sanityTeams) {
-    if (t.name && t.logoUrl) {
-      cmsTeamLogos[t.name] = t.logoUrl;
-    }
-  }
-
-  // Returns logo URL: CMS first, then hardcoded fallback, then null
-  const getTeamLogoUrl = (teamName: string): string | null => {
-    if (!teamName) return null;
-    const trimmed = teamName.trim();
-    return cmsTeamLogos[trimmed] || HARDCODED_LOGOS[trimmed] || null;
-  };
 
   const localPlayer = PLAYERS_DATA[slug.toLowerCase()];
   
@@ -1095,6 +1005,12 @@ export default function PlayerProfileClient({ slug, sanityData, sanityTeams = []
                           </td>
                           <td style={{ padding: '14px 15px', textAlign: 'center' }}>
                             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                              {ach.team === 'Seventh Element' && (
+                                <NextImage src="/SeventhElement-Logo.png" alt="Seventh Element" width={48} height={30} style={{ objectFit: 'contain' }} title="Seventh Element" />
+                              )}
+                              {ach.team === 'Koxav Esports' && (
+                                <NextImage src="/Koxav-Logo.jpeg" alt="Koxav Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Koxav Esports" />
+                              )}
                               {(ach.team === 'XGeneration' || ach.team === 'xgenerator') && (
                                 <NextImage src="/Xg-Logo.jpeg" alt="XGeneration" width={48} height={30} style={{ objectFit: 'contain' }} title="XGeneration" />
                               )}

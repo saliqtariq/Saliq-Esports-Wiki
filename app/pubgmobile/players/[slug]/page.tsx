@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import PlayerProfileClient from './PlayerProfileClient';
 import { getAbsoluteUrl, getPlayer, getPlayerDescription, getPlayerSeoTitle, players } from '../data';
 import { client } from '../../../../sanity/client';
-import { getPlayerBySlugQuery, getAllTeamsQuery } from '../../../../sanity/queries';
+import { getPlayerBySlugQuery } from '../../../../sanity/queries';
 import { urlForImage } from '../../../../sanity/image';
 
 type PlayerPageProps = {
@@ -87,10 +87,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
   const localPlayer = getPlayer(slug);
   
   // 2. Fetch from Sanity
-  const [sanityPlayer, sanityTeams] = await Promise.all([
-    client.fetch(getPlayerBySlugQuery, { slug }),
-    client.fetch(getAllTeamsQuery),
-  ]);
+  const sanityPlayer = await client.fetch(getPlayerBySlugQuery, { slug });
 
   // 3. If neither exists, 404
   if (!localPlayer && !sanityPlayer) {
@@ -135,7 +132,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
-      <PlayerProfileClient slug={slug} sanityData={sanityPlayer} sanityTeams={sanityTeams || []} />
+      <PlayerProfileClient slug={slug} sanityData={sanityPlayer} />
     </>
   );
 }
