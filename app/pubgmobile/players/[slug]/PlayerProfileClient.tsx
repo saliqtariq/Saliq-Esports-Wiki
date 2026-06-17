@@ -739,9 +739,49 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '', leave: 'Present', team: 'Red Saints' },
     ]
   },
-  
-  
-  
+  'baba': {
+    name: 'Asad Nadeem Mughal',
+    nick: 'Baba',
+    image: '',
+    teamLogo: '',
+    teamName: '',
+    nationality: '',
+    born: '',
+    status: '',
+    bio: <></>,
+    achievements: [],
+    history: [
+      { join: '2020-03-08', leave: '2020-08-05', team: 'Free Style' },
+      { join: '2021-02-09', leave: '2021-09-05', team: 'Portal Esports' },
+      { join: '2021-09-05', leave: '2022-05-19', team: 'WallStreet Bets' }
+    ]
+  },
+  '420boy': {
+    name: 'Abdullah Khan',
+    nick: 'Khan420',
+    image: '',
+    teamLogo: '',
+    teamName: '',
+    nationality: '',
+    born: '',
+    status: '',
+    bio: <></>,
+    achievements: [],
+    history: [
+      { join: '2021-08-05', leave: '2021-09-05', team: 'Team Bablu' },
+      { join: '2021-09-05', leave: '2022-05-28', team: 'Clarity Esports' },
+      { join: '2022-05-28', leave: '2022-06-??', team: 'Team Bablu' },
+      { join: '2022-06-??', leave: '2023-01-12', team: 'Team QWERTY' },
+      { join: '2023-01-12', leave: '2023-02-20', team: '7E X QR RAGE' },
+      { join: '2023-03-05', leave: '2023-06-03', team: 'Magnus Esports' },
+      { join: '2023-06-08', leave: '2023-12-04', team: 'R3GICIDE' },
+      { join: '2023-12-04', leave: '2024-01-25', team: 'Oxygen Esports' },
+      { join: '2024-01-25', leave: '2024-03-??', team: 'R9 Esports' },
+      { join: '2024-03-??', leave: '2024-06-27', team: 'R3GICIDE' },
+      { join: '2024-10-01', leave: '2024-12-05', team: 'Viper Xotics' },
+      { join: '2024-12-05', leave: '', team: 'Retired' }
+    ]
+  },
 };
 
 
@@ -1044,6 +1084,15 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'FMA Esports') && (
                                 <NextImage src="/fma-esports-logo.jpg" alt="FMA Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="FMA Esports" />
                               )}
+                               {(ach.team === 'Team Bablu') && (
+                                <NextImage src="/TeamBablu.png" alt="Team Bablu" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Bablu" />
+                              )}
+                              {(ach.team === 'R3G Esports') && (
+                                <NextImage src="/R3G logo.png" alt="R3G Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="R3G Esports" />
+                              )}
+                               {(ach.team === 'Clarity Esports') && (
+                                <NextImage src="/Claritylogo.png" alt="Clarity Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Clarity Esports" />
+                              )}
                               {(ach.team === 'Destroyer Esports') && (
                                 <NextImage src="/Des-Logo.jpg" alt="Destroyer Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Destroyer Esports" />
                               )}
@@ -1107,6 +1156,12 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               )}
                               {(ach.team === 'Unbeatables') && (
                                 <NextImage src="/Unbeatables-logo.png" alt="Unbeatables" width={48} height={30} style={{ objectFit: 'contain' }} title="Unbeatables" />
+                              )}
+                              {(ach.team === 'WallStreet Bets') && (
+                                <NextImage src="/WallStreet Bets Logo.jpg" alt="WallStreet Bets" width={48} height={30} style={{ objectFit: 'contain' }} title="WallStreet Bets" />
+                              )}
+                                {(ach.team === 'Team OP') && (
+                                <NextImage src="/Team OPlogo.png" alt="Team OP" width={48} height={30} style={{ objectFit: 'contain' }} title="Team OP" />
                               )}
                                {(ach.team === 'Team Star') && (
                                 <NextImage src="/Starlogo.png" alt="Team Star" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Star" />
@@ -1188,12 +1243,21 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/troublemakerlogo.png" alt="Trouble Makers" width={48} height={30} style={{ objectFit: 'contain' }} title="Trouble Makers" />
                               )}
                                {ach.team === '404 Esports' && (
-                                <NextImage src="/404logo.png" alt="Radical Death" width={48} height={30} style={{ objectFit: 'contain' }} title="Radical Death" />
+                                <NextImage src="/404logo.png" alt="404 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="404 Esports" />
+                              )}
+                               {ach.team === 'Stalwart Esports' && (
+                                <NextImage src="/STElogo.jpg" alt="Stalwart Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Stalwart Esports" />
+                              )}
+                               {ach.team === 'Qwerty Esports' && (
+                                <NextImage src="/T20xQwerty.png" alt="Qwerty Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Qwerty Esports" />
+                              )}
+                               {ach.team === 'Magnus Esports' && (
+                                <NextImage src="/MgsLogo.png" alt="Magnus Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Magnus Esports" />
                               )}
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','Stalwart Esports','Team OP','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>

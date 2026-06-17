@@ -299,6 +299,30 @@ export const players: PlayerSeoData[] = [
     instagram: 'https://www.instagram.com/ig.captn01',
     seoAliases: ['RST Captain pubg', 'Captn PUBGM', 'Shahzada Anzal'],
   },
+  {
+    slug: 'baba',
+    nick: 'Baba',
+    name: 'Asad Nadeem Mughal',
+    teamName: 'WallStreet Bets',
+    teamLogo: '/WallStreet Bets Logo.jpg',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Not Active',
+    image: '',
+    seoAliases: ['Baba PUBG', 'Baba PUBGM', 'Asad Nadeem Mughal'],
+  },
+  {
+    slug: '420boy',
+    nick: 'Khan420',
+    name: 'Abdullah Khan',
+    teamName: 'Viper Xotics',
+    teamLogo: '',
+    nationality: 'Pakistan',
+    born: '',
+    status: 'Retired',
+    image: '',
+    seoAliases: ['Khan420 PUBG', 'Khan420 PUBGM', 'Abdullah Khan'],
+  },
 ];
 
 export const playersBySlug = Object.fromEntries(
