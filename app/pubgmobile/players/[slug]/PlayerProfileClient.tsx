@@ -782,6 +782,73 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2024-12-05', leave: '', team: 'Retired' }
     ]
   },
+  'ashad': {
+    name: 'Ashad Ali',
+    nick: 'Ashad',
+    image: '',
+    teamLogo: '',
+    teamName: '',
+    nationality: '',
+    born: '',
+    status: '',
+    bio: <></>,
+    achievements: [
+      { date: '2025-06-22', place: '9th', tier: 'A-Tier', tourney: 'PUBG Mobile Super League - Central & South Asia Spring 2025', team: 'Viper x Knockout' },
+      { date: '2025-04-27', place: '3rd', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: 'Viper x Knockout' },
+      { date: '2023-11-12', place: '42nd - 44th', tier: 'S-Tier', tourney: 'PUBG Mobile Global Championship 2023', team: 'Seventh Element' },
+      { date: '2023-09-03', place: '6th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Fall 2023', team: 'Seventh Element' },
+      { date: '2023-08-20', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2023', team: 'Seventh Element' },
+      { date: '2023-06-27', place: '1st', tier: 'C-Tier', tourney: 'PUBG Mobile Vacation Vandetta 2023', team: 'Seventh Element' },
+      { date: '2023-05-20', place: '1st', tier: 'C-Tier', tourney: 'Saadat of Umrah', team: 'Seventh Element' },
+      { date: '2023-04-09', place: '6th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: 'Seventh Element' },
+      { date: '2022-10-16', place: '16th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Fall 2022', team: 'R3G Esports' },
+      { date: '2022-10-02', place: '6th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2022', team: 'R3G Esports' }
+    ],
+    history: [
+      { join: '2021-10-05', leave: '2022-07-13', team: 'Flames 1 Esports' },
+      { join: '2022-08-??', leave: '2023-03-01', team: 'R3G Esports' },
+      { join: '2023-03-01', leave: '2023-12-02', team: 'Seventh Element' },
+      { join: '2023-12-02', leave: '2024-09-07', team: 'XGeneration' },
+      { join: '2024-09-07', leave: '2025-06-28', team: 'Viper x Knockout' },
+      { join: '2025-07-29', leave: '2026-01-28', team: 'Oxygen Esports' },
+      { join: '2026-01-28', leave: '2026-04-01', team: 'XGeneration' }
+    ]
+  },
+  'blade': {
+    name: 'Abir Kazimi',
+    nick: 'BLADE',
+    image: '',
+    teamLogo: '',
+    teamName: '',
+    nationality: 'Belgium',
+    born: '',
+    status: 'Not-Active',
+    bio: <></>,
+    achievements: [
+      { date: '2023-09-03', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Fall 2023', team: 'AGONxi8 Esports' },
+      { date: '2023-08-20', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2023', team: 'AGONxi8 Esports' },
+      { date: '2023-07-13', place: '8th', tier: 'S-Tier', tourney: 'PUBG Mobile World Invitational 2023: Allstars Stage', team: 'AGONxi8 Esports' },
+      { date: '2023-04-09', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: 'AGONxi8 Esports' },
+      { date: '2023-02-12', place: '1st', tier: 'B-Tier', tourney: 'Gamekey Arena', team: 'AGONxi8 Esports' },
+      { date: '2022-12-04', place: '24th', tier: 'S-Tier', tourney: 'PUBG Mobile Global Championship 2022', team: 'AGONxi8 Esports' },
+      { date: '2022-10-16', place: '4th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Fall 2022', team: 'AGONxi8 Esports' },
+      { date: '2022-10-02', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2022', team: 'i8 Esports' },
+      { date: '2022-04-17', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2022', team: 'Saltxi8' },
+      { date: '2021-08-29', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Fall Split 2021: Pakistan', team: 'i8 Esports' }
+    ],
+    history: [
+      { join: '2021-02-16', leave: '2021-06-13', team: 'Stalwart Esports' },
+      { join: '2021-06-13', leave: '2021-12-27', team: 'i8 Esports' },
+      { join: '2021-12-27', leave: '2022-05-05', team: 'SALTxi8 Esports' },
+      { join: '2022-05-05', leave: '2022-10-03', team: 'i8 Esports' },
+      { join: '2022-10-03', leave: '2023-04-19', team: 'AGONxi8 Esports' },
+      { join: '2024-02-06', leave: '2024-06-27', team: 'Rage Esports' },
+      { join: '2024-06-27', leave: '2024-09-30', team: 'R3GICIDE' },
+      { join: '2024-09-30', leave: '2025-02-05', team: 'LOU Esports' },
+      { join: '2025-02-05', leave: '2025-03-24', team: 'R3GICIDE' },
+      { join: '2025-03-24', leave: '', team: 'Retired' }
+    ]
+  }
 };
 
 
@@ -1060,6 +1127,9 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                {(ach.team === 'Metershot Esports') && (
                                 <NextImage src="/Mslogo.png" alt="Metershot Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Metershot Esports" />
                               )}
+                               {(ach.team === 'Team H2E') && (
+                                <NextImage src="/h2elogo.png" alt="Team H2E" width={48} height={30} style={{ objectFit: 'contain' }} title="Team H2E" />
+                              )}
                                {(ach.team === 'Red Death') && (
                                 <NextImage src="/RedDeathEsp.png" alt="Red Death" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Death" />
                               )}
@@ -1068,6 +1138,15 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               )}
                               {(ach.team === '9Eleven Esport') && (
                                 <NextImage src="/9Elevenlogo.jpeg" alt="9Eleven Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="9Eleven Esport" />
+                              )}
+                              {(ach.team === 'AGONxi8 Esports') && (
+                                <NextImage src="/Agonxi8 logo.png" alt="AGONxi8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="AGONxi8 Esports" />
+                              )}
+                               {(ach.team === 'i8 Esports') && (
+                                <NextImage src="/i8logo.png" alt="i8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="i8 Esports" />
+                              )}
+                              {(ach.team === 'Saltxi8') && (
+                                <NextImage src="/Saltxi8 logo - Copy.png" alt="Saltxi8" width={48} height={30} style={{ objectFit: 'contain' }} title="SALTxi8 Esports" />
                               )}
                               {(ach.team === 'CNF Esports') && (
                                 <NextImage src="/CNFlogo.jpg" alt="CNF Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="CNF Esports" />
@@ -1263,7 +1342,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','R3D','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','Team OP','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','Team OP','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
