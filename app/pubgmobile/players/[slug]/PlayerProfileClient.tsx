@@ -296,7 +296,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ),
     achievements: [
       { date: '2026-05-17', place: '1st', tier: 'A-Tier', tourney: 'PUBG Mobile Global Open 2026 Season 1 - South Asia Finals', team: '4thrives' },
-      { date: '2025-12-07', place: '19th', tier: 'S-Tier', tourney: 'PUBG Mobile Global Championship 2025', team: 'Inner Circle' },
+      { date: '2025-12-07', place: '19th', tier: 'S-Tier', tourney: 'PUBG Mobile Global Championship 2025', team: 'IC' },
       { date: '2025-08-03', place: '7th', tier: 'S-Tier', tourney: 'PUBG Mobile World Cup 2025', team: '4thrives' },
       { date: '2025-06-22', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Super League - Central & South Asia Spring 2025	', team: '4thrives' },
       { date: '2023-09-03', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Fall 2023', team: 'Agonxi8 Esports' },
@@ -848,6 +848,78 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2025-02-05', leave: '2025-03-24', team: 'R3GICIDE' },
       { join: '2025-03-24', leave: '', team: 'Retired' }
     ]
+  },
+  'black': {
+    name: 'Haseeb Nasir',
+    nick: 'Black',
+    image: '/fsBlackPic.png',
+    teamLogo: '/freestyle-logo.jpg',
+    teamName: 'Free Style',
+    nationality: 'Pakistan',
+    born: 'July 16, 1999 (age 26)',
+    status: 'Active',
+    bio: (
+      <p style={{ margin: 0 }}>
+        Haseeb Nasir <strong style={{ color: '#fff' }}>"Black"</strong> is a <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> player who is currently playing for <span style={{ color: '#FACC15', fontWeight: 700 }}>Free Style</span>.
+      </p>
+    ),
+    achievements: [
+      { date: '2026-04-19', place: '2nd', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Kenya 2026 Spring', team: 'Res' },
+      { date: '2023-04-09', place: '15th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: 'FS' },
+      { date: '2022-10-02', place: '8th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2022', team: 'FS' },
+      { date: '2022-05-22', place: '14th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Spring 2022', team: 'FS' },
+      { date: '2022-04-17', place: '6th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2022', team: 'FS' },
+      { date: '2021-08-29', place: '7th', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Fall Split 2021: Pakistan', team: 'FS' },
+      { date: '2021-07-07', place: '8th', tier: 'A-Tier', tourney: 'Ultimate Warrior Showdown 2021', team: 'STE' },
+      { date: '2020-11-08', place: '13th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Season 2', team: 'STE' },
+      { date: '2020-08-09', place: '17th', tier: 'S-Tier', tourney: 'PUBG Mobile World League 2020: East', team: 'FS' },
+      { date: '2020-03-08', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - 2020 Spring Split: Pakistan', team: 'FS' }
+    ],
+    history: [
+      { join: '2020-03-08', leave: 'Present', team: 'Free Style' },
+      { join: '2020-05-07', leave: 'Present', team: 'Stalwart Esports' },
+      { join: '2020-12-07', leave: 'Present', team: 'Free Style' }
+    ]
+  },
+  'cairo': {
+    name: '',
+    nick: 'Cairo',
+    image: '',
+    teamLogo: '',
+    teamName: '',
+    nationality: 'Pakistan',
+    born: '',
+    status: '',
+    bio: <></>,
+    achievements: [
+      { date: '2025-12-07', place: '19th', tier: 'S-Tier', tourney: 'PUBG Mobile Global Championship 2025', team: 'IC' },
+      { date: '2025-10-15', place: '9th', tier: 'A-Tier', tourney: 'PUBG Mobile Super League - Central & South Asia Fall 2025', team: 'IC' },
+      { date: '2025-08-03', place: '7th', tier: 'S-Tier', tourney: 'PUBG Mobile World Cup 2025', team: '4T' },
+      { date: '2025-06-22', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Super League - Central & South Asia Spring 2025', team: '4T' },
+      { date: '2025-05-11', place: '1st', tier: 'B-Tier', tourney: 'ESAN PUBG Mobile Asian Showdown', team: 'PAK' },
+      { date: '2025-04-27', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Spring 2025', team: '4T' },
+      { date: '2023-08-20', place: '4th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Fall 2023', team: 'SR | 3x' },
+      { date: '2023-04-09', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2023', team: '3x' },
+      { date: '2023-02-12', place: '2nd', tier: 'B-Tier', tourney: 'Gamekey Arena', team: '3x' },
+      { date: '2022-08-27', place: '2nd', tier: 'B-Tier', tourney: 'PUBG Mobile Campus Challenge Pakistan 2022', team: 'Rage' }
+    ],
+    history: [
+      { join: '2021-08-17', leave: 'Present', team: '52 Esports' },
+      { join: '2022-07-??', leave: '2022-11-01', team: 'Team Faulty Devils' },
+      { join: '2022-07-??', leave: '2022-11-01', team: 'Team Faulty Devils' },
+      { join: '2022-11-01', leave: '2024-04-09', team: 'SR | 3x Esports' },
+      { join: '2024-04-09', leave: '2024-04-26', team: 'Guts & Glory' },
+      { join: '2024-04-26', leave: '2024-06-13', team: 'WAOW Esports' },
+      { join: '2024-06-13', leave: '2024-07-12', team: 'Guts & Glory' },
+      { join: '2024-07-12', leave: '2024-09-14', team: 'Leo Esports' },
+      { join: '2024-09-14', leave: '2024-12-01', team: 'Guts & Glory' },
+      { join: '2024-12-01', leave: '2025-09-06', team: '4Thrives Esports' },
+      { join: '2025-09-06', leave: '2025-12-15', team: 'IC' },
+      { join: '2025-12-15', leave: '2025-12-16', team: '4Thrives Esports' },
+      { join: '2025-12-16', leave: '2026-01-08', team: 'Guts & Glory' },
+      { join: '2026-01-08', leave: 'Present', team: 'Aminz Esports' },
+      { join: '2026-04-09', leave: '', team: 'Banned' }
+    ]
   }
 };
 
@@ -1133,7 +1205,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                {(ach.team === 'Red Death') && (
                                 <NextImage src="/RedDeathEsp.png" alt="Red Death" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Death" />
                               )}
-                               {(ach.team === '3x Esports') && (
+                               {(ach.team === '3x Esports' || ach.team === '3x') && (
                                 <NextImage src="/3xlogo.png" alt="3x Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="3x Esports" />
                               )}
                               {(ach.team === '9Eleven Esport') && (
@@ -1177,6 +1249,9 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               )}
                               {(ach.team === '52 Esports') && (
                                 <NextImage src="/52-Esport Logo.png" alt="52 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="52 Esports" />
+                              )}
+                              {(ach.team === 'IC') && (
+                                <NextImage src="/Inner circle logo.png" alt="IC" width={48} height={30} style={{ objectFit: 'contain' }} title="IC" />
                               )}
                                {(ach.team === 'VLR Esports') && (
                                 <NextImage src="/VLRlogo.png" alt="VLR Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="VLR Esports" />
@@ -1242,10 +1317,10 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 {(ach.team === 'Team OP') && (
                                 <NextImage src="/Team OPlogo.png" alt="Team OP" width={48} height={30} style={{ objectFit: 'contain' }} title="Team OP" />
                               )}
-                               {(ach.team === 'Team Star') && (
+                              {(ach.team === 'Team Star') && (
                                 <NextImage src="/Starlogo.png" alt="Team Star" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Star" />
                               )}
-                              {(ach.team === 'Freestyle') && (
+                              {(ach.team === 'Freestyle' || ach.team === 'Free Style' || ach.team === 'FS') && (
                                 <NextImage src="/freestyle-logo.jpg" alt="Freestyle" width={48} height={30} style={{ objectFit: 'contain' }} title="Freestyle" />
                               )}
                               {(ach.team === 'TOB') && (
@@ -1324,7 +1399,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                {ach.team === '404 Esports' && (
                                 <NextImage src="/404logo.png" alt="404 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="404 Esports" />
                               )}
-                               {ach.team === 'Stalwart Esports' && (
+                               {(ach.team === 'Stalwart Esports' || ach.team === 'STE') && (
                                 <NextImage src="/STElogo.jpg" alt="Stalwart Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Stalwart Esports" />
                               )}
                                {ach.team === 'Qwerty Esports' && (
@@ -1342,7 +1417,20 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'Jk Nation' || ach.team === 'JK Nation') && (
                                 <NextImage src="/Jknationlogo.png" alt="Jk Nation" width={48} height={30} style={{ objectFit: 'contain' }} title="Jk Nation" />
                               )}
-                              {!['Seventh Element','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','Team OP','3x Esports','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                            
+                              {(ach.team === '4T') && (
+                                <NextImage src="/4thirveslogo.png" alt="4T" width={48} height={30} style={{ objectFit: 'contain' }} title="4T" />
+                              )}
+                              {(ach.team === 'PAK') && (
+                                <NextImage src="/mini-pak-flag.png" alt="PAK" width={48} height={30} style={{ objectFit: 'contain' }} title="PAK" />
+                              )}
+                              {(ach.team === 'SR | 3x') && (
+                                <NextImage src="/3xlogo.png" alt="SR | 3x" width={48} height={30} style={{ objectFit: 'contain' }} title="SR | 3x" />
+                              )}
+                              {(ach.team === 'Rage') && (
+                                <NextImage src="/Rage-logo.png" alt="Rage" width={48} height={30} style={{ objectFit: 'contain' }} title="Rage" />
+                              )}
+                              {!['Seventh Element','IC','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
