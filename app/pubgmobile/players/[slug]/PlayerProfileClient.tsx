@@ -920,6 +920,41 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       { join: '2026-01-08', leave: 'Present', team: 'Aminz Esports' },
       { join: '2026-04-09', leave: '', team: 'Banned' }
     ]
+  },
+  'crypto': {
+    name: 'Raja Haseeb',
+    nick: 'CRYPTO',
+    image: '',
+    teamLogo: '',
+    teamName: 'AS i8 Esports',
+    nationality: 'Pakistan',
+    born: 'June 28, 2004 (age 21)',
+    status: 'Active',
+    bio: <></>,
+    achievements: [
+      { date: '2025-08-31', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan Fall 2025', team: 'ASi8' },
+      { date: '2024-04-21', place: '1st', tier: 'B-Tier', tourney: 'Gamers Galaxy Pakistan 2024', team: 'i8 Esports' },
+      { date: '2023-12-24', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - South Asia 2023', team: 'AGONxi8 Esports' },
+      { date: '2023-07-16', place: '16th', tier: 'S-Tier', tourney: 'PUBG Mobile World Invitational 2023', team: 'Twsited Minds' },
+      { date: '2023-04-19', place: '1st', tier: 'A-Tier', tourney: 'Saudi League 2023 Season 1', team: 'Twsited Minds' },
+      { date: '2023-02-12', place: '1st', tier: 'B-Tier', tourney: 'Gamekey Arena', team: 'AGONxi8 Esports' },
+      { date: '2022-05-22', place: '4th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Spring 2022', team: 'i8 Esports' },
+      { date: '2022-04-17', place: '3rd', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - Pakistan Spring 2022', team: 'Saltxi8' },
+      { date: '2021-08-29', place: '1st', tier: 'B-Tier', tourney: 'PUBG Mobile Club Open - Fall Split 2021: Pakistan', team: 'i8 Esports' },
+      { date: '2021-06-13', place: '4th', tier: 'A-Tier', tourney: 'PUBG Mobile Pro League - South Asia Championship Season 1', team: 'STE' }
+    ],
+    history: [
+      { join: '2021-02-16', leave: '2021-06-13', team: 'Stalwart Esports' },
+      { join: '2021-06-13', leave: '2021-12-27', team: 'i8 Esports' },
+      { join: '2021-12-27', leave: '2022-05-05', team: 'SALTxi8 Esports' },
+      { join: '2022-05-05', leave: '2022-06-20', team: 'i8 Esports' },
+      { join: '2022-07-04', leave: '2023-01-20', team: 'Unicorns of Love' },
+      { join: '2023-03-17', leave: '2023-11-14', team: 'Twisted Minds' },
+      { join: '2023-11-14', leave: '2024-06-23', team: 'ASagi8 Esports' },
+      { join: '2024-06-26', leave: '2024-09-30', team: '52 Esports' },
+      { join: '2024-09-30', leave: '2024-12-05', team: 'LOU Esports' },
+      { join: '2024-12-05', leave: 'Present', team: 'AS i8 Esports' }
+    ]
   }
 };
 
@@ -1223,6 +1258,9 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'CNF Esports') && (
                                 <NextImage src="/CNFlogo.jpg" alt="CNF Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="CNF Esports" />
                               )}
+                                {(ach.team === 'Twsited Minds') && (
+                                <NextImage src="/twistedminds logo.jpg" alt="Twsited Minds" width={48} height={30} style={{ objectFit: 'contain' }} title="Twsited Minds" />
+                              )}
 
                               {(ach.team === 'Spins Esport') && (
                                 <NextImage src="/spinslogo.png" alt="Spins Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="Spins Esport" />
@@ -1430,7 +1468,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'Rage') && (
                                 <NextImage src="/Rage-logo.png" alt="Rage" width={48} height={30} style={{ objectFit: 'contain' }} title="Rage" />
                               )}
-                              {!['Seventh Element','IC','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Twsited Minds','IC','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
