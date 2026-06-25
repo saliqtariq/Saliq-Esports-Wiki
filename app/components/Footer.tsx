@@ -120,7 +120,7 @@ export default function Footer() {
               Want to get featured? Reach out to us!
             </p>
             <a 
-              href="https://wa.me/923358746804" 
+              href="https://wa.me/923358746804?text=Hi,%20I'm%20reaching%20out%20from%20Saliq%20Esports." 
               target="_blank" 
               rel="noopener noreferrer"
               style={{
