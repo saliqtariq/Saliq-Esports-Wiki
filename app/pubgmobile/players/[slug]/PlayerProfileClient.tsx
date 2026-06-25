@@ -1462,13 +1462,19 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'PAK') && (
                                 <NextImage src="/mini-pak-flag.png" alt="PAK" width={48} height={30} style={{ objectFit: 'contain' }} title="PAK" />
                               )}
+                               {(ach.team === 'Negative Minds') && (
+                                <NextImage src="/Negative minds logo.jpg" alt="Negative Minds" width={48} height={30} style={{ objectFit: 'contain' }} title="Negative Minds" />
+                              )}
+                               {(ach.team === 'Team Seal') && (
+                                <NextImage src="/teamsealLogo.jpg" alt="Team Seal" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Seal" />
+                              )}
                               {(ach.team === 'SR | 3x') && (
                                 <NextImage src="/3xlogo.png" alt="SR | 3x" width={48} height={30} style={{ objectFit: 'contain' }} title="SR | 3x" />
                               )}
                               {(ach.team === 'Rage') && (
                                 <NextImage src="/Rage-logo.png" alt="Rage" width={48} height={30} style={{ objectFit: 'contain' }} title="Rage" />
                               )}
-                              {!['Seventh Element','Twsited Minds','IC','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Team Seal','Twsited Minds','Negative Minds','IC','R3D','i8 Esports','Saltxi8','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>
