@@ -996,6 +996,16 @@ function renderSanityBio(bioText: string, teamName: string) {
   );
 }
 
+function getPlacementValue(place: string): number {
+  if (!place) return 999;
+  const p = place.toLowerCase().trim();
+  const match = p.match(/^(\d+)/);
+  if (match) return parseInt(match[1], 10);
+  if (p === 'finals') return 50;
+  if (p === 'semifinals') return 51;
+  return 999;
+}
+
 export default function PlayerProfileClient({ slug, sanityData }: { slug: string, sanityData?: any }) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
@@ -1021,8 +1031,20 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
 
   const sortedAchievements = player
     ? [...player.achievements].sort((a, b) => {
-        const tierDiff = (TIER_PRIORITY[a.tier] ?? 99) - (TIER_PRIORITY[b.tier] ?? 99);
+        const getTierPriority = (tierStr: string) => {
+          if (!tierStr) return 99;
+          const normalized = tierStr.trim().toLowerCase();
+          const match = Object.entries(TIER_PRIORITY).find(([key]) => key.toLowerCase() === normalized);
+          return match ? match[1] : 99;
+        };
+
+        const tierDiff = getTierPriority(a.tier) - getTierPriority(b.tier);
         if (tierDiff !== 0) return tierDiff;
+        
+        const placeA = getPlacementValue(a.place);
+        const placeB = getPlacementValue(b.place);
+        if (placeA !== placeB) return placeA - placeB;
+
         return new Date(b.date).getTime() - new Date(a.date).getTime();
       })
     : [];
@@ -1212,7 +1234,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                             </span>
                           </td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c', textAlign: 'center' }}>
-                            <span style={{ fontSize: '1rem', fontWeight: 600, color: ach.tier === 'A-Tier' ? '#FFD700' : '#a0c4ff' }}>{ach.tier}</span>
+                            <span style={{ fontSize: '1rem', fontWeight: 600, color: ach.tier?.trim() === 'A-Tier' ? '#FFD700' : '#a0c4ff' }}>{ach.tier}</span>
                           </td>
                           <td style={{ padding: '14px 15px', borderRight: '1px solid #3c3c3c' }}>
                             <span className="tourney-link" style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 500, cursor: 'pointer' }}>{ach.tourney}</span>
