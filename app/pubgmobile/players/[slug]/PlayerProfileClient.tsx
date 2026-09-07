@@ -716,7 +716,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     name: 'Shahzada Anzal',
     nick: 'Captain',
     image: '/captnEspPic.jpg',
-    teamLogo: '/RST-Esports.png',
+    teamLogo: '/RST Esports.png',
     teamName: 'Red Saints',
     nationality: 'Pakistan',
     born: '',
@@ -1270,19 +1270,19 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/9Elevenlogo.jpeg" alt="9Eleven Esport" width={48} height={30} style={{ objectFit: 'contain' }} title="9Eleven Esport" />
                               )}
                               {(ach.team === 'AGONxi8 Esports') && (
-                                <NextImage src="/Agonxi8-logo.png" alt="AGONxi8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="AGONxi8 Esports" />
+                                <NextImage src="/Agonxi8 logo.png" alt="AGONxi8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="AGONxi8 Esports" />
                               )}
                                {(ach.team === 'i8 Esports') && (
                                 <NextImage src="/i8logo.png" alt="i8 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="i8 Esports" />
                               )}
                               {(ach.team === 'Saltxi8') && (
-                                <NextImage src="/Saltxi8-logo.png" alt="Saltxi8" width={48} height={30} style={{ objectFit: 'contain' }} title="SALTxi8 Esports" />
+                                <NextImage src="/Saltxi8 logo - Copy.png" alt="Saltxi8" width={48} height={30} style={{ objectFit: 'contain' }} title="SALTxi8 Esports" />
                               )}
                               {(ach.team === 'CNF Esports') && (
                                 <NextImage src="/CNFlogo.jpg" alt="CNF Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="CNF Esports" />
                               )}
                                 {(ach.team === 'Twsited Minds') && (
-                                <NextImage src="/twistedminds-logo.jpg" alt="Twsited Minds" width={48} height={30} style={{ objectFit: 'contain' }} title="Twsited Minds" />
+                                <NextImage src="/twistedminds logo.jpg" alt="Twsited Minds" width={48} height={30} style={{ objectFit: 'contain' }} title="Twsited Minds" />
                               )}
 
                               {(ach.team === 'Spins Esport') && (
@@ -1300,7 +1300,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/TeamBablu.png" alt="Team Bablu" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Bablu" />
                               )}
                               {(ach.team === 'R3G Esports') && (
-                                <NextImage src="/R3G-logo.png" alt="R3G Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="R3G Esports" />
+                                <NextImage src="/R3G logo.png" alt="R3G Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="R3G Esports" />
                               )}
                                {(ach.team === 'Global Wiz') && (
                                 <NextImage src="/globalwizesportslogo.jpg" alt="Global Wiz" width={48} height={30} style={{ objectFit: 'contain' }} title="Global Wiz" />
@@ -1312,10 +1312,10 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/Des-Logo.jpg" alt="Destroyer Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Destroyer Esports" />
                               )}
                               {(ach.team === '52 Esports') && (
-                                <NextImage src="/52-Esport-Logo.png" alt="52 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="52 Esports" />
+                                <NextImage src="/52-Esport Logo.png" alt="52 Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="52 Esports" />
                               )}
                               {(ach.team === 'IC') && (
-                                <NextImage src="/Inner-circle-logo.png" alt="IC" width={48} height={30} style={{ objectFit: 'contain' }} title="IC" />
+                                <NextImage src="/Inner circle logo.png" alt="IC" width={48} height={30} style={{ objectFit: 'contain' }} title="IC" />
                               )}
                                {(ach.team === 'VLR Esports') && (
                                 <NextImage src="/VLRlogo.png" alt="VLR Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="VLR Esports" />
@@ -1364,22 +1364,22 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/Tfdlogo.png" alt="TFD Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="TFD Esports" />
                               )}
                                {(ach.team === 'Red Saints') && (
-                                <NextImage src="/RST-Esports.png" alt="Red Saints" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Saints" />
+                                <NextImage src="/RST Esports.png" alt="Red Saints" width={48} height={30} style={{ objectFit: 'contain' }} title="Red Saints" />
                               )}
                               {(ach.team === '7Sins') && (
                                 <NextImage src="/7Sins-Logo.png" alt="7Sins" width={48} height={30} style={{ objectFit: 'contain' }} title="7Sins" />
                               )}
                               {(ach.team === 'DTDxEsports') && (
-                                <NextImage src="/DTDxEsports-Logo.png" alt="DTDxEsports" width={48} height={30} style={{ objectFit: 'contain' }} title="DTDxEsports" />
+                                <NextImage src="/DTDxEsports Logo.png" alt="DTDxEsports" width={48} height={30} style={{ objectFit: 'contain' }} title="DTDxEsports" />
                               )}
                               {(ach.team === 'Unbeatables') && (
                                 <NextImage src="/Unbeatables-logo.png" alt="Unbeatables" width={48} height={30} style={{ objectFit: 'contain' }} title="Unbeatables" />
                               )}
                               {(ach.team === 'WallStreet Bets') && (
-                                <NextImage src="/WallStreet-Bets-Logo.jpg" alt="WallStreet Bets" width={48} height={30} style={{ objectFit: 'contain' }} title="WallStreet Bets" />
+                                <NextImage src="/WallStreet Bets Logo.jpg" alt="WallStreet Bets" width={48} height={30} style={{ objectFit: 'contain' }} title="WallStreet Bets" />
                               )}
                                 {(ach.team === 'Team OP') && (
-                                <NextImage src="/Team-OPlogo.png" alt="Team OP" width={48} height={30} style={{ objectFit: 'contain' }} title="Team OP" />
+                                <NextImage src="/Team OPlogo.png" alt="Team OP" width={48} height={30} style={{ objectFit: 'contain' }} title="Team OP" />
                               )}
                               {(ach.team === 'Team Star') && (
                                 <NextImage src="/Starlogo.png" alt="Team Star" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Star" />
@@ -1418,7 +1418,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/4ProMarshalls.png" alt="4Pro Marshals" width={48} height={30} style={{ objectFit: 'contain' }} title="4Pro Marshals" />
                               )}
                               {(ach.team === 'PTG Gaming') && (
-                                <NextImage src="/PTG-Gaming.png" alt="PTG Gaming" width={48} height={30} style={{ objectFit: 'contain' }} title="PTG Gaming" />
+                                <NextImage src="/PTG Gaming.png" alt="PTG Gaming" width={48} height={30} style={{ objectFit: 'contain' }} title="PTG Gaming" />
                               )}
                              
                               {(ach.team === 'ATX') && (
@@ -1489,7 +1489,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                                 <NextImage src="/mini-pak-flag.png" alt="PAK" width={48} height={30} style={{ objectFit: 'contain' }} title="PAK" />
                               )}
                                {(ach.team === 'Negative Minds') && (
-                                <NextImage src="/Negative-minds-logo.jpg" alt="Negative Minds" width={48} height={30} style={{ objectFit: 'contain' }} title="Negative Minds" />
+                                <NextImage src="/Negative minds logo.jpg" alt="Negative Minds" width={48} height={30} style={{ objectFit: 'contain' }} title="Negative Minds" />
                               )}
                                {(ach.team === 'Team Seal') && (
                                 <NextImage src="/teamsealLogo.jpg" alt="Team Seal" width={48} height={30} style={{ objectFit: 'contain' }} title="Team Seal" />
