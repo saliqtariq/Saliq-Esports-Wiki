@@ -596,28 +596,27 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     nick: 'Codex',
     image: '/CodexUpdatedPic.png',
     teamLogo: '/A8Logo.jpg',
-    teamName: 'A8 Academy',
+    teamName: 'Hyper Esports',
     nationality: 'Pakistan',
     born: '20 January 2005 (age 21)',
     status: 'Active',
     bio: (
        <p style={{ margin: 0 }}>
-        Muhammad Ghous <strong style={{ color: '#fff' }}>"Codex"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> Coach & Analyst who is currently working with <span style={{ color: '#22C55E', fontWeight: 700 }}>A8 Academy & Hyper Esports</span>.
+        Muhammad Ghous <strong style={{ color: '#fff' }}>"Codex"</strong>  is a <span style={{ color: '#22C55E', fontWeight: 600 }}>Active</span> <span style={{ color: '#fff', fontWeight: 600 }}>Pakistani</span> Coach & Analyst who is currently working with <span style={{ color: '#22C55E', fontWeight: 700 }}>Hyper Esports</span>.
       </p>
     ),
     achievements: [
         { date: '2026-04-21', place: '2nd', tier: 'D-Tier', tourney: 'SSP Rumble Showdown', team: 'F4K Esports' },
          { date: '2026-08-28', place: '14th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2026 Fall', team: 'Global Wiz' },
-         { date: '2026-04-14', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile FFC Season 3 by AJ', team: 'F4K Esports' },
-      { date: '2026-04-27', place: '1st', tier: 'D-Tier', tourney: 'PUBG Mobile SFA Season 3 by AJ', team: 'F4K Esports' },
-      { date: '2026-04-22', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile Ultimate Showdown', team: 'F4K Esports' }, 
+      
       { date: '2026-02-15', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Hyper Esport' },
     ],
   
     history: [],
     staffHistory: [
-      { join: '2026-04-17', leave: 'Present', team: 'A8 Academy', role: 'Analyst' },
-      { join: '-', leave: 'Present', team: 'Hyper Esports', role: 'Analyst' },
+       { join: '2026-09-04', leave: 'Present', team: 'Hyper Esports', role: 'Analyst' },
+      { join: '2026-04-17', leave: '-', team: 'A8 Academy', role: 'Analyst' },
+      { join: '-', leave: '-', team: 'Hyper Esports', role: 'Analyst' },
        { join: '2026-04-08', leave: '2026-05-27', team: 'Demon Esports', role: 'Analyst' }
     ]
   },
