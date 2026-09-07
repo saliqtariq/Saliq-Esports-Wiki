@@ -594,7 +594,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
   'codex': {
     name: 'Muhammad Ghous',
     nick: 'Codex',
-    image: '/Codex-EspPic.png',
+    image: '/CodexUpdatedPic.png',
     teamLogo: '/A8Logo.jpg',
     teamName: 'A8 Academy',
     nationality: 'Pakistan',
@@ -607,6 +607,7 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
     ),
     achievements: [
         { date: '2026-04-21', place: '2nd', tier: 'D-Tier', tourney: 'SSP Rumble Showdown', team: 'F4K Esports' },
+         { date: '2026-08-28', place: '14th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2026 Fall', team: 'Global Wiz' },
          { date: '2026-04-14', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile FFC Season 3 by AJ', team: 'F4K Esports' },
       { date: '2026-04-27', place: '1st', tier: 'D-Tier', tourney: 'PUBG Mobile SFA Season 3 by AJ', team: 'F4K Esports' },
       { date: '2026-04-22', place: '2nd', tier: 'D-Tier', tourney: 'PUBG Mobile Ultimate Showdown', team: 'F4K Esports' }, 
@@ -1301,6 +1302,9 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'R3G Esports') && (
                                 <NextImage src="/R3G logo.png" alt="R3G Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="R3G Esports" />
                               )}
+                               {(ach.team === 'Global Wiz') && (
+                                <NextImage src="/globalwizesportslogo.jpg" alt="Global Wiz" width={48} height={30} style={{ objectFit: 'contain' }} title="Global Wiz" />
+                              )}
                                {(ach.team === 'Clarity Esports') && (
                                 <NextImage src="/Claritylogo.png" alt="Clarity Esports" width={48} height={30} style={{ objectFit: 'contain' }} title="Clarity Esports" />
                               )}
@@ -1529,7 +1533,7 @@ export default function PlayerProfileClient({ slug, sanityData }: { slug: string
                               {(ach.team === 'Rage') && (
                                 <NextImage src="/Rage-logo.png" alt="Rage" width={48} height={30} style={{ objectFit: 'contain' }} title="Rage" />
                               )}
-                              {!['Seventh Element','Stallion Esports','Team glxy','Seven Esports','Team rtg','TC','Fyme','Aminz Esports','Vip Esports','e8 Esports','Team Seal','Twsited Minds','Raze Renegades','Negative Minds','IC','R3D','i8 Esports','Saltxi8','Tog Esports','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
+                              {!['Seventh Element','Global Wiz','Stallion Esports','Team glxy','Seven Esports','Team rtg','TC','Fyme','Aminz Esports','Vip Esports','e8 Esports','Team Seal','Twsited Minds','Raze Renegades','Negative Minds','IC','R3D','i8 Esports','Saltxi8','Tog Esports','AGONxi8 Esports','Team H2E','Clarity Esports','Magnus Esports','Qwerty Esports','Team Bablu','R3G Esports','WallStreet Bets','North Esports','Stalwart Esports','STE','Team OP','3x Esports','3x','SR | 3x','R360 Esports','CNF Esports','9Eleven Esport','Hyper Esport','F4K Esports','Unix Esport','Trouble Makers','Radical Death','404 Esports','Bloodmoon','Demolition 5','Virus','KOD Esports','4Pro Marshals','Tag Esports','TFD Esports','Flex Esports','Mythicals','Myth Esports','PTG Gaming','Oxy Esports','Unique Esports','Hellraisers','Red Death','VLR Esports','AS Esports','Metershot Esports','ViperxS1','Team Star','Team RPG','Koxav Esports','NED 99','Spins Esport', 'XGeneration', 'xgenerator', 'FMA Esports', 'Destroyer Esports', '52 Esports', 'F2D Esports', 'MSxDTD', '247Esports', 'Hashtag Esports', 'Galacticous', 'Team QWERTY', '7Sins', 'DTDxEsports', 'Unbeatables', 'Freestyle', 'Free Style', 'FS', 'TOB', 'Ext', 'H4K', 'Unstoppable', 'GPA', 'ATX', '4thrives', '4T', 'IC', 'PAK', 'Rage', 'Agonxi8 Esports','Red Saints','Son of Anarchy','Sons of Anarchy','Cracked Mind','Cracked Minds','Jk Nation','JK Nation'].includes(ach.team) && (
                                 <span style={{ fontSize: '0.85rem', color: ach.team === 'Flames 1' ? '#ff0000' : '#3498db', fontWeight: 700 }}>{ach.team}</span>
                               )}
                             </div>

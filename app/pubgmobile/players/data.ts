@@ -243,7 +243,7 @@ export const players: PlayerSeoData[] = [
     nationality: 'Pakistan',
     born: '20 January 2005 (age 21)',
     status: 'Active',
-    image:'/Codex-EspPic.png',
+    image:'/CodexUpdatedPic.png',
     instagram: 'https://www.instagram.com/codex.sys',
     seoAliases: ['Codex PUBG', 'Ghous PUBG', 'Codex Ghous PUBGM', 'Coach Pakistan pubg'],
   },
