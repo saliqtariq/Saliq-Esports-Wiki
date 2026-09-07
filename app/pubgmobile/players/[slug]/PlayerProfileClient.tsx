@@ -606,9 +606,9 @@ const PLAYERS_DATA: Record<string, PlayerData> = {
       </p>
     ),
     achievements: [
-        { date: '2026-04-21', place: '2nd', tier: 'D-Tier', tourney: 'SSP Rumble Showdown', team: 'F4K Esports' },
+       
          { date: '2026-08-28', place: '14th', tier: 'B-Tier', tourney: 'PUBG Mobile National Championship Pakistan 2026 Fall', team: 'Global Wiz' },
-      
+       
       { date: '2026-02-15', place: 'SemiFinals', tier: 'C-Tier', tourney: 'PUBG Mobile Spring Cup 2026', team: 'Hyper Esport' },
     ],
   
